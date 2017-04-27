@@ -6,6 +6,7 @@
   width: 100%
   display: flex
   flex-wrap: wrap
+  align-items: center
   justify-content: center
   background-color: #fff
   position: fixed
@@ -36,7 +37,7 @@
 .hamburger
   display: flex
   justify-content: flex-end
-  width: 25%
+  width: 15%
 
 // LIST ________________________________________________________________________
 .nav__list
@@ -48,6 +49,12 @@
   flex-grow: 2
   width: 100%
   margin-top: 0
+  margin-bottom: 3.272rem
+  text-align: left
+  padding-left: 3.272rem
+
+.top-nav__list
+  display: none
 
 // LINK ________________________________________________________________________
 .top-nav__link
@@ -56,6 +63,8 @@
   color: #9b9b9b
   text-decoration: none
   transition: .5s
+  display: block
+  width: 100%
 
 .top-nav__link:hover
   color: #3b3b3b
@@ -79,17 +88,26 @@
 
   .top-nav__on-top
     align-items: center
+    flex-wrap: nowrap
 
   .subline
     height: 2px
-    width: 75%
 
   // LIST
   .top-nav__list
+    display: flex
     flex-grow: 2
-    justify-content: space-around
+    flex-direction: row
+    justify-content: space-between
+    margin-bottom: 0
 
   // LOGO
+  .logo
+    width: 5.295rem
+
+  .logo-container
+    width: 25%
+
   .logo-container::after
     content: '=>'
     font-size: 3.272rem

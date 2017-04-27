@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
+import {Motion, spring, presets} from 'react-motion'
 
 // IMPORT ASSETS _______________________________________________________________
 import './Navbar.sass'
 import logo from './logo.svg'
-import hamburger from './hamburger.svg'
-import cross from './cross.svg'
+import Hamburger from './Hamburger'
+import Cross from './Cross'
 
 // IMPORT COMPONENTS ___________________________________________________________
 import List from './List'
@@ -28,9 +29,32 @@ class Navbar extends Component {
     return <div className="subline" aria-hidden></div>
   }
 
+/*
+<img src={cross} alt="Hamburger"
+  className={`cross__icon ${navOpen ? 'cross__icon--display' : ''}`}
+/>
+
+<img src={hamburger} alt="Hamburger"
+  className={`hamburger__icon ${navOpen ? 'hamburger__icon--hidden' : ''}`}
+/>
+ */
+
+ addMotionToComponent(component, key) {
+   return (
+     <Motion key={key} defaultStyle={{x: 0}}
+       style={{x: spring(1, presets.gentle)}}
+       >
+       {interpolatingStyle => component({style: interpolatingStyle})}
+     </Motion>
+   )
+ }
+
   render() {
     const {navOpen} = this.state
-    const {renderSubline} = this
+    const {
+      renderSubline,
+      addMotionToComponent
+    } = this
     return (
       <header role="banner"
         className={`top-nav ${navOpen ? 'top-nav--open' : ''}`}
@@ -42,10 +66,11 @@ class Navbar extends Component {
           <div className="hamburger" onClick={this.toggleMenuHandler.bind(this)}>
             {
               navOpen
-              ? <img src={cross} className="cross__icon" alt="Hamburger"/>
-              : <img src={hamburger} className="hamburger__icon" alt="Hamburger"/>
+              ? addMotionToComponent(Cross, 1)
+              : addMotionToComponent(Hamburger, 2)
             }
           </div>
+          <List topNav={true} />
         </div>
         {
           navOpen
