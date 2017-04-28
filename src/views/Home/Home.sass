@@ -1,0 +1,58 @@
+@import '../../_sass/_constants.sass'
+@import '../../_sass/_breakpoints.sass'
+
+.home-container
+  padding-top: 20%
+  background-image: url('./hero.png')
+  background-repeat: no-repeat
+  background-position: left bottom
+  background-size: cover
+  // background-origin: content-box
+  border-top: 6.854rem transparent solid
+  width: 100%
+  height: 100vh
+  font-family: 'Roboto Mono', monospace
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+
+
+// PRESENTATION ________________________________________________________________
+.presentation
+  font-weight: bold
+  line-height: 1
+
+.name
+  font-size: 1.618rem
+  margin: 0
+
+.semi
+  color: $blue
+
+.job-title
+  color: $blue
+  font-size: 3.272rem
+  margin-bottom: 0.773rem
+  text-transform: capitalize
+
+.developer
+  color: $dark-grey
+  margin: 0
+
+// MAG GLASS ___________________________________________________________________
+.mag-glass-container
+  display: inline-block
+  border: 2px solid #bcbcbc
+  padding: 0.7rem
+  border-radius: 50%
+
+// LANDSCAPE BREAKPOINT -- MOBILE ______________________________________________
++for-phone-portrait
+  .home-container
+    border-top: 3.272rem transparent solid
+    background-position: left top
+    padding-top: 1.618rem
+
+  .developer
+    background-color: rgba(255, 255, 255, .6)

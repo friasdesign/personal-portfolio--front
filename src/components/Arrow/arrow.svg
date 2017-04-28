@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <radialGradient id="a" cy="100%" r="87.245%" fx="50%" fy="100%" gradientTransform="scale(-.5 -1) rotate(-30.055 -3.975 2.794)">
+      <stop stop-color="#FCD6D6" offset="0%"/>
+      <stop stop-color="#C15454" offset="100%"/>
+    </radialGradient>
+  </defs>
+  <polyline fill="none" stroke="url(#a)" stroke-width="3" points="0 .975 24.985 25.946 50 .946" transform="translate(5 17)" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
