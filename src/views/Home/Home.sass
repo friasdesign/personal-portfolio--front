@@ -16,6 +16,7 @@
   flex-direction: column
   justify-content: space-between
   align-items: center
+  overflow: hidden
 
 
 // PRESENTATION ________________________________________________________________
@@ -98,3 +99,23 @@
 +for-tablet-landscape-up
   .home-container
     padding-top: 5%
+
+// DESKTOP BREAKPOINT __________________________________________________________
++for-desktop-up
+  .home-container
+    background-position: right bottom
+    background-size: contain
+    border-top: 8.567rem transparent solid
+    padding-top: 8%
+
+  .presentation
+    padding-left: 5.295rem
+
+// DESKTOP BIG BREAKPOINT ______________________________________________________
++for-big-desktop-up
+  .presentation
+    padding-left: 13.861rem
+
+  .job-title
+    font-size: 6.854rem
+    margin-top: 4.236rem
