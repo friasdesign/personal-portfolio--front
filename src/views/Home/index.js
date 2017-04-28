@@ -6,16 +6,68 @@ import glass from './mag-glass.svg'
 // COMPONENTS __________________________________________________________________=
 import Arrow from '../../components/Arrow'
 
+// Define final text
+const FIRST_LINE = 'carlos frias'
+const SECOND_LINE = 'full-stack'
+const THIRD_LINE = 'developer'
+
 class Home extends Component {
   constructor(props) {
     super(props)
 
+    this.firstLine = FIRST_LINE.split('')
+    this.secondLine = SECOND_LINE.split('')
+    this.thirdLine = THIRD_LINE.split('')
+
     this.state = {
-      firstLine: 'carlos frias',
-      semiColon: ';',
-      secondLine: 'full-stack',
-      thirdLine: 'developer'
+      firstLine: '',
+      semiColon: '',
+      secondLine: '',
+      thirdLine: '',
+      finishedTyping: false
     }
+
+    this.typeCharArray = this.typeCharArray.bind(this)
+  }
+
+  componentDidMount() {
+    this.startTyping()
+  }
+
+  startTyping() {
+    const {
+      typeCharArray,
+      firstLine,
+      secondLine,
+      thirdLine
+    } = this
+
+    // Type `.name`
+    typeCharArray(firstLine, 'firstLine')
+      // Type `.semi`
+      .then(() => typeCharArray([';'], 'semiColon'))
+      // Type `.job-title`
+      .then(() => typeCharArray(secondLine, 'secondLine'))
+      // Type `.developer`
+      .then(() => typeCharArray(thirdLine, 'thirdLine'))
+      // Finish typing
+      .then(() => this.setState({finishedTyping: true}))
+  }
+
+  typeCharArray(charArray, property) {
+    return new Promise((resolve) => {
+      const length = charArray.length
+
+      charArray.forEach((char, i) => {
+        setTimeout(() => requestAnimationFrame(() => {
+          this.setState({
+            [property]: this.state[property] + char
+          })
+          // Resolve if finished
+          if((i + 1) === length) resolve(true)
+        }), (i + 1) * 250)
+      })
+    })
   }
 
   render() {
