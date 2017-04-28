@@ -40,6 +40,20 @@
   color: $dark-grey
   margin: 0
 
+// CONTROLS ____________________________________________________________________
+.controls
+  flex-grow: 2
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+// SEARCH ______________________________________________________________________
+.search
+  display: flex
+  flex-direction: column
+  justify-content: center
+  flex-grow: 2
+
 // MAG GLASS ___________________________________________________________________
 .mag-glass-container
   display: inline-block
@@ -56,3 +70,26 @@
 
   .developer
     background-color: rgba(255, 255, 255, .6)
+
+// TABLET BREAKPOINT -- PORTRAIT _______________________________________________
++for-tablet-portrait-up
+  .home-container
+    align-items: flex-start
+
+  // PRESENTATION
+  .presentation
+    width: 100%
+    padding-left: 2.618rem
+
+  .name
+    font-size: 3.272rem
+
+  .job-title
+    font-size: 5.295rem
+
+  .developer
+    font-size: 1.618rem
+
+  .controls
+    width: 50%
+    align-items: center

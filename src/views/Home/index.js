@@ -37,12 +37,14 @@ class Home extends Component {
           <p className="job-title">{secondLine}</p>
           <p className="developer">{thirdLine}</p>
         </div>
-        <div className="search">
-          <div className="mag-glass-container">
-            <img src={glass} alt="Search" className="mag-glass"/>
+        <div className="controls">
+          <div className="search">
+            <div className="mag-glass-container">
+              <img src={glass} alt="Search" className="mag-glass"/>
+            </div>
           </div>
+          <Arrow />
         </div>
-        <Arrow />
       </section>
     )
   }
