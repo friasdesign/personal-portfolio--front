@@ -1,4 +1,5 @@
 @import '../../_sass/_breakpoints.sass'
+@import '../../_sass/_constants.sass'
 
 .top-nav
   font-family: 'Roboto Mono', monospace
@@ -34,7 +35,7 @@
 .subline
   height: 1px
   width: 85%
-  background-color: #e1e1e1
+  background-color: $light-grey
 
 // HAMBURGER ___________________________________________________________________
 .hamburger
@@ -63,14 +64,14 @@
 .top-nav__link
   text-transform: uppercase
   font-size: 1.618rem
-  color: #9b9b9b
+  color: $dark-grey
   text-decoration: none
   transition: .5s
   display: block
   width: 100%
 
 .top-nav__link:hover
-  color: #3b3b3b
+  color: $black
   -webkit-font-smoothing: subpixel-antialiased
   transition: .5s
 
@@ -116,7 +117,7 @@
     content: '=>'
     font-size: 3.272rem
     margin-left: 1.618rem
-    color: #e1e1e1
+    color: $light-grey
     display: inline-block
 
   // HAMBURGER
