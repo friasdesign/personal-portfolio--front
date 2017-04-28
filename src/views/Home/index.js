@@ -65,7 +65,7 @@ class Home extends Component {
           })
           // Resolve if finished
           if((i + 1) === length) resolve(true)
-        }), (i + 1) * 250)
+        }), (i + 1) * 100)
       })
     })
   }
@@ -75,27 +75,30 @@ class Home extends Component {
       firstLine,
       semiColon,
       secondLine,
-      thirdLine
+      thirdLine,
+      finishedTyping
     } = this.state
     // TODO: Check if Home is read by screen reader
     return (
       <section id="home" className="home-container">
-        <h1 id="home__title" hidden>Home</h1>
-        <div className="presentation">
-          <p className="name">
-            {firstLine}
-            <span className="semi">{semiColon}</span>
-          </p>
-          <p className="job-title">{secondLine}</p>
-          <p className="developer">{thirdLine}</p>
-        </div>
-        <div className="controls">
-          <div className="search">
-            <div className="mag-glass-container">
-              <img src={glass} alt="Search" className="mag-glass"/>
-            </div>
+        <div className={`home-content ${finishedTyping ? 'home-content--pic' : ''}`}>
+          <h1 id="home__title" hidden>Home</h1>
+          <div className="presentation">
+            <p className="name">
+              {firstLine}
+              <span className="semi">{semiColon}</span>
+            </p>
+            <p className="job-title">{secondLine}</p>
+            <p className="developer">{thirdLine}</p>
           </div>
-          <Arrow />
+          <div className="controls">
+            <div className="search">
+              <div className="mag-glass-container">
+                <img src={glass} alt="Search" className="mag-glass"/>
+              </div>
+            </div>
+            <Arrow />
+          </div>
         </div>
       </section>
     )

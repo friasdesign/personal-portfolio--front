@@ -2,7 +2,6 @@
 @import '../../_sass/_breakpoints.sass'
 
 .home-container
-  padding-top: 20%
   background-image: url('./hero.png')
   background-repeat: no-repeat
   background-position: left bottom
@@ -11,16 +10,24 @@
   width: 100%
   height: 100vh
   font-family: 'Roboto Mono', monospace
+  overflow: hidden
+
+.home-content
+  padding-top: 20%
+  background-color: rgba(255, 255, 255, .6)
+  width: 100%
+  height: 100%
   display: flex
   flex-direction: column
   justify-content: space-between
   align-items: center
-  overflow: hidden
 
 // PRESENTATION ________________________________________________________________
 .presentation
   font-weight: bold
   line-height: 1
+  width: 100%
+  padding-left: 1.618rem
 
 .name
   font-size: 1.618rem
@@ -65,14 +72,13 @@
   .home-container
     border-top: 3.272rem transparent solid
     background-position: left top
-    padding-top: 1.618rem
 
-  .developer
-    background-color: rgba(255, 255, 255, .6)
+  .home-content
+    padding-top: 1.618rem
 
 // TABLET BREAKPOINT -- PORTRAIT _______________________________________________
 +for-tablet-portrait-up
-  .home-container
+  .home-content
     align-items: flex-start
 
   // PRESENTATION
@@ -95,15 +101,20 @@
 
 // TABLET BREAKPOINT -- PORTRAIT _______________________________________________
 +for-tablet-landscape-up
-  .home-container
+  .home-content
     padding-top: 5%
+    background-color: transparent
+
+  .home-container
+    background-size: contain
+    background-position: right bottom
 
 // DESKTOP BREAKPOINT __________________________________________________________
 +for-desktop-up
   .home-container
-    background-position: right bottom
-    background-size: contain
     border-top: 8.567rem transparent solid
+
+  .home-content
     padding-top: 8%
 
   .presentation
