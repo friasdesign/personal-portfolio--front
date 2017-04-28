@@ -20,8 +20,8 @@ const MENU_ITEMS = [
   }
 ]
 
-const STIFFNESS = 400
-const DAMPING = 60
+const STIFFNESS = 210
+const DAMPING = 18
 
 function TopList() {
   return (
@@ -45,14 +45,14 @@ function List({topNav}) {
         return i === 0
           // Initial stiffness and damping
           ? {
-              x: spring(0, { stiffness: STIFFNESS, damping: DAMPING }),
+              x: spring(0, {stiffness: STIFFNESS, damping: DAMPING}),
               o: spring(1)
             }
           // Final stiffness and damping
           : {
-              x: spring(prevInterpolatedStyles[i - 1].x,
-                { stiffness: STIFFNESS, damping: DAMPING }
-              ),
+              x: spring(prevInterpolatedStyles[i - 1].x, {
+                stiffness: STIFFNESS, damping: DAMPING
+              }),
               o: spring(prevInterpolatedStyles[i - 1].o)
             };
       })}
