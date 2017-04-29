@@ -76,23 +76,23 @@
 
 // SEARCH ______________________________________________________________________
 .search
+  flex-grow: 2
   display: flex
   flex-direction: column
-  justify-content: center
-  flex-grow: 2
+  align-items: center
 
 // MAG GLASS ___________________________________________________________________
 .mag-glass-container
   display: inline-block
   border: 2px solid #bcbcbc
-  padding: 0.7rem
+  padding: 0.5rem 0.6rem
   border-radius: 50%
 
 // LANDSCAPE BREAKPOINT -- MOBILE ______________________________________________
 +for-phone-portrait
   .home-container
-    border-top: 3.272rem transparent solid
-    background-position: left top
+    border-top: 3.272rem rgba(0, 0, 0, .75) solid
+    background-position: center
 
   .presentation
     display: flex
