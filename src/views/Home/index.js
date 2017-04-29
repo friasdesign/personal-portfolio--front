@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Motion, spring, presets} from 'react-motion'
 
 import './Home.sass'
 import glass from './mag-glass.svg'
@@ -7,37 +8,44 @@ import glass from './mag-glass.svg'
 import Arrow from '../../components/Arrow'
 
 // Define final text
-const FIRST_LINE = 'carlos frias'
+const FIRST_LINE = 'I am'
+const NAME = 'Carlos Frias'
 const SECOND_LINE = 'full-stack'
-const THIRD_LINE = 'developer'
+const THIRD_LINE = 'ux/ui'
 
 class Home extends Component {
   constructor(props) {
     super(props)
 
     this.firstLine = FIRST_LINE.split('')
+    this.name = NAME.split('')
     this.secondLine = SECOND_LINE.split('')
     this.thirdLine = THIRD_LINE.split('')
 
     this.state = {
-      firstLine: 'I am',
-      name: 'Carlos Frias',
-      secondLine: 'full-stack',
-      thirdLine: 'ux/ui',
-      finishedTyping: false
+      firstLine: '',
+      name: '',
+      secondLine: '',
+      thirdLine: '',
+      finishedTyping: false,
+      developer: false,
+      designer: false
     }
 
     this.typeCharArray = this.typeCharArray.bind(this)
+    this.displaySub = this.displaySub.bind(this)
   }
 
   componentDidMount() {
-    // this.startTyping()
+    this.startTyping()
   }
 
   startTyping() {
     const {
       typeCharArray,
+      displaySub,
       firstLine,
+      name,
       secondLine,
       thirdLine
     } = this
@@ -45,13 +53,26 @@ class Home extends Component {
     // Type `.name`
     typeCharArray(firstLine, 'firstLine')
       // Type `.semi`
-      .then(() => typeCharArray([';'], 'semiColon'))
-      // Type `.job-title`
+      .then(() => typeCharArray(name, 'name'))
+      // Type 'FULL-STACK'
       .then(() => typeCharArray(secondLine, 'secondLine'))
-      // Type `.developer`
+      // Trigger 'developer' animation
+      .then(() => displaySub('developer'))
+      // Type 'UX/UI'
       .then(() => typeCharArray(thirdLine, 'thirdLine'))
+      // Trigger 'designer' animation
+      .then(() => displaySub('designer'))
       // Finish typing
       .then(() => this.setState({finishedTyping: true}))
+  }
+
+  displaySub(property) {
+    return new Promise((resolve, reject) => {
+      this.setState({
+        [property]: true
+      })
+      setTimeout(() => resolve(), 800)
+    })
   }
 
   typeCharArray(charArray, property) {
@@ -59,13 +80,14 @@ class Home extends Component {
       const length = charArray.length
 
       charArray.forEach((char, i) => {
+        const final = (i + 1) === length
         setTimeout(() => requestAnimationFrame(() => {
           this.setState({
-            [property]: this.state[property] + char
+            [property]: this.state[property] + char,
           })
           // Resolve if finished
-          if((i + 1) === length) resolve(true)
-        }), (i + 1) * 100)
+          if(final) resolve(true)
+        }), (i + 1) * 120)
       })
     })
   }
@@ -84,9 +106,27 @@ class Home extends Component {
           : null
         }
         <p className="job-title">{title}</p>
-        <span className={`job-sub ${shorter ? 'job-sub--shorter' : ''}`}>
-          {subtitle}
-        </span>
+        {
+          this.state[subtitle]
+          ? (
+            <Motion
+              defaultStyle={{s: 0.6, o: 0}}
+              style={{s: spring(1, presets.wobbly), o: spring(1)}}
+            >
+              {
+                ({s, o}) => (
+                  <span style={{
+                      opacity: o,
+                      transform: `scale(${s}, ${s})`
+                    }} className={`job-sub ${shorter ? 'job-sub--shorter' : ''}`}>
+                    {subtitle}
+                  </span>
+                )
+              }
+            </Motion>
+          )
+          : null
+        }
       </div>
     )
   }
