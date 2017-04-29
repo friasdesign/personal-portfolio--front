@@ -20,10 +20,10 @@ class Home extends Component {
     this.thirdLine = THIRD_LINE.split('')
 
     this.state = {
-      firstLine: '',
-      semiColon: '',
-      secondLine: '',
-      thirdLine: '',
+      firstLine: 'I am',
+      name: 'Carlos Frias',
+      secondLine: 'full-stack',
+      thirdLine: 'ux/ui',
       finishedTyping: false
     }
 
@@ -31,7 +31,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.startTyping()
+    // this.startTyping()
   }
 
   startTyping() {
@@ -70,10 +70,29 @@ class Home extends Component {
     })
   }
 
+  titleWithSub(title, subtitle, shorter, first) {
+    return (
+      <div className="title-sub">
+        {
+          first
+          ? (
+            <p className="name">
+              {this.state.firstLine}
+              <span className="semi">{' ' + this.state.name}</span>
+            </p>
+          )
+          : null
+        }
+        <p className="job-title">{title}</p>
+        <span className={`job-sub ${shorter ? 'job-sub--shorter' : ''}`}>
+          {subtitle}
+        </span>
+      </div>
+    )
+  }
+
   render() {
     const {
-      firstLine,
-      semiColon,
       secondLine,
       thirdLine,
       finishedTyping
@@ -84,12 +103,12 @@ class Home extends Component {
         <div className={`home-content ${finishedTyping ? 'home-content--pic' : ''}`}>
           <h1 id="home__title" hidden>Home</h1>
           <div className="presentation">
-            <p className="name">
-              {firstLine}
-              <span className="semi">{semiColon}</span>
-            </p>
-            <p className="job-title">{secondLine}</p>
-            <p className="developer">{thirdLine}</p>
+            {
+              this.titleWithSub(secondLine, 'developer', false, true)
+            }
+            {
+              this.titleWithSub(thirdLine, 'designer', true)
+            }
           </div>
           <div className="controls">
             <div className="search">
