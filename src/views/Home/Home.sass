@@ -118,7 +118,7 @@
 
   // TITLE WITH SUB
   .name
-    font-size: 2.618rem
+    font-size: 1.618rem
 
   .job-title
     font-size: 5.295rem
@@ -154,19 +154,53 @@
 // DESKTOP BREAKPOINT __________________________________________________________
 +for-desktop-up
   .home-container
-    border-top: 8.567rem transparent solid
+    border-top: 4.236rem transparent solid
 
   .home-content
-    padding-top: 8%
+    padding-top: 10%
+    width: 90%
+    align-items: flex-end
 
   .presentation
-    padding-left: 5.295rem
+    padding: 0
+    width: 46%
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+  .name
+    font-size: 2.023rem
+
+  // TITLE WITH SUB
+  .title-sub
+    width: 100%
+
+  .title-sub--half
+    width: 75%
+
+  .job-title
+    font-size: 5.295rem
+    align-self: flex-start
+
+  .job-sub
+    font-size: 2.618rem
+
+  .job-sub--shorter::before
+    width: 11.089rem
 
 // DESKTOP BIG BREAKPOINT ______________________________________________________
 +for-big-desktop-up
-  .presentation
-    padding-left: 13.861rem
-
   .job-title
     font-size: 6.854rem
-    margin-top: 4.236rem
+
+  .job-sub
+    font-size: 3.272rem
+
+  .name
+    font-size: 2.618rem
+
+  .job-sub::before
+    width: 22.428rem
+
+  .job-sub--shorter::before
+    width: 13.861rem

@@ -72,7 +72,7 @@ class Home extends Component {
 
   titleWithSub(title, subtitle, shorter, first) {
     return (
-      <div className="title-sub">
+      <div className={`title-sub ${shorter ? 'title-sub--half' : ''}`}>
         {
           first
           ? (
