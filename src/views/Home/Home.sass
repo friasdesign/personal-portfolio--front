@@ -105,20 +105,38 @@
 
 // TABLET BREAKPOINT -- PORTRAIT _______________________________________________
 +for-tablet-portrait-up
+  .home-container
+    background-position: center
+
   .home-content
-    align-items: flex-start
+    padding-top: 20%
 
   // PRESENTATION
   .presentation
-    width: 100%
-    padding-left: 2.618rem
+    padding-right: 3.272rem
+    align-self: flex-end
 
+  // TITLE WITH SUB
   .name
     font-size: 2.618rem
 
   .job-title
     font-size: 5.295rem
 
+  .job-sub
+    font-size: 2.023rem
+
+  .job-sub::before
+    width: 17.942rem
+
+  .job-sub--shorter::before
+    width: 5.295rem
+
+  // SEARCH
+  .search
+    justify-content: center
+
+  // CONTROLS
   .controls
     width: 50%
     align-items: center
@@ -130,6 +148,7 @@
     background-color: transparent
 
   .home-container
+    background-position: left bottom
     background-size: contain
 
 // DESKTOP BREAKPOINT __________________________________________________________
