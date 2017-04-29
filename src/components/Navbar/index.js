@@ -25,20 +25,6 @@ class Navbar extends Component {
     })
   }
 
-  renderSubline() {
-    return <div className="subline" aria-hidden></div>
-  }
-
-/*
-<img src={cross} alt="Hamburger"
-  className={`cross__icon ${navOpen ? 'cross__icon--display' : ''}`}
-/>
-
-<img src={hamburger} alt="Hamburger"
-  className={`hamburger__icon ${navOpen ? 'hamburger__icon--hidden' : ''}`}
-/>
- */
-
  addMotionToComponent(component, key) {
    return (
      <Motion key={key} defaultStyle={{x: 0}}
@@ -52,7 +38,6 @@ class Navbar extends Component {
   render() {
     const {navOpen} = this.state
     const {
-      renderSubline,
       addMotionToComponent
     } = this
     return (
@@ -74,13 +59,8 @@ class Navbar extends Component {
         </div>
         {
           navOpen
-          ? renderSubline()
-          : null
-        }
-        {
-          navOpen
           ? <List topNav={false} />
-          : renderSubline()
+          : null
         }
       </header>
     )

@@ -2,7 +2,6 @@
 @import '../../_sass/_constants.sass'
 
 .top-nav
-  font-family: 'Roboto Mono', monospace
   font-weight: normal
   -webkit-font-smoothing: antialiased
   width: 100%
@@ -19,7 +18,7 @@
   align-items: center
   justify-content: flex-start
   flex-direction: column
-  background-color: #fff
+  background-color: #000
   transition: background-color .3s
 
 .top-nav__on-top
@@ -30,7 +29,7 @@
   justify-content: space-between
   padding: 0 .75rem
   height: 4.236rem
-  background-color: #fff
+  background-color: #000
 
 .subline
   height: 1px
@@ -66,13 +65,11 @@
   font-size: 1.618rem
   color: $dark-grey
   text-decoration: none
-  transition: .5s
   display: block
   width: 100%
 
 .top-nav__link:hover
-  color: $black
-  -webkit-font-smoothing: subpixel-antialiased
+  color: $primary
   transition: .5s
 
 // LOGO ________________________________________________________________________
@@ -87,7 +84,7 @@
 // DESKTOP _____________________________________________________________________
 +for-desktop-up
   .top-nav
-    height: 8.567rem
+    height: 6.854rem
     width: 100%
     padding: 0 4.236rem
 
@@ -112,13 +109,6 @@
 
   .logo-container
     width: 25%
-
-  .logo-container::after
-    content: '=>'
-    font-size: 3.272rem
-    margin-left: 1.618rem
-    color: $light-grey
-    display: inline-block
 
   // HAMBURGER
   .hamburger
