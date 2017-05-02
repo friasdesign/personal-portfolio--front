@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {Motion, spring, presets} from 'react-motion'
 
 import './Home.sass'
-import glass from './mag-glass.svg'
 
 // COMPONENTS __________________________________________________________________=
 import Arrow from '../../components/Arrow'
@@ -151,11 +150,6 @@ class Home extends Component {
             }
           </div>
           <div className="controls">
-            <div className="search">
-              <div className="mag-glass-container">
-                <img src={glass} alt="Search" className="mag-glass"/>
-              </div>
-            </div>
             {
               finishedTyping
               ? (<Arrow />)
