@@ -156,7 +156,11 @@ class Home extends Component {
                 <img src={glass} alt="Search" className="mag-glass"/>
               </div>
             </div>
-            <Arrow />
+            {
+              finishedTyping
+              ? (<Arrow />)
+              : null
+            }
           </div>
         </div>
       </section>
