@@ -1,0 +1,296 @@
+exports[`Home should match snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <section
+    className="home-container"
+    id="home">
+    <div
+        className="home-content ">
+        <h1
+            hidden={true}
+            id="home__title">
+            Home
+        </h1>
+        <div
+            className="presentation">
+            <div
+                className="title-sub ">
+                <p
+                    className="name">
+                    
+                    <span
+                        className="semi">
+                         
+                    </span>
+                </p>
+                <p
+                    className="job-title" />
+            </div>
+            <div
+                className="title-sub title-sub--half">
+                <p
+                    className="job-title" />
+            </div>
+        </div>
+        <div
+            className="controls">
+            <div
+                className="search">
+                <div
+                    className="mag-glass-container">
+                    <img
+                        alt="Search"
+                        className="mag-glass"
+                        src="mag-glass.svg" />
+                </div>
+            </div>
+            <Arrow />
+        </div>
+    </div>
+</section>,
+  "nodes": Array [
+    <section
+      className="home-container"
+      id="home">
+      <div
+            className="home-content ">
+            <h1
+                  hidden={true}
+                  id="home__title">
+                  Home
+            </h1>
+            <div
+                  className="presentation">
+                  <div
+                        className="title-sub ">
+                        <p
+                              className="name">
+                              
+                              <span
+                                    className="semi">
+                                     
+                              </span>
+                        </p>
+                        <p
+                              className="job-title" />
+                  </div>
+                  <div
+                        className="title-sub title-sub--half">
+                        <p
+                              className="job-title" />
+                  </div>
+            </div>
+            <div
+                  className="controls">
+                  <div
+                        className="search">
+                        <div
+                              className="mag-glass-container">
+                              <img
+                                    alt="Search"
+                                    className="mag-glass"
+                                    src="mag-glass.svg" />
+                        </div>
+                  </div>
+                  <Arrow />
+            </div>
+      </div>
+</section>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Home />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Home {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "displaySub": [Function],
+        "firstLine": Array [
+          "I",
+          " ",
+          "a",
+          "m",
+        ],
+        "name": Array [
+          "C",
+          "a",
+          "r",
+          "l",
+          "o",
+          "s",
+          " ",
+          "F",
+          "r",
+          "i",
+          "a",
+          "s",
+        ],
+        "props": Object {},
+        "refs": Object {},
+        "secondLine": Array [
+          "f",
+          "u",
+          "l",
+          "l",
+          "-",
+          "s",
+          "t",
+          "a",
+          "c",
+          "k",
+        ],
+        "state": Object {
+          "designer": false,
+          "developer": false,
+          "finishedTyping": false,
+          "firstLine": "",
+          "name": "",
+          "secondLine": "",
+          "thirdLine": "",
+        },
+        "thirdLine": Array [
+          "u",
+          "x",
+          "/",
+          "u",
+          "i",
+        ],
+        "typeCharArray": [Function],
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <section
+          className="home-container"
+          id="home">
+          <div
+                    className="home-content ">
+                    <h1
+                              hidden={true}
+                              id="home__title">
+                              Home
+                    </h1>
+                    <div
+                              className="presentation">
+                              <div
+                                        className="title-sub ">
+                                        <p
+                                                  className="name">
+                                                  
+                                                  <span
+                                                            className="semi">
+                                                             
+                                                  </span>
+                                        </p>
+                                        <p
+                                                  className="job-title" />
+                              </div>
+                              <div
+                                        className="title-sub title-sub--half">
+                                        <p
+                                                  className="job-title" />
+                              </div>
+                    </div>
+                    <div
+                              className="controls">
+                              <div
+                                        className="search">
+                                        <div
+                                                  className="mag-glass-container">
+                                                  <img
+                                                            alt="Search"
+                                                            className="mag-glass"
+                                                            src="mag-glass.svg" />
+                                        </div>
+                              </div>
+                              <Arrow />
+                    </div>
+          </div>
+</section>,
+        "_debugID": 2,
+        "_renderedOutput": <section
+          className="home-container"
+          id="home">
+          <div
+                    className="home-content ">
+                    <h1
+                              hidden={true}
+                              id="home__title">
+                              Home
+                    </h1>
+                    <div
+                              className="presentation">
+                              <div
+                                        className="title-sub ">
+                                        <p
+                                                  className="name">
+                                                  
+                                                  <span
+                                                            className="semi">
+                                                             
+                                                  </span>
+                                        </p>
+                                        <p
+                                                  className="job-title" />
+                              </div>
+                              <div
+                                        className="title-sub title-sub--half">
+                                        <p
+                                                  className="job-title" />
+                              </div>
+                    </div>
+                    <div
+                              className="controls">
+                              <div
+                                        className="search">
+                                        <div
+                                                  className="mag-glass-container">
+                                                  <img
+                                                            alt="Search"
+                                                            className="mag-glass"
+                                                            src="mag-glass.svg" />
+                                        </div>
+                              </div>
+                              <Arrow />
+                    </div>
+          </div>
+</section>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Home />,
+}
+`;
