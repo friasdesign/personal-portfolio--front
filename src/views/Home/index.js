@@ -169,17 +169,18 @@ class Home extends Component {
 
   render() {
     const {ready} = this.state
-
     return(
       <FadeIn
         onRest={() => {this.setState({ready: true})}}
       >
         <section id="home" className="home-container">
-          {
-            ready
-            ? this.mountChildren()
-            : null
-          }
+          <div className="curtain">
+            {
+              ready
+              ? this.mountChildren()
+              : null
+            }
+          </div>
         </section>
       </FadeIn>
     )
