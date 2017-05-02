@@ -7,6 +7,9 @@ import logo from './logo.svg'
 import Hamburger from './Hamburger'
 import Cross from './Cross'
 
+// ANIMATIONS __________________________________________________________________
+import FadeIn from '../../animations/FadeIn'
+
 // IMPORT COMPONENTS ___________________________________________________________
 import List from './List'
 
@@ -41,28 +44,32 @@ class Navbar extends Component {
       addMotionToComponent
     } = this
     return (
-      <header role="banner"
-        className={`top-nav ${navOpen ? 'top-nav--open' : ''}`}
-        >
-        <div className="top-nav__on-top">
-          <div className="logo-container">
-            <img src={logo} alt="logo" className="logo" />
+      <FadeIn
+        onRest={f => f}
+      >
+        <header role="banner"
+          className={`top-nav ${navOpen ? 'top-nav--open' : ''}`}
+          >
+          <div className="top-nav__on-top">
+            <div className="logo-container">
+              <img src={logo} alt="logo" className="logo" />
+            </div>
+            <div className="hamburger" onClick={this.toggleMenuHandler.bind(this)}>
+              {
+                navOpen
+                ? addMotionToComponent(Cross, 1)
+                : addMotionToComponent(Hamburger, 2)
+              }
+            </div>
+            <List topNav={true} />
           </div>
-          <div className="hamburger" onClick={this.toggleMenuHandler.bind(this)}>
-            {
-              navOpen
-              ? addMotionToComponent(Cross, 1)
-              : addMotionToComponent(Hamburger, 2)
-            }
-          </div>
-          <List topNav={true} />
-        </div>
-        {
-          navOpen
-          ? <List topNav={false} />
-          : null
-        }
-      </header>
+          {
+            navOpen
+            ? <List topNav={false} />
+            : null
+          }
+        </header>
+      </FadeIn>
     )
   }
 }

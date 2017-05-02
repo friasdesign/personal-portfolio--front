@@ -3,8 +3,11 @@ import {Motion, spring, presets} from 'react-motion'
 
 import './Home.sass'
 
-// COMPONENTS __________________________________________________________________=
+// COMPONENTS __________________________________________________________________
 import Arrow from '../../components/Arrow'
+
+// ANIMATIONS __________________________________________________________________
+import FadeIn from '../../animations/FadeIn'
 
 // Define final text
 const FIRST_LINE = 'I am'
@@ -27,16 +30,14 @@ class Home extends Component {
       secondLine: '',
       thirdLine: '',
       finishedTyping: false,
+      startedTyping: false,
       developer: false,
-      designer: false
+      designer: false,
+      ready: false
     }
 
     this.typeCharArray = this.typeCharArray.bind(this)
     this.displaySub = this.displaySub.bind(this)
-  }
-
-  componentDidMount() {
-    this.startTyping()
   }
 
   startTyping() {
@@ -83,12 +84,18 @@ class Home extends Component {
         setTimeout(() => requestAnimationFrame(() => {
           this.setState({
             [property]: this.state[property] + char,
+            startedTyping: true
           })
           // Resolve if finished
           if(final) resolve(true)
         }), (i + 1) * 120)
       })
     })
+  }
+
+  componentDidUpdate() {
+    const {ready, startedTyping} = this.state
+    if(ready && !startedTyping) this.startTyping()
   }
 
   titleWithSub(title, subtitle, shorter, first) {
@@ -130,15 +137,15 @@ class Home extends Component {
     )
   }
 
-  render() {
+  mountChildren() {
     const {
       secondLine,
       thirdLine,
       finishedTyping
     } = this.state
+
     // TODO: Check if Home is read by screen reader
     return (
-      <section id="home" className="home-container">
         <div className={`home-content ${finishedTyping ? 'home-content--pic' : ''}`}>
           <h1 id="home__title" hidden>Home</h1>
           <div className="presentation">
@@ -157,7 +164,24 @@ class Home extends Component {
             }
           </div>
         </div>
-      </section>
+    )
+  }
+
+  render() {
+    const {ready} = this.state
+
+    return(
+      <FadeIn
+        onRest={() => {this.setState({ready: true})}}
+      >
+        <section id="home" className="home-container">
+          {
+            ready
+            ? this.mountChildren()
+            : null
+          }
+        </section>
+      </FadeIn>
     )
   }
 }
