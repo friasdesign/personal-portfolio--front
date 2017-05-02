@@ -6,101 +6,25 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <section
-    className="home-container"
-    id="home">
-    <div
-        className="home-content ">
-        <h1
-            hidden={true}
-            id="home__title">
-            Home
-        </h1>
-        <div
-            className="presentation">
-            <div
-                className="title-sub ">
-                <p
-                    className="name">
-                    
-                    <span
-                        className="semi">
-                         
-                    </span>
-                </p>
-                <p
-                    className="job-title" />
-            </div>
-            <div
-                className="title-sub title-sub--half">
-                <p
-                    className="job-title" />
-            </div>
-        </div>
-        <div
-            className="controls">
-            <div
-                className="search">
-                <div
-                    className="mag-glass-container">
-                    <img
-                        alt="Search"
-                        className="mag-glass"
-                        src="mag-glass.svg" />
-                </div>
-            </div>
-            <Arrow />
-        </div>
-    </div>
-</section>,
-  "nodes": Array [
+  "node": <FadeIn
+    onRest={[Function]}>
     <section
-      className="home-container"
-      id="home">
-      <div
-            className="home-content ">
-            <h1
-                  hidden={true}
-                  id="home__title">
-                  Home
-            </h1>
+        className="home-container"
+        id="home">
+        <div
+            className="curtain" />
+    </section>
+</FadeIn>,
+  "nodes": Array [
+    <FadeIn
+      onRest={[Function]}>
+      <section
+            className="home-container"
+            id="home">
             <div
-                  className="presentation">
-                  <div
-                        className="title-sub ">
-                        <p
-                              className="name">
-                              
-                              <span
-                                    className="semi">
-                                     
-                              </span>
-                        </p>
-                        <p
-                              className="job-title" />
-                  </div>
-                  <div
-                        className="title-sub title-sub--half">
-                        <p
-                              className="job-title" />
-                  </div>
-            </div>
-            <div
-                  className="controls">
-                  <div
-                        className="search">
-                        <div
-                              className="mag-glass-container">
-                              <img
-                                    alt="Search"
-                                    className="mag-glass"
-                                    src="mag-glass.svg" />
-                        </div>
-                  </div>
-                  <Arrow />
-            </div>
-      </div>
-</section>,
+                  className="curtain" />
+      </section>
+</FadeIn>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -156,7 +80,9 @@ ShallowWrapper {
           "finishedTyping": false,
           "firstLine": "",
           "name": "",
+          "ready": false,
           "secondLine": "",
+          "startedTyping": false,
           "thirdLine": "",
         },
         "thirdLine": Array [
@@ -185,103 +111,27 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <section
-          className="home-container"
-          id="home">
-          <div
-                    className="home-content ">
-                    <h1
-                              hidden={true}
-                              id="home__title">
-                              Home
-                    </h1>
+        "_currentElement": <FadeIn
+          onRest={[Function]}>
+          <section
+                    className="home-container"
+                    id="home">
                     <div
-                              className="presentation">
-                              <div
-                                        className="title-sub ">
-                                        <p
-                                                  className="name">
-                                                  
-                                                  <span
-                                                            className="semi">
-                                                             
-                                                  </span>
-                                        </p>
-                                        <p
-                                                  className="job-title" />
-                              </div>
-                              <div
-                                        className="title-sub title-sub--half">
-                                        <p
-                                                  className="job-title" />
-                              </div>
-                    </div>
-                    <div
-                              className="controls">
-                              <div
-                                        className="search">
-                                        <div
-                                                  className="mag-glass-container">
-                                                  <img
-                                                            alt="Search"
-                                                            className="mag-glass"
-                                                            src="mag-glass.svg" />
-                                        </div>
-                              </div>
-                              <Arrow />
-                    </div>
-          </div>
-</section>,
+                              className="curtain" />
+          </section>
+</FadeIn>,
         "_debugID": 2,
-        "_renderedOutput": <section
-          className="home-container"
-          id="home">
-          <div
-                    className="home-content ">
-                    <h1
-                              hidden={true}
-                              id="home__title">
-                              Home
-                    </h1>
+        "_renderedOutput": <FadeIn
+          onRest={[Function]}>
+          <section
+                    className="home-container"
+                    id="home">
                     <div
-                              className="presentation">
-                              <div
-                                        className="title-sub ">
-                                        <p
-                                                  className="name">
-                                                  
-                                                  <span
-                                                            className="semi">
-                                                             
-                                                  </span>
-                                        </p>
-                                        <p
-                                                  className="job-title" />
-                              </div>
-                              <div
-                                        className="title-sub title-sub--half">
-                                        <p
-                                                  className="job-title" />
-                              </div>
-                    </div>
-                    <div
-                              className="controls">
-                              <div
-                                        className="search">
-                                        <div
-                                                  className="mag-glass-container">
-                                                  <img
-                                                            alt="Search"
-                                                            className="mag-glass"
-                                                            src="mag-glass.svg" />
-                                        </div>
-                              </div>
-                              <Arrow />
-                    </div>
-          </div>
-</section>,
+                              className="curtain" />
+          </section>
+</FadeIn>,
       },
-      "_renderedNodeType": 0,
+      "_renderedNodeType": 1,
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,

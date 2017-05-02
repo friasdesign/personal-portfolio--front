@@ -6,83 +6,89 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <header
-    className="top-nav "
-    role="banner">
-    <div
-        className="top-nav__on-top">
-        <div
-            className="logo-container">
-            <img
-                alt="logo"
-                className="logo"
-                src="logo.svg" />
-        </div>
-        <div
-            className="hamburger"
-            onClick={[Function]}>
-            <Motion
-                defaultStyle={
-                    Object {
-                        "x": 0,
-                      }
-                }
-                style={
-                    Object {
-                        "x": Object {
-                          "damping": 14,
-                          "precision": 0.01,
-                          "stiffness": 120,
-                          "val": 1,
-                        },
-                      }
-                }>
-                [Function]
-            </Motion>
-        </div>
-        <List
-            topNav={true} />
-    </div>
-</header>,
-  "nodes": Array [
+  "node": <FadeIn
+    onRest={[Function]}>
     <header
-      className="top-nav "
-      role="banner">
-      <div
+        className="top-nav "
+        role="banner">
+        <div
             className="top-nav__on-top">
             <div
-                  className="logo-container">
-                  <img
-                        alt="logo"
-                        className="logo"
-                        src="logo.svg" />
+                className="logo-container">
+                <img
+                    alt="logo"
+                    className="logo"
+                    src="logo.svg" />
             </div>
             <div
-                  className="hamburger"
-                  onClick={[Function]}>
-                  <Motion
-                        defaultStyle={
-                              Object {
-                                    "x": 0,
-                                  }
-                        }
-                        style={
-                              Object {
-                                    "x": Object {
-                                      "damping": 14,
-                                      "precision": 0.01,
-                                      "stiffness": 120,
-                                      "val": 1,
-                                    },
-                                  }
-                        }>
-                        [Function]
-                  </Motion>
+                className="hamburger"
+                onClick={[Function]}>
+                <Motion
+                    defaultStyle={
+                        Object {
+                            "x": 0,
+                          }
+                    }
+                    style={
+                        Object {
+                            "x": Object {
+                              "damping": 14,
+                              "precision": 0.01,
+                              "stiffness": 120,
+                              "val": 1,
+                            },
+                          }
+                    }>
+                    [Function]
+                </Motion>
             </div>
             <List
-                  topNav={true} />
-      </div>
-</header>,
+                topNav={true} />
+        </div>
+    </header>
+</FadeIn>,
+  "nodes": Array [
+    <FadeIn
+      onRest={[Function]}>
+      <header
+            className="top-nav "
+            role="banner">
+            <div
+                  className="top-nav__on-top">
+                  <div
+                        className="logo-container">
+                        <img
+                              alt="logo"
+                              className="logo"
+                              src="logo.svg" />
+                  </div>
+                  <div
+                        className="hamburger"
+                        onClick={[Function]}>
+                        <Motion
+                              defaultStyle={
+                                    Object {
+                                          "x": 0,
+                                        }
+                              }
+                              style={
+                                    Object {
+                                          "x": Object {
+                                            "damping": 14,
+                                            "precision": 0.01,
+                                            "stiffness": 120,
+                                            "val": 1,
+                                          },
+                                        }
+                              }>
+                              [Function]
+                        </Motion>
+                  </div>
+                  <List
+                        topNav={true} />
+            </div>
+      </header>
+</FadeIn>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -120,85 +126,91 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <header
-          className="top-nav "
-          role="banner">
-          <div
-                    className="top-nav__on-top">
+        "_currentElement": <FadeIn
+          onRest={[Function]}>
+          <header
+                    className="top-nav "
+                    role="banner">
                     <div
-                              className="logo-container">
-                              <img
-                                        alt="logo"
-                                        className="logo"
-                                        src="logo.svg" />
+                              className="top-nav__on-top">
+                              <div
+                                        className="logo-container">
+                                        <img
+                                                  alt="logo"
+                                                  className="logo"
+                                                  src="logo.svg" />
+                              </div>
+                              <div
+                                        className="hamburger"
+                                        onClick={[Function]}>
+                                        <Motion
+                                                  defaultStyle={
+                                                            Object {
+                                                                      "x": 0,
+                                                                    }
+                                                  }
+                                                  style={
+                                                            Object {
+                                                                      "x": Object {
+                                                                        "damping": 14,
+                                                                        "precision": 0.01,
+                                                                        "stiffness": 120,
+                                                                        "val": 1,
+                                                                      },
+                                                                    }
+                                                  }>
+                                                  [Function]
+                                        </Motion>
+                              </div>
+                              <List
+                                        topNav={true} />
                     </div>
-                    <div
-                              className="hamburger"
-                              onClick={[Function]}>
-                              <Motion
-                                        defaultStyle={
-                                                  Object {
-                                                            "x": 0,
-                                                          }
-                                        }
-                                        style={
-                                                  Object {
-                                                            "x": Object {
-                                                              "damping": 14,
-                                                              "precision": 0.01,
-                                                              "stiffness": 120,
-                                                              "val": 1,
-                                                            },
-                                                          }
-                                        }>
-                                        [Function]
-                              </Motion>
-                    </div>
-                    <List
-                              topNav={true} />
-          </div>
-</header>,
+          </header>
+</FadeIn>,
         "_debugID": 4,
-        "_renderedOutput": <header
-          className="top-nav "
-          role="banner">
-          <div
-                    className="top-nav__on-top">
+        "_renderedOutput": <FadeIn
+          onRest={[Function]}>
+          <header
+                    className="top-nav "
+                    role="banner">
                     <div
-                              className="logo-container">
-                              <img
-                                        alt="logo"
-                                        className="logo"
-                                        src="logo.svg" />
+                              className="top-nav__on-top">
+                              <div
+                                        className="logo-container">
+                                        <img
+                                                  alt="logo"
+                                                  className="logo"
+                                                  src="logo.svg" />
+                              </div>
+                              <div
+                                        className="hamburger"
+                                        onClick={[Function]}>
+                                        <Motion
+                                                  defaultStyle={
+                                                            Object {
+                                                                      "x": 0,
+                                                                    }
+                                                  }
+                                                  style={
+                                                            Object {
+                                                                      "x": Object {
+                                                                        "damping": 14,
+                                                                        "precision": 0.01,
+                                                                        "stiffness": 120,
+                                                                        "val": 1,
+                                                                      },
+                                                                    }
+                                                  }>
+                                                  [Function]
+                                        </Motion>
+                              </div>
+                              <List
+                                        topNav={true} />
                     </div>
-                    <div
-                              className="hamburger"
-                              onClick={[Function]}>
-                              <Motion
-                                        defaultStyle={
-                                                  Object {
-                                                            "x": 0,
-                                                          }
-                                        }
-                                        style={
-                                                  Object {
-                                                            "x": Object {
-                                                              "damping": 14,
-                                                              "precision": 0.01,
-                                                              "stiffness": 120,
-                                                              "val": 1,
-                                                            },
-                                                          }
-                                        }>
-                                        [Function]
-                              </Motion>
-                    </div>
-                    <List
-                              topNav={true} />
-          </div>
-</header>,
+          </header>
+</FadeIn>,
       },
-      "_renderedNodeType": 0,
+      "_renderedNodeType": 1,
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,
