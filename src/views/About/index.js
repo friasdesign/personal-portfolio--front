@@ -18,7 +18,7 @@ const About = (props: any) => (
       <h1 className="section__heading"
         aria-label="About"
       >
-        <img src={heading} alt="About"/>
+        <img src={heading} alt="About" className="about__heading"/>
       </h1>
     </header>
     <article className="bio">
