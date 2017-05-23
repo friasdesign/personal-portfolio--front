@@ -17,7 +17,7 @@ const ArticleLine = ({heading, entries}: ArticleLineProps) => (
     <h2 className="article-heading">{heading}</h2>
     {
       entries.map((e, i) => (
-        <div className={`line__entry ${
+        <div key={i} className={`line__entry ${
             i % 2 === 0
             ? 'line__entry--even'
             : ''
@@ -26,7 +26,9 @@ const ArticleLine = ({heading, entries}: ArticleLineProps) => (
           <div className="entry__content">
             <p className="entry__sub">{e.sub}</p>
             <h3 className="entry__h">{e.h}</h3>
-            <p className="entry__text">{e.text}</p>
+            <p className="entry__text"
+              dangerouslySetInnerHTML={{__html: e.text}}
+            />
           </div>
         </div>
       ))
