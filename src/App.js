@@ -5,14 +5,18 @@ import './App.css';
 import Navbar from './components/Navbar'
 
 // VIEWS _______________________________________________________________________
-import Home from './views/Home'
+// import Home from './views/Home'
+import About from './views/About'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar />
-        <Home />
+        {
+          //<Home />
+        }
+        <About/>
       </div>
     );
   }
