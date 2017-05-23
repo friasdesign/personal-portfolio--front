@@ -2,16 +2,24 @@
 
 import React from 'react'
 
+// ASSETS ______________________________________________________________________
+import './About.sass'
+import heading from './_assets/heading.svg'
+
 // COMPONENTS __________________________________________________________________
 import ArticleLine from '../../components/ArticleLine'
 
 // DATA ________________________________________________________________________
 import {education, interests} from './_data'
 
-const About = (props) => (
+const About = (props: any) => (
   <main className="about">
     <header className="section-header about__header">
-      <h1 className="section__heading">About</h1>
+      <h1 className="section__heading"
+        aria-label="About"
+      >
+        <img src={heading} alt="About"/>
+      </h1>
     </header>
     <article className="bio">
       <h2 className="article-heading">Bio</h2>
