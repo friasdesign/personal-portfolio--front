@@ -4,21 +4,30 @@
 .article-line
   width: 100%
 
+// .article-line::before
+//   display: block
+//   content: ""
+
 // ENTRIES CONTAINER ___________________________________________________________
 .line__entries
   display: flex
   flex-direction: column
   width: 100%
-  margin-left: auto
-  margin-right: auto
+  position: relative
+  align-items: flex-end
+  right: -12rem
+  padding-top: 2.023rem
 
 // LINE ENTRY __________________________________________________________________
 .line__entry
   display: flex
   width: auto
   align-items: center
-  width: 100%
+  justify-content: flex-start
+  width: 50%
   position: relative
+  left: -25rem
+  margin-bottom: 2.945rem
 
 // ENTRY CONTENT _______________________________________________________________
 .entry__content
@@ -43,6 +52,10 @@
   font-size: 1.25rem
 
 // LINE ENTRY EVEN _____________________________________________________________
+.line__entry--odd
+  align-self: flex-start
+  justify-content: flex-end
+  position: static
 
 .line__entry--odd>.entry__content
   text-align: right

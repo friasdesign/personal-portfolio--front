@@ -14,7 +14,7 @@ export const education = [
   {
     logo: udacityLogo,
     sub: 'Front-end',
-    h: 'Udacity',
+    h: 'Nanodegree',
     text: 'Udacity<br/>2016'
   },
   {
