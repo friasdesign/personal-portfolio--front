@@ -17,6 +17,7 @@ type ArticleLineProps = {
 const ArticleLine = ({heading, entries}: ArticleLineProps) => (
   <article className="article-line">
     <h2 className="article-heading">{heading}</h2>
+    <div className="line__line" aria-hidden></div>
     <div className="line__entries">
       {
         entries.map((e, i) => (

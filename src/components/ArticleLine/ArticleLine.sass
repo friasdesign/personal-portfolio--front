@@ -3,16 +3,21 @@
 
 .article-line
   width: 100%
+  display: flex
+  flex-wrap: wrap
+  overflow-x: hidden
 
-// .article-line::before
-//   display: block
-//   content: ""
+.line__line
+  width: 1px
+  border-left: 1px solid $mid-grey
+  position: relative
+  left: 49.8%
 
 // ENTRIES CONTAINER ___________________________________________________________
 .line__entries
   display: flex
   flex-direction: column
-  width: 100%
+  width: 99%
   position: relative
   align-items: flex-end
   right: -12rem
