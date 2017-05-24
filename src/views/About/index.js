@@ -9,12 +9,14 @@ import heading from './_assets/heading.svg'
 // COMPONENTS __________________________________________________________________
 import ArticleLine from '../../components/ArticleLine'
 import Filter from '../../components/Filter'
+import NavArrow from '../../components/NavArrow'
 
 // DATA ________________________________________________________________________
 import {education, interests} from './_data'
 
 const About = (props: any) => (
   <main className="about">
+    <NavArrow direction="up"/>
     <Filter type="top"/>
     <Filter type="bottom"/>
     <header className="section-header about__header">
@@ -50,6 +52,7 @@ const About = (props: any) => (
       heading="Interests"
       entries={interests}
     />
+    <NavArrow direction="down"/>
   </main>
 )
 
