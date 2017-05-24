@@ -18,7 +18,7 @@ const NavArrow = ({direction}: NavArrowProps) => {
   return (
     <a className={`nav-arrow nav-arrow--${direction}`}
       href={`#${direction}`}
-      aria-role="button"
+      role="button"
     >
       <img className="nav-arrow__arrow" src={icons[direction]} alt={direction}/>
       Go one page {direction}
