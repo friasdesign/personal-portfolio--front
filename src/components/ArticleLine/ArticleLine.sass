@@ -21,9 +21,7 @@
 .line__entry
   display: flex
   flex-wrap: wrap
-  width: auto
   align-items: center
-  // justify-content: flex-start
   justify-content: center
   width: 100%
   margin-bottom: 2.945rem
@@ -32,7 +30,6 @@
 .entry__content
   padding: 0.75rem 0
   width: 100%
-  // margin-left: 7.71rem
   text-align: center
 
 .entry__sub
@@ -46,7 +43,6 @@
   font-size: 1.82rem
 
 .entry__logo
-  // height: 100%
   width: 30%
 
 .entry__text
@@ -54,9 +50,13 @@
   font-size: 1.125rem
 
 +for-tablet-portrait-up
+  .line__entries
+    align-items: center
+
   .line__entry
     flex-wrap: nowrap
     justify-content: flex-start
+    max-width: $max-readable
 
   .entry__content
     text-align: left
@@ -73,6 +73,7 @@
     width: 50%
     position: relative
     left: -25rem
+    max-width: none
 
   .line__entry--odd
     position: static
