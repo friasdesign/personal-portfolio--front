@@ -8,20 +8,20 @@
   overflow-x: hidden
 
 .line__line
-  width: 1px
-  background-color: $mid-grey
-  position: relative
-  left: calc((100% - 8px) / 2)
+  display: none
+  // width: 1px
+  // background-color: $mid-grey
+  // position: relative
+  // left: calc((100% - 8px) / 2)
 
 // ENTRIES CONTAINER ___________________________________________________________
 .line__entries
   display: flex
   flex-direction: column
-  width: 99%
-  position: relative
-  align-items: flex-end
-  right: -12rem
-  padding-top: 2.023rem
+  width: 100%
+  // position: relative
+  // right: -12rem
+  padding: 2.023rem 1.82rem 0 1.82rem
 
 // LINE ENTRY __________________________________________________________________
 .line__entry
@@ -29,9 +29,10 @@
   width: auto
   align-items: center
   justify-content: flex-start
-  width: 50%
-  position: relative
-  left: -25rem
+  // width: 50%
+  width: 100%
+  // position: relative
+  // left: 12rem
   margin-bottom: 2.945rem
 
 // ENTRY CONTENT _______________________________________________________________
@@ -42,36 +43,61 @@
 .entry__sub
   margin: 0
   color: $ternary
-  font-size: 2.023rem
+  font-size: 1.25rem
 
 .entry__h
   margin: 0
   color: $primary
-  font-size: 2.945rem
+  font-size: 1.82rem
 
 .entry__logo
   height: 100%
 
 .entry__text
   margin: 0
-  font-size: 1.25rem
+  font-size: 1.125rem
 
-// LINE ENTRY EVEN _____________________________________________________________
-.line__entry--odd
-  align-self: flex-start
-  justify-content: flex-end
-  position: static
++for-tablet-landscape-up
+  .line__entry
+    width: 50%
+    position: relative
+    left: -25rem
 
-.line__entry--odd>.entry__content
-  text-align: right
-  order: 0
-  margin-left: 0
-  margin-right: 7.71rem
+  .line__entry--odd
+    position: static
+    align-self: flex-start
+    justify-content: flex-end
 
-.line__entry--odd>.entry__logo
-  order: 1
-  +anti-aliased
+  .line__line
+    display: block
+    width: 1px
+    background-color: $mid-grey
+    position: relative
+    left: calc((100% - 8px) / 2)
 
-// +for-big-desktop-up
-//   .line__line
-//     left: 49.8%
+  .line__entries
+    position: relative
+    right: -12rem
+    align-items: flex-end
+    width: 99%
+    padding: 0
+    padding-top: 2.023rem
+
+  .line__entry--odd>.entry__content
+    text-align: right
+    order: 0
+    margin-left: 0
+    margin-right: 7.71rem
+
+  .line__entry--odd>.entry__logo
+    order: 1
+
++for-desktop-up
+  .entry__sub
+    font-size: 2.023rem
+
+  .entry__h
+    font-size: 2.945rem
+
+  .entry__text
+    font-size: 1.125rem
