@@ -8,12 +8,15 @@ import heading from './_assets/heading.svg'
 
 // COMPONENTS __________________________________________________________________
 import ArticleLine from '../../components/ArticleLine'
+import Filter from '../../components/Filter'
 
 // DATA ________________________________________________________________________
 import {education, interests} from './_data'
 
 const About = (props: any) => (
   <main className="about">
+    <Filter type="top"/>
+    <Filter type="bottom"/>
     <header className="section-header about__header">
       <h1 className="section__heading"
         aria-label="About"
