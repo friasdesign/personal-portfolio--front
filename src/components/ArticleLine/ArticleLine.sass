@@ -9,9 +9,9 @@
 
 .line__line
   width: 1px
-  border-left: 1px solid $mid-grey
+  background-color: $mid-grey
   position: relative
-  left: 49.8%
+  left: calc((100% - 8px) / 2)
 
 // ENTRIES CONTAINER ___________________________________________________________
 .line__entries
@@ -71,3 +71,7 @@
 .line__entry--odd>.entry__logo
   order: 1
   +anti-aliased
+
+// +for-big-desktop-up
+//   .line__line
+//     left: 49.8%
