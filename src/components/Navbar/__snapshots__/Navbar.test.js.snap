@@ -9,7 +9,9 @@ ShallowWrapper {
   "node": <FadeIn
     onRest={[Function]}>
     <header
-        className="top-nav "
+        className="top-nav 
+                
+              "
         role="banner">
         <div
             className="top-nav__on-top">
@@ -22,7 +24,8 @@ ShallowWrapper {
             </div>
             <div
                 className="hamburger"
-                onClick={[Function]}>
+                onClick={[Function]}
+                style={Object {}}>
                 <Motion
                     defaultStyle={
                         Object {
@@ -51,7 +54,9 @@ ShallowWrapper {
     <FadeIn
       onRest={[Function]}>
       <header
-            className="top-nav "
+            className="top-nav 
+                  
+                "
             role="banner">
             <div
                   className="top-nav__on-top">
@@ -64,7 +69,8 @@ ShallowWrapper {
                   </div>
                   <div
                         className="hamburger"
-                        onClick={[Function]}>
+                        onClick={[Function]}
+                        style={Object {}}>
                         <Motion
                               defaultStyle={
                                     Object {
@@ -129,7 +135,9 @@ ShallowWrapper {
         "_currentElement": <FadeIn
           onRest={[Function]}>
           <header
-                    className="top-nav "
+                    className="top-nav 
+                      
+                    "
                     role="banner">
                     <div
                               className="top-nav__on-top">
@@ -142,7 +150,8 @@ ShallowWrapper {
                               </div>
                               <div
                                         className="hamburger"
-                                        onClick={[Function]}>
+                                        onClick={[Function]}
+                                        style={Object {}}>
                                         <Motion
                                                   defaultStyle={
                                                             Object {
@@ -171,7 +180,9 @@ ShallowWrapper {
         "_renderedOutput": <FadeIn
           onRest={[Function]}>
           <header
-                    className="top-nav "
+                    className="top-nav 
+                      
+                    "
                     role="banner">
                     <div
                               className="top-nav__on-top">
@@ -184,7 +195,8 @@ ShallowWrapper {
                               </div>
                               <div
                                         className="hamburger"
-                                        onClick={[Function]}>
+                                        onClick={[Function]}
+                                        style={Object {}}>
                                         <Motion
                                                   defaultStyle={
                                                             Object {

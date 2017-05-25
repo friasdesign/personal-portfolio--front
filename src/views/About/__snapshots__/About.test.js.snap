@@ -1,0 +1,587 @@
+exports[`About should match snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <main
+    className="about">
+    <NavArrow
+        direction="up" />
+    <FilterTop
+        type="top" />
+    <FilterTop
+        type="bottom" />
+    <header
+        className="section-header about__header">
+        <h1
+            aria-label="About"
+            className="section__heading">
+            <img
+                alt="About"
+                className="about__heading"
+                src="heading.svg" />
+        </h1>
+    </header>
+    <article
+        className="bio">
+        <h2
+            className="article-heading">
+            Bio
+        </h2>
+        <p>
+            Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+            <strong>
+                COMPUTER GEEK
+            </strong>
+             (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+        </p>
+        <p>
+            One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+        </p>
+        <p>
+            After a couple of years of experimenting, I went back to my roots and started studying 
+            <strong>
+                Computer Programming
+            </strong>
+            , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+            <strong>
+                Graphic Design
+            </strong>
+             as well, that way I landed into 
+            <strong>
+                UX/UI Design
+            </strong>
+            , which is a core aspect of my life alongside 
+            <strong>
+                Full-stack Development
+            </strong>
+            .
+        </p>
+        <p>
+            In the present day, I want to focus all my time to 
+            <strong>
+                deliver Great Experiences and Usable Products
+            </strong>
+            , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+        </p>
+        <p>
+            I\'m also commited to accessiblity, I deeply believe in a 
+            <strong>
+                Web accessible for all
+            </strong>
+            , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+        </p>
+    </article>
+    <ArticleLine
+        entries={
+            Array [
+                Object {
+                  "h": "Nanodegree",
+                  "logo": "udacity.svg",
+                  "sub": "Front-end",
+                  "text": "Udacity<br/>2016",
+                },
+                Object {
+                  "h": "Certified Developer",
+                  "logo": "mongo.svg",
+                  "sub": "MongoDB",
+                  "text": "MongoDB<br/>2016",
+                },
+                Object {
+                  "h": "Technical Degree",
+                  "logo": "frrg.svg",
+                  "sub": "Computer Programming",
+                  "text": "Facultad Regional Río Grande (FRRG) de la UTN<br/>2013-2015",
+                },
+              ]
+        }
+        heading="Education" />
+    <ArticleLine
+        entries={
+            Array [
+                Object {
+                  "h": "Zen Buddhism",
+                  "logo": "zen.svg",
+                  "sub": "Head-space",
+                  "text": "I’ve been interested in Zen Buddhism since my trip to Japan, after visiting Soji Temple in Yokohama … so peaceful!",
+                },
+                Object {
+                  "h": "Tech Talks",
+                  "logo": "glasses.svg",
+                  "sub": "Events",
+                  "text": "Tech talks are exciting; React conf, CSSconf, whateverconf, name it! I like to participate as well as help in coordination whenever possible.",
+                },
+                Object {
+                  "h": "Kickboxing",
+                  "logo": "kick.svg",
+                  "sub": "Exercises",
+                  "text": "I practiced martial arts since I can remember, lately I turned myself towards kickboxing. It helps me beat stress, a strong enemy, indeed.",
+                },
+                Object {
+                  "h": "Piano",
+                  "logo": "piano.svg",
+                  "sub": "Arts",
+                  "text": "I’ve playing piano for several years, it used to be more than a hobbie in the past. Nowadays it’s there for eventual diminished scale smashing.",
+                },
+                Object {
+                  "h": "Pizza",
+                  "logo": "pizza.svg",
+                  "sub": "Food",
+                  "text": "Ah! Pizza!",
+                },
+              ]
+        }
+        heading="Interests" />
+    <NavArrow
+        direction="down" />
+</main>,
+  "nodes": Array [
+    <main
+      className="about">
+      <NavArrow
+            direction="up" />
+      <FilterTop
+            type="top" />
+      <FilterTop
+            type="bottom" />
+      <header
+            className="section-header about__header">
+            <h1
+                  aria-label="About"
+                  className="section__heading">
+                  <img
+                        alt="About"
+                        className="about__heading"
+                        src="heading.svg" />
+            </h1>
+      </header>
+      <article
+            className="bio">
+            <h2
+                  className="article-heading">
+                  Bio
+            </h2>
+            <p>
+                  Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+                  <strong>
+                        COMPUTER GEEK
+                  </strong>
+                   (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+            </p>
+            <p>
+                  One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+            </p>
+            <p>
+                  After a couple of years of experimenting, I went back to my roots and started studying 
+                  <strong>
+                        Computer Programming
+                  </strong>
+                  , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+                  <strong>
+                        Graphic Design
+                  </strong>
+                   as well, that way I landed into 
+                  <strong>
+                        UX/UI Design
+                  </strong>
+                  , which is a core aspect of my life alongside 
+                  <strong>
+                        Full-stack Development
+                  </strong>
+                  .
+            </p>
+            <p>
+                  In the present day, I want to focus all my time to 
+                  <strong>
+                        deliver Great Experiences and Usable Products
+                  </strong>
+                  , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+            </p>
+            <p>
+                  I\'m also commited to accessiblity, I deeply believe in a 
+                  <strong>
+                        Web accessible for all
+                  </strong>
+                  , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+            </p>
+      </article>
+      <ArticleLine
+            entries={
+                  Array [
+                        Object {
+                          "h": "Nanodegree",
+                          "logo": "udacity.svg",
+                          "sub": "Front-end",
+                          "text": "Udacity<br/>2016",
+                        },
+                        Object {
+                          "h": "Certified Developer",
+                          "logo": "mongo.svg",
+                          "sub": "MongoDB",
+                          "text": "MongoDB<br/>2016",
+                        },
+                        Object {
+                          "h": "Technical Degree",
+                          "logo": "frrg.svg",
+                          "sub": "Computer Programming",
+                          "text": "Facultad Regional Río Grande (FRRG) de la UTN<br/>2013-2015",
+                        },
+                      ]
+            }
+            heading="Education" />
+      <ArticleLine
+            entries={
+                  Array [
+                        Object {
+                          "h": "Zen Buddhism",
+                          "logo": "zen.svg",
+                          "sub": "Head-space",
+                          "text": "I’ve been interested in Zen Buddhism since my trip to Japan, after visiting Soji Temple in Yokohama … so peaceful!",
+                        },
+                        Object {
+                          "h": "Tech Talks",
+                          "logo": "glasses.svg",
+                          "sub": "Events",
+                          "text": "Tech talks are exciting; React conf, CSSconf, whateverconf, name it! I like to participate as well as help in coordination whenever possible.",
+                        },
+                        Object {
+                          "h": "Kickboxing",
+                          "logo": "kick.svg",
+                          "sub": "Exercises",
+                          "text": "I practiced martial arts since I can remember, lately I turned myself towards kickboxing. It helps me beat stress, a strong enemy, indeed.",
+                        },
+                        Object {
+                          "h": "Piano",
+                          "logo": "piano.svg",
+                          "sub": "Arts",
+                          "text": "I’ve playing piano for several years, it used to be more than a hobbie in the past. Nowadays it’s there for eventual diminished scale smashing.",
+                        },
+                        Object {
+                          "h": "Pizza",
+                          "logo": "pizza.svg",
+                          "sub": "Food",
+                          "text": "Ah! Pizza!",
+                        },
+                      ]
+            }
+            heading="Interests" />
+      <NavArrow
+            direction="down" />
+</main>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <About />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <main
+          className="about">
+          <NavArrow
+                    direction="up" />
+          <FilterTop
+                    type="top" />
+          <FilterTop
+                    type="bottom" />
+          <header
+                    className="section-header about__header">
+                    <h1
+                              aria-label="About"
+                              className="section__heading">
+                              <img
+                                        alt="About"
+                                        className="about__heading"
+                                        src="heading.svg" />
+                    </h1>
+          </header>
+          <article
+                    className="bio">
+                    <h2
+                              className="article-heading">
+                              Bio
+                    </h2>
+                    <p>
+                              Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+                              <strong>
+                                        COMPUTER GEEK
+                              </strong>
+                               (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+                    </p>
+                    <p>
+                              One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+                    </p>
+                    <p>
+                              After a couple of years of experimenting, I went back to my roots and started studying 
+                              <strong>
+                                        Computer Programming
+                              </strong>
+                              , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+                              <strong>
+                                        Graphic Design
+                              </strong>
+                               as well, that way I landed into 
+                              <strong>
+                                        UX/UI Design
+                              </strong>
+                              , which is a core aspect of my life alongside 
+                              <strong>
+                                        Full-stack Development
+                              </strong>
+                              .
+                    </p>
+                    <p>
+                              In the present day, I want to focus all my time to 
+                              <strong>
+                                        deliver Great Experiences and Usable Products
+                              </strong>
+                              , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+                    </p>
+                    <p>
+                              I\'m also commited to accessiblity, I deeply believe in a 
+                              <strong>
+                                        Web accessible for all
+                              </strong>
+                              , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+                    </p>
+          </article>
+          <ArticleLine
+                    entries={
+                              Array [
+                                        Object {
+                                          "h": "Nanodegree",
+                                          "logo": "udacity.svg",
+                                          "sub": "Front-end",
+                                          "text": "Udacity<br/>2016",
+                                        },
+                                        Object {
+                                          "h": "Certified Developer",
+                                          "logo": "mongo.svg",
+                                          "sub": "MongoDB",
+                                          "text": "MongoDB<br/>2016",
+                                        },
+                                        Object {
+                                          "h": "Technical Degree",
+                                          "logo": "frrg.svg",
+                                          "sub": "Computer Programming",
+                                          "text": "Facultad Regional Río Grande (FRRG) de la UTN<br/>2013-2015",
+                                        },
+                                      ]
+                    }
+                    heading="Education" />
+          <ArticleLine
+                    entries={
+                              Array [
+                                        Object {
+                                          "h": "Zen Buddhism",
+                                          "logo": "zen.svg",
+                                          "sub": "Head-space",
+                                          "text": "I’ve been interested in Zen Buddhism since my trip to Japan, after visiting Soji Temple in Yokohama … so peaceful!",
+                                        },
+                                        Object {
+                                          "h": "Tech Talks",
+                                          "logo": "glasses.svg",
+                                          "sub": "Events",
+                                          "text": "Tech talks are exciting; React conf, CSSconf, whateverconf, name it! I like to participate as well as help in coordination whenever possible.",
+                                        },
+                                        Object {
+                                          "h": "Kickboxing",
+                                          "logo": "kick.svg",
+                                          "sub": "Exercises",
+                                          "text": "I practiced martial arts since I can remember, lately I turned myself towards kickboxing. It helps me beat stress, a strong enemy, indeed.",
+                                        },
+                                        Object {
+                                          "h": "Piano",
+                                          "logo": "piano.svg",
+                                          "sub": "Arts",
+                                          "text": "I’ve playing piano for several years, it used to be more than a hobbie in the past. Nowadays it’s there for eventual diminished scale smashing.",
+                                        },
+                                        Object {
+                                          "h": "Pizza",
+                                          "logo": "pizza.svg",
+                                          "sub": "Food",
+                                          "text": "Ah! Pizza!",
+                                        },
+                                      ]
+                    }
+                    heading="Interests" />
+          <NavArrow
+                    direction="down" />
+</main>,
+        "_debugID": 2,
+        "_renderedOutput": <main
+          className="about">
+          <NavArrow
+                    direction="up" />
+          <FilterTop
+                    type="top" />
+          <FilterTop
+                    type="bottom" />
+          <header
+                    className="section-header about__header">
+                    <h1
+                              aria-label="About"
+                              className="section__heading">
+                              <img
+                                        alt="About"
+                                        className="about__heading"
+                                        src="heading.svg" />
+                    </h1>
+          </header>
+          <article
+                    className="bio">
+                    <h2
+                              className="article-heading">
+                              Bio
+                    </h2>
+                    <p>
+                              Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+                              <strong>
+                                        COMPUTER GEEK
+                              </strong>
+                               (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+                    </p>
+                    <p>
+                              One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+                    </p>
+                    <p>
+                              After a couple of years of experimenting, I went back to my roots and started studying 
+                              <strong>
+                                        Computer Programming
+                              </strong>
+                              , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+                              <strong>
+                                        Graphic Design
+                              </strong>
+                               as well, that way I landed into 
+                              <strong>
+                                        UX/UI Design
+                              </strong>
+                              , which is a core aspect of my life alongside 
+                              <strong>
+                                        Full-stack Development
+                              </strong>
+                              .
+                    </p>
+                    <p>
+                              In the present day, I want to focus all my time to 
+                              <strong>
+                                        deliver Great Experiences and Usable Products
+                              </strong>
+                              , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+                    </p>
+                    <p>
+                              I\'m also commited to accessiblity, I deeply believe in a 
+                              <strong>
+                                        Web accessible for all
+                              </strong>
+                              , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+                    </p>
+          </article>
+          <ArticleLine
+                    entries={
+                              Array [
+                                        Object {
+                                          "h": "Nanodegree",
+                                          "logo": "udacity.svg",
+                                          "sub": "Front-end",
+                                          "text": "Udacity<br/>2016",
+                                        },
+                                        Object {
+                                          "h": "Certified Developer",
+                                          "logo": "mongo.svg",
+                                          "sub": "MongoDB",
+                                          "text": "MongoDB<br/>2016",
+                                        },
+                                        Object {
+                                          "h": "Technical Degree",
+                                          "logo": "frrg.svg",
+                                          "sub": "Computer Programming",
+                                          "text": "Facultad Regional Río Grande (FRRG) de la UTN<br/>2013-2015",
+                                        },
+                                      ]
+                    }
+                    heading="Education" />
+          <ArticleLine
+                    entries={
+                              Array [
+                                        Object {
+                                          "h": "Zen Buddhism",
+                                          "logo": "zen.svg",
+                                          "sub": "Head-space",
+                                          "text": "I’ve been interested in Zen Buddhism since my trip to Japan, after visiting Soji Temple in Yokohama … so peaceful!",
+                                        },
+                                        Object {
+                                          "h": "Tech Talks",
+                                          "logo": "glasses.svg",
+                                          "sub": "Events",
+                                          "text": "Tech talks are exciting; React conf, CSSconf, whateverconf, name it! I like to participate as well as help in coordination whenever possible.",
+                                        },
+                                        Object {
+                                          "h": "Kickboxing",
+                                          "logo": "kick.svg",
+                                          "sub": "Exercises",
+                                          "text": "I practiced martial arts since I can remember, lately I turned myself towards kickboxing. It helps me beat stress, a strong enemy, indeed.",
+                                        },
+                                        Object {
+                                          "h": "Piano",
+                                          "logo": "piano.svg",
+                                          "sub": "Arts",
+                                          "text": "I’ve playing piano for several years, it used to be more than a hobbie in the past. Nowadays it’s there for eventual diminished scale smashing.",
+                                        },
+                                        Object {
+                                          "h": "Pizza",
+                                          "logo": "pizza.svg",
+                                          "sub": "Food",
+                                          "text": "Ah! Pizza!",
+                                        },
+                                      ]
+                    }
+                    heading="Interests" />
+          <NavArrow
+                    direction="down" />
+</main>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <About />,
+}
+`;
