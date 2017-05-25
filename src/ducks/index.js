@@ -44,6 +44,16 @@ export function setScreenBottomPosition(value: boolean): Action {
 }
 
 // REDUCERS ____________________________________________________________________
+/**
+ * Tells whether the screen is on top of the page or not. Useful to:
+ * - Remove top filter when on top
+ * - Tell NavArrow animation when to trigger
+ *
+ * @param  {Boolean} [state=true] Actual value from Redux State
+ * @param  {String}  type         Type of Redux Action triggered
+ * @param  {Any}  payload      New Value from payload of action
+ * @return {Boolean}               The new value for this entry in the Redux State
+ */
 function onTop(state = true, {type, payload}: Action): boolean {
   switch(type) {
     case SET_ON_TOP:
