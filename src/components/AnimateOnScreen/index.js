@@ -19,7 +19,7 @@ import type {
 
 type Props = {
   onRest: () => void,
-  children: ReactChildren
+  children?: ReactChildren
 }
 
 // FUNCTION DEFINITION _________________________________________________________
@@ -46,18 +46,15 @@ function AnimateOnScreen(
       }
     }
 
-    componentDidMount() {
-      console.log(this.refs._target)
-    }
-
     render() {
       const {
-        onRest
+        onRest,
+        ...passThru
       } = this.props
 
       return (
         <Animation onRest={onRest}>
-          <WrappedComponent ref="_target"/>
+          <WrappedComponent {...passThru}/>
         </Animation>
       )
     }
