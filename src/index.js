@@ -1,12 +1,18 @@
-// ASSETS _____________________________________________________________________
-import './assets/normalize.css'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Provider} from 'react-redux'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.sass';
+// ASSETS ______________________________________________________________________
+import './assets/normalize.css'
+import './index.sass'
+
+// STORE _______________________________________________________________________
+import store from './ducks'
+
+// APPLICATION _________________________________________________________________
+import App from './App'
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}><App/></Provider>,
   document.getElementById('root')
 );
