@@ -6,6 +6,9 @@ import React from 'react'
 import './About.sass'
 import heading from './_assets/heading.svg'
 
+// ANIMATIONS __________________________________________________________________
+import PopIn from '../../animations/PopIn'
+
 // COMPONENTS __________________________________________________________________
 import ArticleLine from '../../components/ArticleLine'
 import Filter from '../../components/Filter'
@@ -20,11 +23,13 @@ const About = (props: any) => (
     <Filter type="top"/>
     <Filter type="bottom"/>
     <header className="section-header about__header">
-      <h1 className="section__heading"
-        aria-label="About"
-      >
-        <img src={heading} alt="About" className="about__heading"/>
-      </h1>
+      <PopIn onRest={f => f}>
+        <h1 className="section__heading"
+          aria-label="About"
+        >
+          <img src={heading} alt="About" className="about__heading"/>
+        </h1>
+      </PopIn>
     </header>
     <article className="bio">
       <h2 className="article-heading">Bio</h2>
