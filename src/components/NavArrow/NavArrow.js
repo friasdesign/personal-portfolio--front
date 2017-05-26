@@ -17,6 +17,8 @@ type NavArrowProps = {
   direction: 'up' | 'down',
   onTop: boolean,
   onBottom: boolean,
+  label: string,
+  text?: string,
   shouldRender?: boolean,
   defaultY?: number
 }
@@ -24,7 +26,7 @@ type NavArrowProps = {
 const SPRING_SET = {stiffness: 28, damping: 13}
 
 // COMPONENT DEFINITION ________________________________________________________
-const NavArrowComponent = ({direction, defaultY}: NavArrowProps) => {
+const NavArrowComponent = ({direction, text, defaultY}: NavArrowProps) => {
   return (
     <div className={`nav-arrow-container nav-arrow-container--${direction}`}>
       <Motion
@@ -57,7 +59,7 @@ const NavArrowComponent = ({direction, defaultY}: NavArrowProps) => {
                       }}
                     >
                       <img className="nav-arrow__arrow" src={icons[direction]} alt={direction}/>
-                      Go one page {direction}
+                      {text}
                     </div>
                 )
               }
@@ -88,6 +90,7 @@ const addPropsForUp = (props: NavArrowProps) => {
   return {
     defaultY: 20,
     shouldRender: props.onTop,
+    text: `back to ${props.label}`,
     ...props
   }
 }
@@ -97,6 +100,7 @@ const addPropsForDown = (props: NavArrowProps) => {
   return {
     defaultY: -20,
     shouldRender: props.onBottom,
+    text: `next to ${props.label}`,
     ...props
   }
 }

@@ -16,7 +16,7 @@ import {education, interests} from './_data'
 
 const About = (props: any) => (
   <main className="about">
-    <NavArrow direction="up"/>
+    <NavArrow direction="up" label="Home"/>
     <Filter type="top"/>
     <Filter type="bottom"/>
     <header className="section-header about__header">
@@ -52,7 +52,7 @@ const About = (props: any) => (
       heading="Interests"
       entries={interests}
     />
-    <NavArrow direction="down"/>
+  <NavArrow direction="down" label="Skills"/>
   </main>
 )
 
