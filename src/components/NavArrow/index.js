@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
-import {Motion, spring, presets} from 'react-motion'
+import {Motion, spring} from 'react-motion'
 import {ReactMotionLoop} from 'react-motion-loop'
 
 // ASSETS ______________________________________________________________________
