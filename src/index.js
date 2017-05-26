@@ -12,6 +12,7 @@ import store from './ducks'
 // APPLICATION _________________________________________________________________
 import App from './App'
 
+// RENDER DOM __________________________________________________________________
 ReactDOM.render(
   <Provider store={store}><App/></Provider>,
   document.getElementById('root')
