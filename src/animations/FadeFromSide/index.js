@@ -1,21 +1,23 @@
 // @flow
 import React from 'react'
-import {Motion, spring, presets} from 'react-motion'
+import {Motion, spring} from 'react-motion'
 
 // TYPES _______________________________________________________________________
 import type {ReactChildren} from 'react-flow-types'
 
 const SPRING_SET = {stiffness: 50, damping: 15}
 
-type PopInProps = {
+type FadeFromSideProps = {
   children: ReactChildren,
+  defaultX: number,
   onRest: () => void
 }
 
-function PopIn(props: PopInProps) {
+function FadeFromSide(props: FadeFromSideProps) {
   const {
     onRest,
-    children
+    children,
+    defaultX
   } = props
 
   const child = React.Children.only(children)
@@ -24,20 +26,20 @@ function PopIn(props: PopInProps) {
     <Motion
       defaultStyle={{
         o: 0,
-        s: 0.7
+        x: defaultX
       }}
       style={{
         o: spring(1, SPRING_SET),
-        s: spring(1, presets.wobbly)
+        x: spring(0, SPRING_SET)
       }}
       onRest={onRest.bind({})}
     >
       {
-        ({o, s}) => (
+        ({o, x}) => (
           React.cloneElement(child, {
             style: {
               opacity: o,
-              transform: `scale(${s})`
+              transform: `translate(${x}px, 0)`
             }
           })
         )
@@ -46,4 +48,4 @@ function PopIn(props: PopInProps) {
   )
 }
 
-export default PopIn
+export default FadeFromSide
