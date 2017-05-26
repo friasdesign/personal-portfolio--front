@@ -19,8 +19,10 @@ import About from '../views/About'
 
 // TYPES
 // _____________________________________________________________________________
-type Props = {
+export type AppProps = {
   setOnTop: () => void,
+  setOnBottom: () => void,
+  onBottom: boolean,
   onTop: boolean
 }
 
@@ -28,7 +30,7 @@ type Props = {
 // COMPONENT
 // _____________________________________________________________________________
 class App extends React.Component {
-  props: Props
+  props: AppProps
 
   componentDidMount() {
     document.addEventListener('scroll', () => {

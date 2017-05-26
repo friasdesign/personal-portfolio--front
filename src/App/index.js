@@ -3,23 +3,26 @@ import {connect} from 'react-redux'
 
 // ACTIONS _____________________________________________________________________
 import {
-  setOnTop
+  setOnTop,
+  setOnBottom
 } from '../ducks'
 
 // COMPONENT ___________________________________________________________________
 import App from './App'
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({onTop}) {
+function mapStateToProps({onTop, onBottom}) {
   return {
-    onTop
+    onTop,
+    onBottom
   }
 }
 
 // DEFINE CONTAINER ____________________________________________________________
 const AppContainer = connect(
   mapStateToProps, {
-    setOnTop
+    setOnTop,
+    setOnBottom
   }
 )(App)
 
