@@ -22,7 +22,7 @@ import type {
  * @return {number} The current `window.scrollY` position
  */
 const checkIfOnTop = _.curry((props: AppProps, position: number) => {
-  if(position <= 10) props.setOnTop(true)
+  if(position <= 50) props.setOnTop(true)
   else if(props.onTop) props.setOnTop(false)
   return position
 })
@@ -37,7 +37,7 @@ const checkIfOnTop = _.curry((props: AppProps, position: number) => {
  * @return {number} The current `window.scrollY` position
  */
 const checkIfOnBottom = _.curry((props: AppProps, docHeight: number, position: number) => {
-  if(getScreenBottom(position) >= docHeight) props.setOnBottom(true)
+  if(getScreenBottom(position) >= (docHeight - 30)) props.setOnBottom(true)
   else if(props.onBottom) props.setOnBottom(false)
   return position
 })
