@@ -1,15 +1,19 @@
-import React from 'react'
+import {connect} from 'react-redux'
 
-import './Filter.sass'
+// COMPONENT ___________________________________________________________________
+import Filter from './Filter'
 
-const FilterTop = ({type}) => {
-  const className = `filter-${type}`
-
-  return (
-    <div className={`filter ${className}`}
-      aria-hidden
-    />
-  )
+// MAP STATE TO PROPS __________________________________________________________
+function mapStateToProps({onTop, onBottom}) {
+  return {
+    onTop,
+    onBottom
+  }
 }
 
-export default FilterTop
+// DEFINE CONTAINER ____________________________________________________________
+const FilterContainer = connect(
+  mapStateToProps
+)(Filter)
+
+export default FilterContainer
