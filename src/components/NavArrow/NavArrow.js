@@ -17,6 +17,7 @@ type NavArrowProps = {
   direction: 'up' | 'down',
   onTop: boolean,
   onBottom: boolean,
+  ready: boolean,
   label: string,
   text?: string,
   shouldRender?: boolean,
@@ -73,13 +74,13 @@ const NavArrowComponent = ({direction, text, defaultY}: NavArrowProps) => {
 
 // ADD SHOULD DISPLAY __________________________________________________________
 const addShouldRender = (props: NavArrowProps) => {
-  const {onTop, onBottom, direction} = props
+  const {onTop, onBottom, direction, ready} = props
 
   switch(direction) {
     case 'up':
-      return {shouldRender: onTop, ...props}
+      return {shouldRender: onTop && ready, ...props}
     case 'down':
-      return {shouldRender: onBottom, ...props}
+      return {shouldRender: onBottom && ready, ...props}
     default:
       return props
   }

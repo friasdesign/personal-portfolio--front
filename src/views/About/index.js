@@ -35,7 +35,7 @@ class About extends React.Component {
     const {titleAnimationEnd} = this.state
     return (
       <main className="about">
-        <NavArrow direction="up" label="Home"/>
+        <NavArrow direction="up" label="Home" ready={titleAnimationEnd} />
 
         <Filter type="top"/>
         <Filter type="bottom"/>
@@ -89,7 +89,7 @@ class About extends React.Component {
           entries={interests}
         />
 
-        <NavArrow direction="down" label="Skills"/>
+      <NavArrow direction="down" label="Skills" ready={titleAnimationEnd}/>
       </main>
     )
   }
