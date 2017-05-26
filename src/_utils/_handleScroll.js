@@ -37,7 +37,7 @@ const checkIfOnTop = _.curry((props: AppProps, position: number) => {
  * @return {number} The current `window.scrollY` position
  */
 const checkIfOnBottom = _.curry((props: AppProps, docHeight: number, position: number) => {
-  if(getScreenBottom(position) >= (docHeight - 30)) props.setOnBottom(true)
+  if(getScreenBottom(position) >= (docHeight - 50)) props.setOnBottom(true)
   else if(props.onBottom) props.setOnBottom(false)
   return position
 })
