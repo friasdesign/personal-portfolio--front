@@ -5,8 +5,6 @@ import {Motion, spring, presets} from 'react-motion'
 // TYPES _______________________________________________________________________
 import type {ReactChildren} from 'react-flow-types'
 
-const SPRING_SET = {stiffness: 50, damping: 15}
-
 type PopInProps = {
   children: ReactChildren,
   onRest: () => void
@@ -27,7 +25,7 @@ function PopIn(props: PopInProps) {
         s: 0.7
       }}
       style={{
-        o: spring(1, SPRING_SET),
+        o: spring(1, presets.noWobble),
         s: spring(1, presets.wobbly)
       }}
       onRest={onRest.bind({})}
