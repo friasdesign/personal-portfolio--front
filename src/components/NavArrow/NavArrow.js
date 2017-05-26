@@ -83,15 +83,33 @@ const addShouldRender = (props: NavArrowProps) => {
   }
 }
 
-// ADD DEFAULT Y _______________________________________________________________
-const addDefaultY = (props: NavArrowProps) => {
+// ADD PROPS FOR UP ____________________________________________________________
+const addPropsForUp = (props: NavArrowProps) => {
+  return {
+    defaultY: 20,
+    shouldRender: props.onTop,
+    ...props
+  }
+}
+
+// ADD PROPS FOR DOWN __________________________________________________________
+const addPropsForDown = (props: NavArrowProps) => {
+  return {
+    defaultY: -20,
+    shouldRender: props.onBottom,
+    ...props
+  }
+}
+
+// ADD EXTRA PROPS _____________________________________________________________
+const addExtraProps = (props: NavArrowProps) => {
   const {direction} = props
 
   switch(direction) {
     case 'up':
-      return {defaultY: 20, ...props}
+      return addPropsForUp(props)
     case 'down':
-      return {defaultY: -20, ...props}
+      return addPropsForDown(props)
     default:
       return props
   }
@@ -108,7 +126,7 @@ const NavArrowRender = (props: NavArrowProps) => {
 // COMPOSE COMPONENT ___________________________________________________________
 const NavArrow = _.compose(
   NavArrowRender,
-  addDefaultY,
+  addExtraProps,
   addShouldRender
 )
 
