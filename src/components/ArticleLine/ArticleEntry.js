@@ -22,10 +22,14 @@ type Props = {
 
 // COMPONENT ___________________________________________________________________
 const ArticleEntry = ({entry, odd, theme, triggered}: Props) => (
-  <div className={`line__entry ${
+  <div className={`line__entry fade ${
       odd
       ? 'line__entry--odd'
       : ''
+    } ${
+      triggered
+      ? ''
+      : 'fade-bottom'
     }`}>
     <img src={entry.logo} alt={`Logo of ${entry.h}`} className="entry__logo"/>
     <div className={`entry__content ${
