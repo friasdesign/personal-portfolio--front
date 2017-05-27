@@ -49,6 +49,7 @@ const setScreenBottomPosition = _.curry((props: AppProps, position: number) => {
 
 // SMALL GETTERS _______________________________________________________________
 function getScreenBottom(position) {
+  console.log('innerHeight', window.innerHeight)
   return position + window.innerHeight
 }
 
