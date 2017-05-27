@@ -87,6 +87,7 @@ class About extends React.Component {
         <ArticleLine
           heading="Interests"
           entries={interests}
+          theme="mono"
         />
 
       <NavArrow direction="down" label="Skills" ready={titleAnimationEnd}/>
