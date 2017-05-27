@@ -18,14 +18,12 @@ import type {
 } from 'react-flow-types'
 
 type Props = {
-  onRest: () => void,
   children?: ReactChildren
 }
 
 // FUNCTION DEFINITION _________________________________________________________
-function AnimateOnScreen(
-  WrappedComponent: Component<any>,
-  Animation: Component<any>
+function triggerOnScreen(
+  WrappedComponent: Component<any>
 ) {
   // COMPONENT _________________________________________________________________
   return class extends React.Component {
@@ -48,17 +46,14 @@ function AnimateOnScreen(
 
     render() {
       const {
-        onRest,
-        ...passThru
-      } = this.props
+        triggered
+      } = this.state
 
       return (
-        <Animation onRest={onRest}>
-          <WrappedComponent {...passThru}/>
-        </Animation>
+        <WrappedComponent triggered={triggered} {...this.props}/>
       )
     }
   }
 }
 
-export default AnimateOnScreen
+export default triggerOnScreen

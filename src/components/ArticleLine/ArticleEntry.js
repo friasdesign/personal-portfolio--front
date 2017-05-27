@@ -1,8 +1,7 @@
 // @flow
 import React from 'react'
 
-import AnimateOnScreen from '../AnimateOnScreen'
-import FadeIn from '../../animations/FadeIn'
+import TriggerOnScreen from '../TriggerOnScreen'
 
 // TYPE DEFINITION _____________________________________________________________
 type Props = {
@@ -13,11 +12,12 @@ type Props = {
     text: string
   },
   theme?: 'default' | 'mono',
-  odd: boolean
+  odd: boolean,
+  triggered: boolean
 }
 
 // COMPONENT ___________________________________________________________________
-const ArticleEntry = ({entry, odd, theme}: Props) => (
+const ArticleEntry = ({entry, odd, theme, triggered}: Props) => (
   <div className={`line__entry ${
       odd
       ? 'line__entry--odd'
@@ -38,4 +38,4 @@ const ArticleEntry = ({entry, odd, theme}: Props) => (
   </div>
 )
 
-export default AnimateOnScreen(ArticleEntry, FadeIn)
+export default TriggerOnScreen(ArticleEntry)
