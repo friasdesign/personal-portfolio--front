@@ -1,13 +1,10 @@
 // @flow
 /*
-This HOC will add animation when first appeared on screen for the component that
-has been passed.
+HOC that checks whether the child component is on the screen or has been on the screen
+and sets trigger on state to true, passing down `state.triggered` down as prop.
 
-This HOC does:
-
-- calculate whether component is within the screen
-- trigger the animation passed in
-- renders with corresponding styles
+Used to animate or to trigger any similar kind of bheavior expected to happen
+once user scrolls over the component.
  */
 import React from 'react'
 
