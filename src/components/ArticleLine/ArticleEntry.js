@@ -17,12 +17,13 @@ type Props = {
   },
   theme?: 'default' | 'mono',
   odd: boolean,
+  setTopPosition: () => void,
   triggered: boolean
 }
 
 // COMPONENT ___________________________________________________________________
-const ArticleEntry = ({entry, odd, theme, triggered}: Props) => (
-  <div className={`line__entry ${
+const ArticleEntry = ({setTopPosition, entry, odd, theme, triggered}: Props) => (
+  <div ref={e => setTopPosition(e)} className={`line__entry ${
       odd
       ? 'line__entry--odd'
       : ''

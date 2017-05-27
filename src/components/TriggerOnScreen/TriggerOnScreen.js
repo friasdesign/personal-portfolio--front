@@ -17,17 +17,24 @@ type Props = {
   screenBottomPosition: number
 }
 
+// UTIL FUNCTIONS ______________________________________________________________
+function getElementTopPosition(elem) {
+  return elem.getBoundingClientRect().top
+}
+
 // FUNCTION DEFINITION _________________________________________________________
 function triggerOnScreen(
   WrappedComponent: Component<Object>
 ) {
   // COMPONENT _________________________________________________________________
-  return class extends React.Component {
+  return class TriggerOnScreen extends React.Component {
     props: Props
 
     state: {
       triggered: boolean
     }
+
+    topPosition: number
 
     static defaultProps = {
       onRest: f => {}
@@ -40,13 +47,18 @@ function triggerOnScreen(
       }
     }
 
+    setTopPosition(element: Object) {
+      this.topPosition = getElementTopPosition(element)
+    }
+
     render() {
       const {
         triggered
       } = this.state
 
       return (
-        <WrappedComponent triggered={triggered} {...this.props}/>
+        <WrappedComponent setTopPosition={this.setTopPosition.bind(this)}
+          triggered={triggered} {...this.props}/>
       )
     }
   }
