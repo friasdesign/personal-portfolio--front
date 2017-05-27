@@ -30,10 +30,10 @@ const ArticleEntry = ({setTopPosition, entry, odd, theme, triggered}: Props) => 
         ? 'line__entry--odd'
         : ''
       }`}>
-      <div className={`entry__container fade ${
+      <div className={`entry__container fade-bottom ${
           triggered
           ? ''
-          : 'fade-bottom'
+          : 'fade-bottom--init'
         }`}>
         <img src={entry.logo} alt={`Logo of ${entry.h}`} className="entry__logo"/>
         <div className={`entry__content ${
