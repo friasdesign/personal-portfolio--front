@@ -49,11 +49,19 @@ function triggerOnScreen(
     }
 
     setTopPosition(element: Object) {
-      this.topPosition = getElementTopPosition(element)
+      if(element) this.topPosition = getElementTopPosition(element)
+    }
+
+    componentWillReceiveProps(nextProps: Object) {
+      if(nextProps.screenBottomPosition >= this.topPosition) {
+        this.setState({
+          triggered: true
+        })
+      }
     }
 
     shouldComponentUpdate(nextProps: Object, nextState: Object) {
-      return !_.equals(nextProps, this.props) || !_.equals(nextState, this.state)
+      return !_.equals(nextState, this.state)
     }
 
     render() {
