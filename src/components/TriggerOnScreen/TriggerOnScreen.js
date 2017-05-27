@@ -49,9 +49,7 @@ function triggerOnScreen(
     }
 
     setTopPosition(element: Object) {
-      console.log(element)
       this.topPosition = getElementTopPosition(element)
-      console.log('position', this.topPosition)
     }
 
     shouldComponentUpdate(nextProps: Object, nextState: Object) {
