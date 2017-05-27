@@ -8,10 +8,9 @@ import type {Component} from 'react-flow-types'
 import TriggerOnScreen from './TriggerOnScreen'
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({onTop, onBottom}) {
+function mapStateToProps({screenBottomPosition}) {
   return {
-    onTop,
-    onBottom
+    screenBottomPosition
   }
 }
 

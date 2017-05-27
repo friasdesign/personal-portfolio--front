@@ -23,11 +23,12 @@ const ArticleLine = ({heading, entries, theme}: ArticleLineProps) => (
     <div className="line__line" aria-hidden></div>
     <div className="line__entries">
       {
-        entries.map((e, i) => (
+        entries.map((e, i) => {
+          return (
           <ArticleEntry theme={theme || 'default'} key={i}
             entry={e}
             odd={i % 2 !== 0}/>
-        ))
+        )})
       }
     </div>
   </article>

@@ -7,6 +7,7 @@ Used to animate or to trigger any similar kind of bheavior expected to happen
 once user scrolls over the component.
  */
 import React from 'react'
+import _ from 'ramda'
 
 // IMPORT TYPES ________________________________________________________________
 import type {
@@ -48,7 +49,13 @@ function triggerOnScreen(
     }
 
     setTopPosition(element: Object) {
+      console.log(element)
       this.topPosition = getElementTopPosition(element)
+      console.log('position', this.topPosition)
+    }
+
+    shouldComponentUpdate(nextProps: Object, nextState: Object) {
+      return !_.equals(nextProps, this.props) || !_.equals(nextState, this.state)
     }
 
     render() {
