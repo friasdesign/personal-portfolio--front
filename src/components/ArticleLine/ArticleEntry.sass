@@ -3,12 +3,20 @@
 
 // LINE ENTRY __________________________________________________________________
 .line__entry
+  width: 100%
+  margin-bottom: 2.945rem
+
+.entry__container
+  width: 100%
   display: flex
   flex-wrap: wrap
   align-items: center
   justify-content: center
-  width: 100%
-  margin-bottom: 2.945rem
+
+// ANIMATIONS __________________________________________________________________
+.fade-bottom
+  opacity: 0.2
+  transform: translate(0, 100px)
 
 // ENTRY CONTENT _______________________________________________________________
 .entry__content
@@ -41,9 +49,11 @@
 
 +for-tablet-portrait-up
   .line__entry
+    max-width: $max-readable
+
+  .entry__container
     flex-wrap: nowrap
     justify-content: flex-start
-    max-width: $max-readable
 
   .entry__content
     text-align: left
@@ -66,13 +76,13 @@
     align-self: flex-start
     justify-content: flex-end
 
-  .line__entry--odd>.entry__content
+  .line__entry--odd>.entry__container>.entry__content
     text-align: right
     order: 0
     margin-left: 0
     margin-right: 7.71rem
 
-  .line__entry--odd>.entry__logo
+  .line__entry--odd>.entry__container>.entry__logo
     order: 1
 
 +for-desktop-up
