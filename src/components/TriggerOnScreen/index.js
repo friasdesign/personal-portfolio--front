@@ -1,6 +1,9 @@
 // @flow
 import {connect} from 'react-redux'
 
+// TYPES _______________________________________________________________________
+import type {Component} from 'react-flow-types'
+
 // COMPONENT ___________________________________________________________________
 import TriggerOnScreen from './TriggerOnScreen'
 
@@ -13,7 +16,7 @@ function mapStateToProps({onTop, onBottom}) {
 }
 
 // DEFINE CONTAINER ____________________________________________________________
-const TriggerOnScreenContainer = (child) => {
+const TriggerOnScreenContainer = (child: Component<Object>) => {
   return connect(
     mapStateToProps,
   )(TriggerOnScreen(child))

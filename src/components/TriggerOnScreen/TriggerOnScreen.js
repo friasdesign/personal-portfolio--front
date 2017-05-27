@@ -10,18 +10,16 @@ import React from 'react'
 
 // IMPORT TYPES ________________________________________________________________
 import type {
-  Component,
-  ReactChildren
+  Component
 } from 'react-flow-types'
 
 type Props = {
-  screenBottomPosition: number,
-  children?: ReactChildren
+  screenBottomPosition: number
 }
 
 // FUNCTION DEFINITION _________________________________________________________
 function triggerOnScreen(
-  WrappedComponent: Component<any>
+  WrappedComponent: Component<Object>
 ) {
   // COMPONENT _________________________________________________________________
   return class extends React.Component {
