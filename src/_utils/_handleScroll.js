@@ -42,6 +42,11 @@ const checkIfOnBottom = _.curry((props: AppProps, docHeight: number, position: n
   return position
 })
 
+const setScreenBottomPosition = _.curry((props: AppProps, position: number) => {
+  props.setScreenBottomPosition(getScreenBottom(position))
+  return position
+})
+
 // SMALL GETTERS _______________________________________________________________
 function getScreenBottom(position) {
   return position + window.innerHeight
@@ -61,6 +66,7 @@ export default function handleOnScroll(props: AppProps) {
   return _.compose(
     checkIfOnBottom(props, getBodyHeight()),
     checkIfOnTop(props),
+    setScreenBottomPosition(props),
     getWindowPosition
   )
 }

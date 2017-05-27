@@ -22,6 +22,7 @@ import About from '../views/About'
 export type AppProps = {
   setOnTop: () => void,
   setOnBottom: () => void,
+  setScreenBottomPosition: () => void,
   onBottom: boolean,
   onTop: boolean
 }

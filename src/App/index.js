@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 // ACTIONS _____________________________________________________________________
 import {
   setOnTop,
-  setOnBottom
+  setOnBottom,
+  setScreenBottomPosition
 } from '../ducks'
 
 // COMPONENT ___________________________________________________________________
@@ -22,7 +23,8 @@ function mapStateToProps({onTop, onBottom}) {
 const AppContainer = connect(
   mapStateToProps, {
     setOnTop,
-    setOnBottom
+    setOnBottom,
+    setScreenBottomPosition
   }
 )(App)
 
