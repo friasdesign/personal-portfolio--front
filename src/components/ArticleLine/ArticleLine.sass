@@ -17,82 +17,11 @@
   width: 100%
   padding: 2.023rem 1.82rem 0 1.82rem
 
-// LINE ENTRY __________________________________________________________________
-.line__entry
-  display: flex
-  flex-wrap: wrap
-  align-items: center
-  justify-content: center
-  width: 100%
-  margin-bottom: 2.945rem
-
-// ENTRY CONTENT _______________________________________________________________
-.entry__content
-  padding: 0.75rem 0
-  width: 100%
-  text-align: center
-
-.entry__sub
-  margin: 0
-  color: $ternary
-  font-size: 1.25rem
-
-.entry__content--mono>.entry__sub
-  color: $mid-grey
-
-.entry__h
-  margin: 0
-  color: $primary
-  font-size: 1.82rem
-
-.entry__content--mono>.entry__h
-  color: $soft-black
-
-.entry__logo
-  width: 30%
-
-.entry__text
-  margin: 0
-  font-size: 1.125rem
-
 +for-tablet-portrait-up
   .line__entries
     align-items: center
 
-  .line__entry
-    flex-wrap: nowrap
-    justify-content: flex-start
-    max-width: $max-readable
-
-  .entry__content
-    text-align: left
-    margin-left: 7.71rem
-    width: auto
-
-  .entry__logo
-    width: auto
-    height: 100%
-
-
 +for-tablet-landscape-up
-  .line__entry
-    width: 50%
-    position: relative
-    left: -25rem
-    max-width: none
-
-  .line__entry--odd
-    position: static
-    align-self: flex-start
-    justify-content: flex-end
-
-  .line__line
-    display: block
-    width: 1px
-    background-color: $mid-grey
-    position: relative
-    left: calc((100% - 8px) / 2)
-
   .line__entries
     position: relative
     right: -12rem
@@ -101,21 +30,9 @@
     padding: 0
     padding-top: 2.023rem
 
-  .line__entry--odd>.entry__content
-    text-align: right
-    order: 0
-    margin-left: 0
-    margin-right: 7.71rem
-
-  .line__entry--odd>.entry__logo
-    order: 1
-
-+for-desktop-up
-  .entry__sub
-    font-size: 2.023rem
-
-  .entry__h
-    font-size: 2.945rem
-
-  .entry__text
-    font-size: 1.125rem
+  .line__line
+    display: block
+    width: 1px
+    background-color: $mid-grey
+    position: relative
+    left: calc((100% - 8px) / 2)

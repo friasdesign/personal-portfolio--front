@@ -1,6 +1,10 @@
 // @flow
 import React from 'react'
 
+// ASSETS ______________________________________________________________________
+import './ArticleEntry.sass'
+
+// COMPONENTS __________________________________________________________________
 import TriggerOnScreen from '../TriggerOnScreen'
 
 // TYPE DEFINITION _____________________________________________________________
