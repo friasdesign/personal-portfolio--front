@@ -5,6 +5,15 @@ import type {
   AppProps
 } from '../App/App'
 
+// CONSTANTS ___________________________________________________________________
+const checkIfiOS = _.curry((win: {MSStream: any}, nav: {userAgent: string}) => {
+  return /iPad|iPhone|iPod/.test(nav.userAgent) && !win.MSStream
+})
+
+export const _INNER_HEIGHT = checkIfiOS(window, navigator)
+  ? screen.height
+  : window.innerHeight
+
 /**
  * Curried function that checks if application is currently on top of the
  * document. It's done by checking the actual position passed as second argument.
@@ -48,9 +57,8 @@ const setScreenBottomPosition = _.curry((props: AppProps, position: number) => {
 })
 
 // SMALL GETTERS _______________________________________________________________
-function getScreenBottom(position) {
-  console.log('innerHeight', window.innerHeight)
-  return position + window.innerHeight
+export function getScreenBottom(position) {
+  return position + _INNER_HEIGHT
 }
 
 function getWindowPosition() {

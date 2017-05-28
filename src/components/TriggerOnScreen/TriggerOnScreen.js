@@ -18,6 +18,9 @@ type Props = {
   screenBottomPosition: number
 }
 
+// CONSTANTS ___________________________________________________________________
+import {_INNER_HEIGHT} from '../../_utils/_handleScroll'
+
 // UTIL FUNCTIONS ______________________________________________________________
 function getElementTopPosition(elem) {
   return elem.getBoundingClientRect().top
@@ -54,7 +57,6 @@ function triggerOnScreen(
 
     componentWillReceiveProps({screenBottomPosition}: Object) {
       const nextPosition = screenBottomPosition - (window.innerHeight / 5)
-      console.log('nextPosition', nextPosition)
       if(nextPosition >= this.topPosition) {
         this.setState({
           triggered: true
