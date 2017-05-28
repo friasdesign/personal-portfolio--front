@@ -8,72 +8,80 @@ ShallowWrapper {
   "length": 1,
   "node": <main
     className="about">
-    <NavArrow
-        direction="up" />
-    <FilterTop
+    <Connect(Component)
+        direction="up"
+        label="Home"
+        ready={false} />
+    <Connect(Filter)
         type="top" />
-    <FilterTop
+    <Connect(Filter)
         type="bottom" />
     <header
         className="section-header about__header">
-        <h1
-            aria-label="About"
-            className="section__heading">
-            <img
-                alt="About"
-                className="about__heading"
-                src="heading.svg" />
-        </h1>
+        <PopIn
+            onRest={[Function]}>
+            <h1
+                aria-label="About"
+                className="section__heading">
+                <img
+                    alt="About"
+                    className="about__heading"
+                    src="heading.svg" />
+            </h1>
+        </PopIn>
     </header>
     <article
         className="bio">
         <h2
-            className="article-heading">
+            className="article-heading fade-side fade-left">
             Bio
         </h2>
-        <p>
-            Straight from the very south of Argentina, Rio Grande, I grew up to become a 
-            <strong>
-                COMPUTER GEEK
-            </strong>
-             (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
-        </p>
-        <p>
-            One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
-        </p>
-        <p>
-            After a couple of years of experimenting, I went back to my roots and started studying 
-            <strong>
-                Computer Programming
-            </strong>
-            , and finally found my vocation. Having a background on Arts motivated me to experiment with 
-            <strong>
-                Graphic Design
-            </strong>
-             as well, that way I landed into 
-            <strong>
-                UX/UI Design
-            </strong>
-            , which is a core aspect of my life alongside 
-            <strong>
-                Full-stack Development
-            </strong>
-            .
-        </p>
-        <p>
-            In the present day, I want to focus all my time to 
-            <strong>
-                deliver Great Experiences and Usable Products
-            </strong>
-            , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
-        </p>
-        <p>
-            I\'m also commited to accessiblity, I deeply believe in a 
-            <strong>
-                Web accessible for all
-            </strong>
-            , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
-        </p>
+        <div
+            className="article-text fade-side fade-right">
+            <p>
+                Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+                <strong>
+                    COMPUTER GEEK
+                </strong>
+                 (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+            </p>
+            <p>
+                One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+            </p>
+            <p>
+                After a couple of years of experimenting, I went back to my roots and started studying 
+                <strong>
+                    Computer Programming
+                </strong>
+                , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+                <strong>
+                    Graphic Design
+                </strong>
+                 as well, that way I landed into 
+                <strong>
+                    UX/UI Design
+                </strong>
+                , which is a core aspect of my life alongside 
+                <strong>
+                    Full-stack Development
+                </strong>
+                .
+            </p>
+            <p>
+                In the present day, I want to focus all my time to 
+                <strong>
+                    deliver Great Experiences and Usable Products
+                </strong>
+                , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+            </p>
+            <p>
+                I\'m also commited to accessiblity, I deeply believe in a 
+                <strong>
+                    Web accessible for all
+                </strong>
+                , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+            </p>
+        </div>
     </article>
     <ArticleLine
         entries={
@@ -134,79 +142,90 @@ ShallowWrapper {
                 },
               ]
         }
-        heading="Interests" />
-    <NavArrow
-        direction="down" />
+        heading="Interests"
+        theme="mono" />
+    <Connect(Component)
+        direction="down"
+        label="Skills"
+        ready={false} />
 </main>,
   "nodes": Array [
     <main
       className="about">
-      <NavArrow
-            direction="up" />
-      <FilterTop
+      <Connect(Component)
+            direction="up"
+            label="Home"
+            ready={false} />
+      <Connect(Filter)
             type="top" />
-      <FilterTop
+      <Connect(Filter)
             type="bottom" />
       <header
             className="section-header about__header">
-            <h1
-                  aria-label="About"
-                  className="section__heading">
-                  <img
-                        alt="About"
-                        className="about__heading"
-                        src="heading.svg" />
-            </h1>
+            <PopIn
+                  onRest={[Function]}>
+                  <h1
+                        aria-label="About"
+                        className="section__heading">
+                        <img
+                              alt="About"
+                              className="about__heading"
+                              src="heading.svg" />
+                  </h1>
+            </PopIn>
       </header>
       <article
             className="bio">
             <h2
-                  className="article-heading">
+                  className="article-heading fade-side fade-left">
                   Bio
             </h2>
-            <p>
-                  Straight from the very south of Argentina, Rio Grande, I grew up to become a 
-                  <strong>
-                        COMPUTER GEEK
-                  </strong>
-                   (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
-            </p>
-            <p>
-                  One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
-            </p>
-            <p>
-                  After a couple of years of experimenting, I went back to my roots and started studying 
-                  <strong>
-                        Computer Programming
-                  </strong>
-                  , and finally found my vocation. Having a background on Arts motivated me to experiment with 
-                  <strong>
-                        Graphic Design
-                  </strong>
-                   as well, that way I landed into 
-                  <strong>
-                        UX/UI Design
-                  </strong>
-                  , which is a core aspect of my life alongside 
-                  <strong>
-                        Full-stack Development
-                  </strong>
-                  .
-            </p>
-            <p>
-                  In the present day, I want to focus all my time to 
-                  <strong>
-                        deliver Great Experiences and Usable Products
-                  </strong>
-                  , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
-            </p>
-            <p>
-                  I\'m also commited to accessiblity, I deeply believe in a 
-                  <strong>
-                        Web accessible for all
-                  </strong>
-                  , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
-            </p>
+            <div
+                  className="article-text fade-side fade-right">
+                  <p>
+                        Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+                        <strong>
+                              COMPUTER GEEK
+                        </strong>
+                         (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+                  </p>
+                  <p>
+                        One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+                  </p>
+                  <p>
+                        After a couple of years of experimenting, I went back to my roots and started studying 
+                        <strong>
+                              Computer Programming
+                        </strong>
+                        , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+                        <strong>
+                              Graphic Design
+                        </strong>
+                         as well, that way I landed into 
+                        <strong>
+                              UX/UI Design
+                        </strong>
+                        , which is a core aspect of my life alongside 
+                        <strong>
+                              Full-stack Development
+                        </strong>
+                        .
+                  </p>
+                  <p>
+                        In the present day, I want to focus all my time to 
+                        <strong>
+                              deliver Great Experiences and Usable Products
+                        </strong>
+                        , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+                  </p>
+                  <p>
+                        I\'m also commited to accessiblity, I deeply believe in a 
+                        <strong>
+                              Web accessible for all
+                        </strong>
+                        , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+                  </p>
+            </div>
       </article>
       <ArticleLine
             entries={
@@ -267,27 +286,32 @@ ShallowWrapper {
                         },
                       ]
             }
-            heading="Interests" />
-      <NavArrow
-            direction="down" />
+            heading="Interests"
+            theme="mono" />
+      <Connect(Component)
+            direction="down"
+            label="Skills"
+            ready={false} />
 </main>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
+      "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <About />,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": StatelessComponent {
+      "_instance": About {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {},
         "refs": Object {},
-        "state": null,
+        "state": Object {
+          "titleAnimationEnd": false,
+        },
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],
@@ -308,72 +332,80 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <main
           className="about">
-          <NavArrow
-                    direction="up" />
-          <FilterTop
+          <Connect(Component)
+                    direction="up"
+                    label="Home"
+                    ready={false} />
+          <Connect(Filter)
                     type="top" />
-          <FilterTop
+          <Connect(Filter)
                     type="bottom" />
           <header
                     className="section-header about__header">
-                    <h1
-                              aria-label="About"
-                              className="section__heading">
-                              <img
-                                        alt="About"
-                                        className="about__heading"
-                                        src="heading.svg" />
-                    </h1>
+                    <PopIn
+                              onRest={[Function]}>
+                              <h1
+                                        aria-label="About"
+                                        className="section__heading">
+                                        <img
+                                                  alt="About"
+                                                  className="about__heading"
+                                                  src="heading.svg" />
+                              </h1>
+                    </PopIn>
           </header>
           <article
                     className="bio">
                     <h2
-                              className="article-heading">
+                              className="article-heading fade-side fade-left">
                               Bio
                     </h2>
-                    <p>
-                              Straight from the very south of Argentina, Rio Grande, I grew up to become a 
-                              <strong>
-                                        COMPUTER GEEK
-                              </strong>
-                               (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
-                    </p>
-                    <p>
-                              One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
-                    </p>
-                    <p>
-                              After a couple of years of experimenting, I went back to my roots and started studying 
-                              <strong>
-                                        Computer Programming
-                              </strong>
-                              , and finally found my vocation. Having a background on Arts motivated me to experiment with 
-                              <strong>
-                                        Graphic Design
-                              </strong>
-                               as well, that way I landed into 
-                              <strong>
-                                        UX/UI Design
-                              </strong>
-                              , which is a core aspect of my life alongside 
-                              <strong>
-                                        Full-stack Development
-                              </strong>
-                              .
-                    </p>
-                    <p>
-                              In the present day, I want to focus all my time to 
-                              <strong>
-                                        deliver Great Experiences and Usable Products
-                              </strong>
-                              , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
-                    </p>
-                    <p>
-                              I\'m also commited to accessiblity, I deeply believe in a 
-                              <strong>
-                                        Web accessible for all
-                              </strong>
-                              , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
-                    </p>
+                    <div
+                              className="article-text fade-side fade-right">
+                              <p>
+                                        Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+                                        <strong>
+                                                  COMPUTER GEEK
+                                        </strong>
+                                         (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+                              </p>
+                              <p>
+                                        One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+                              </p>
+                              <p>
+                                        After a couple of years of experimenting, I went back to my roots and started studying 
+                                        <strong>
+                                                  Computer Programming
+                                        </strong>
+                                        , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+                                        <strong>
+                                                  Graphic Design
+                                        </strong>
+                                         as well, that way I landed into 
+                                        <strong>
+                                                  UX/UI Design
+                                        </strong>
+                                        , which is a core aspect of my life alongside 
+                                        <strong>
+                                                  Full-stack Development
+                                        </strong>
+                                        .
+                              </p>
+                              <p>
+                                        In the present day, I want to focus all my time to 
+                                        <strong>
+                                                  deliver Great Experiences and Usable Products
+                                        </strong>
+                                        , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+                              </p>
+                              <p>
+                                        I\'m also commited to accessiblity, I deeply believe in a 
+                                        <strong>
+                                                  Web accessible for all
+                                        </strong>
+                                        , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+                              </p>
+                    </div>
           </article>
           <ArticleLine
                     entries={
@@ -434,79 +466,90 @@ ShallowWrapper {
                                         },
                                       ]
                     }
-                    heading="Interests" />
-          <NavArrow
-                    direction="down" />
+                    heading="Interests"
+                    theme="mono" />
+          <Connect(Component)
+                    direction="down"
+                    label="Skills"
+                    ready={false} />
 </main>,
         "_debugID": 2,
         "_renderedOutput": <main
           className="about">
-          <NavArrow
-                    direction="up" />
-          <FilterTop
+          <Connect(Component)
+                    direction="up"
+                    label="Home"
+                    ready={false} />
+          <Connect(Filter)
                     type="top" />
-          <FilterTop
+          <Connect(Filter)
                     type="bottom" />
           <header
                     className="section-header about__header">
-                    <h1
-                              aria-label="About"
-                              className="section__heading">
-                              <img
-                                        alt="About"
-                                        className="about__heading"
-                                        src="heading.svg" />
-                    </h1>
+                    <PopIn
+                              onRest={[Function]}>
+                              <h1
+                                        aria-label="About"
+                                        className="section__heading">
+                                        <img
+                                                  alt="About"
+                                                  className="about__heading"
+                                                  src="heading.svg" />
+                              </h1>
+                    </PopIn>
           </header>
           <article
                     className="bio">
                     <h2
-                              className="article-heading">
+                              className="article-heading fade-side fade-left">
                               Bio
                     </h2>
-                    <p>
-                              Straight from the very south of Argentina, Rio Grande, I grew up to become a 
-                              <strong>
-                                        COMPUTER GEEK
-                              </strong>
-                               (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
-                    </p>
-                    <p>
-                              One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
-                    </p>
-                    <p>
-                              After a couple of years of experimenting, I went back to my roots and started studying 
-                              <strong>
-                                        Computer Programming
-                              </strong>
-                              , and finally found my vocation. Having a background on Arts motivated me to experiment with 
-                              <strong>
-                                        Graphic Design
-                              </strong>
-                               as well, that way I landed into 
-                              <strong>
-                                        UX/UI Design
-                              </strong>
-                              , which is a core aspect of my life alongside 
-                              <strong>
-                                        Full-stack Development
-                              </strong>
-                              .
-                    </p>
-                    <p>
-                              In the present day, I want to focus all my time to 
-                              <strong>
-                                        deliver Great Experiences and Usable Products
-                              </strong>
-                              , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
-                    </p>
-                    <p>
-                              I\'m also commited to accessiblity, I deeply believe in a 
-                              <strong>
-                                        Web accessible for all
-                              </strong>
-                              , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
-                    </p>
+                    <div
+                              className="article-text fade-side fade-right">
+                              <p>
+                                        Straight from the very south of Argentina, Rio Grande, I grew up to become a 
+                                        <strong>
+                                                  COMPUTER GEEK
+                                        </strong>
+                                         (proudly). Since my childhood, I’ve been around computers and other small devices, like watches, as well.
+                              </p>
+                              <p>
+                                        One may think that I would have become a developer rightaway, but eventually I started my college days as Musical Arts Student, and became a lover of Romantic piano composers like Franz Listz and Frederic Chopin. After experimenting with Jazz Piano, I played with a Jazz Quartet and on my own, until I later discovered that music, although my passion, wasn\'t something I wanted to live of.
+                              </p>
+                              <p>
+                                        After a couple of years of experimenting, I went back to my roots and started studying 
+                                        <strong>
+                                                  Computer Programming
+                                        </strong>
+                                        , and finally found my vocation. Having a background on Arts motivated me to experiment with 
+                                        <strong>
+                                                  Graphic Design
+                                        </strong>
+                                         as well, that way I landed into 
+                                        <strong>
+                                                  UX/UI Design
+                                        </strong>
+                                        , which is a core aspect of my life alongside 
+                                        <strong>
+                                                  Full-stack Development
+                                        </strong>
+                                        .
+                              </p>
+                              <p>
+                                        In the present day, I want to focus all my time to 
+                                        <strong>
+                                                  deliver Great Experiences and Usable Products
+                                        </strong>
+                                        , that doesn’t only cover the mandatory guidelines, but also give an extra value to users, clients, designers and developers, through innovation.
+                              </p>
+                              <p>
+                                        I\'m also commited to accessiblity, I deeply believe in a 
+                                        <strong>
+                                                  Web accessible for all
+                                        </strong>
+                                        , without any kind of discrimination (conscious or not); with that in mind I carefully craft and test my projects for ensuring accessiblity.
+                              </p>
+                    </div>
           </article>
           <ArticleLine
                     entries={
@@ -567,9 +610,12 @@ ShallowWrapper {
                                         },
                                       ]
                     }
-                    heading="Interests" />
-          <NavArrow
-                    direction="down" />
+                    heading="Interests"
+                    theme="mono" />
+          <Connect(Component)
+                    direction="down"
+                    label="Skills"
+                    ready={false} />
 </main>,
       },
       "_renderedNodeType": 0,
