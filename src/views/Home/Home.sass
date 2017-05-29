@@ -31,13 +31,15 @@
 // PRESENTATION ________________________________________________________________
 .presentation
   line-height: 1
+  width: 100%
+  padding: 0 1.125rem
 
 .name
   font-size: 1.82rem
   color: $primary
   margin: 0
   margin-bottom: 3.272rem
-  align-self: flex-start
+  align-self: flex-end
 
 .semi
   font-weight: bold
@@ -49,7 +51,7 @@
   color: $white
   display: flex
   flex-direction: column
-  align-items: flex-start
+  align-items: flex-end
 
 .title-sub:last-child
   margin-top: 3.272rem
@@ -65,7 +67,6 @@
 
 .job-sub
   font-size: 1.618rem
-  align-self: flex-end
 
 .job-sub::before
   content: ''
@@ -100,8 +101,8 @@
   .home-content
     padding-top: 1.618rem
 
-// TABLET BREAKPOINT -- PORTRAIT _______________________________________________
-+for-tablet-portrait-up
+// PHABLET FIX _________________________________________________________________
++for-tablet-portrait-only
   .home-container
     background-position: center
 
@@ -129,15 +130,16 @@
   .job-sub--shorter::before
     width: 5.295rem
 
-  // CONTROLS
-  .controls
-    width: 50%
-    align-items: center
 
-// TABLET BREAKPOINT -- PORTRAIT _______________________________________________
+// TABLET BREAKPOINT -- LANDSCAPE _______________________________________________
 +for-tablet-landscape-up
   .home-content
     padding-top: 5%
+
+  // PRESENTATION
+  .presentation
+    padding-right: 3.272rem
+    align-self: flex-end
 
   .curtain
     background-color: transparent
@@ -145,6 +147,27 @@
   .home-container
     background-position: left bottom
     background-size: contain
+
+  // TITLE WITH SUB
+  .name
+    font-size: 2.023rem
+
+  .job-title
+    font-size: 5.295rem
+
+  .job-sub
+    font-size: 2.023rem
+
+  .job-sub::before
+    width: 17.942rem
+
+  .job-sub--shorter::before
+    width: 5.295rem
+
+  // CONTROLS
+  .controls
+    width: 50%
+    align-items: center
 
 // DESKTOP BREAKPOINT __________________________________________________________
 +for-desktop-up
@@ -156,8 +179,12 @@
     width: 90%
     align-items: flex-end
 
+  .name
+    align-self: flex-start
+
   .presentation
     padding: 0
+    margin: 0
     width: 46%
     display: flex
     flex-direction: column
@@ -186,7 +213,6 @@
 // DESKTOP BIG BREAKPOINT ______________________________________________________
 +for-big-desktop-up
   .job-title
-    width: 100%
     font-size: 6.854rem
 
   .job-sub
