@@ -1,7 +1,10 @@
 // @flow
 
-import React from 'react';
-import './App.css';
+import React from 'react'
+import {Route} from 'react-router-dom'
+
+// ASSETS ______________________________________________________________________
+import './App.css'
 
 // HELPERS
 // _____________________________________________________________________________
@@ -14,7 +17,7 @@ import Navbar from '../components/Navbar'
 
 // VIEWS
 // _____________________________________________________________________________
-// import Home from './views/Home'
+import Home from '../views/Home'
 import About from '../views/About'
 
 // TYPES
@@ -43,10 +46,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar minimal={true}/>
-        {
-          //<Home />
-        }
-        <About/>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/about" component={About}/>
       </div>
     )
   }
