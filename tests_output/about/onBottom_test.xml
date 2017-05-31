@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="about.onBottom_test"
+    errors="1" failures="0" hostname="" id="" package="about" skipped="0"
+    tests="1" time="0.007000" timestamp="Wed, 31 May 2017 21:04:24 GMT">
+  
+    <testcase name="user gets to bottom" classname="about.onBottom_test" time="0.007000" assertions="0">
+    </testcase>
+      <system-err>
+          Error while running [About / On Bottom Test / user gets to bottom]:
+
+  TypeError: browser.execute(...).wait is not a function
+    at getToBottom (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/e2e/about/onBottom_test.js:6:6)
+    at Object.user gets to bottom (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/e2e/about/onBottom_test.js:16:5)
+    at Module.call (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/q/q.js:796:13)
+    at /Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/q/q.js:556:49
+    at runSingle (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/q/q.js:137:13)
+    at flush (/Users/carlosfrias/Documents/Workspace/0004-Personal-site/front-end/node_modules/q/q.js:125:13)
+      </system-err>
+  
+  
+  </testsuite>
+</testsuites>

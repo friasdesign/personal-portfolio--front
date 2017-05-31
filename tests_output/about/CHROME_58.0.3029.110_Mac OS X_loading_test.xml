@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="about.loading_test"
+    errors="0" failures="0" hostname="" id="" package="about" skipped="1"
+    tests="1" time="0.000" timestamp="Wed, 31 May 2017 21:07:52 GMT">
+  
+  
+    
+    <testcase
+      name="only page title visible first" classname="about.loading_test">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

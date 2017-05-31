@@ -1,0 +1,26 @@
+{
+  "src_folders": ["e2e"],
+  "globals_path": "./config/nightwatch.globals.js",
+  "selenium": {
+    "start_process": false,
+    "server_path" : "./bin/selenium-server-standalone-3.{VERSION}.jar",
+    "cli_args": {
+      "webdriver.chrome.driver" : "./bin/chromedriver"
+    }
+  },
+  "test_settings": {
+    "default": {
+      "launch_url": "http://localhost",
+      "selenium_port": 9515,
+      "selenium_host": "localhost",
+      "default_path_prefix": "",
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "chromeOptions": {
+          "args": ["--no-sandbox"]
+        },
+        "acceptSslCerts": true
+      }
+    }
+  }
+}

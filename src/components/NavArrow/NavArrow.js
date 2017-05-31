@@ -122,10 +122,10 @@ const addExtraProps = (props: NavArrowProps) => {
 
 // RENDER COMPONENT ____________________________________________________________
 const NavArrowRender = (props: NavArrowProps) => {
-  const {shouldRender} = props
+  const {shouldRender, direction} = props
   return shouldRender
     ? NavArrowComponent(props)
-    : <div className="nav-arrow-container"/>
+    : <div className={`nav-arrow-container nav-arrow-container--${direction}`}/>
 }
 
 // COMPOSE COMPONENT ___________________________________________________________
