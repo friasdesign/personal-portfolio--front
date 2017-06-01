@@ -6,13 +6,10 @@ import type {
   AppProps
 } from '../App/App'
 
-// HELPER LOGGER _______________________________________________________________
-const log = _.curry((label, value) => {
-  console.log(label, value)
-  return value
-})
-
-const run = _.curry((monad, value) => monad.run(value))
+// IMPORT HELPERS ______________________________________________________________
+import {
+  run
+} from './_helpers'
 
 // CONSTANTS ___________________________________________________________________
 const checkIfiOS = _.curry((win: {MSStream: any}, nav: {userAgent: string}) => {
