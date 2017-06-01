@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /bin
+/tests_output
 
 # testing
 /coverage

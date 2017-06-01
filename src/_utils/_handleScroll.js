@@ -1,9 +1,18 @@
 // @flow
 import _ from 'ramda'
+import {Reader} from 'monet'
 
 import type {
   AppProps
 } from '../App/App'
+
+// HELPER LOGGER _______________________________________________________________
+const log = _.curry((label, value) => {
+  console.log(label, value)
+  return value
+})
+
+const run = _.curry((monad, value) => monad.run(value))
 
 // CONSTANTS ___________________________________________________________________
 const checkIfiOS = _.curry((win: {MSStream: any}, nav: {userAgent: string}) => {
@@ -61,21 +70,27 @@ export function getScreenBottom(position: number) {
   return position + _INNER_HEIGHT
 }
 
-function getWindowPosition() {
-  return window.scrollY
-}
+const getScrollY = _.compose(
+  _.map(_.prop('scrollY')),
+  idReader
+)
 
 function getBodyHeight() {
   const {body} = document
   return body ? body.clientHeight : 150
 }
 
+// MONADS ______________________________________________________________________
+function idReader() {
+  return Reader(id => id)
+}
+
 // HANDLE SCROLL COMPOSED FUNCTION _____________________________________________
-export default function handleOnScroll(props: AppProps) {
-  return _.compose(
+export default _.curry((props: AppProps, window: {scrollY: number}) =>
+  _.compose(
     checkIfOnBottom(props, getBodyHeight()),
     checkIfOnTop(props),
     setScreenBottomPosition(props),
-    getWindowPosition
-  )
-}
+    run(getScrollY())
+  )(window)
+)

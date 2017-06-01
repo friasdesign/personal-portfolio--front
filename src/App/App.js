@@ -38,7 +38,7 @@ class App extends React.Component {
 
   componentDidMount() {
     document.addEventListener('scroll', () => {
-      handleOnScroll(this.props)()
+      handleOnScroll(this.props, window)
     })
   }
 
