@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="about.scroll_test"
+    errors="0" failures="0" hostname="" id="" package="about" skipped="0"
+    tests="3" time="11.54" timestamp="Thu, 01 Jun 2017 14:30:14 GMT">
+  
+    <testcase name="user scrolls to middle of page" classname="about.scroll_test" time="3.536" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="user scrolls to top of page from middle" classname="about.scroll_test" time="3.555" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="user scrolls to bottom" classname="about.scroll_test" time="4.445" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+  
+  </testsuite>
+</testsuites>

@@ -1,6 +1,4 @@
 module.exports = {
-  '@disabled': true,
-
   beforeEach: function(browser) {
     browser.url('http://localhost:3000/about')
   },
