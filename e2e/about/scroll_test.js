@@ -72,4 +72,22 @@ module.exports = {
       browser.end()
     })
   },
+
+  'user scrolls to middle from bottom': function(browser) {
+    getToBottom(browser, function() {
+      browser.waitForElementPresent('.nav-arrow--down', 1000)
+
+      getToMid(browser, function() {
+        browser.pause(1500)
+
+        browser.expect.element('.nav-arrow--up').not.to.be.present
+        browser.expect.element('.nav-arrow--down').not.to.be.present
+
+        browser.expect.element('.filter-top').to.be.visible
+        browser.expect.element('.filter-bottom').to.be.visible
+
+        browser.end()
+      })
+    })
+  }
 }

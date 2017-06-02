@@ -5,9 +5,9 @@
 
   <testsuite name="about.loading_test"
     errors="0" failures="0" hostname="" id="" package="about" skipped="0"
-    tests="1" time="2.877" timestamp="Fri, 02 Jun 2017 16:46:54 GMT">
+    tests="1" time="2.966" timestamp="Fri, 02 Jun 2017 17:48:13 GMT">
   
-    <testcase name="only page title visible first" classname="about.loading_test" time="2.877" assertions="5">
+    <testcase name="only page title visible first" classname="about.loading_test" time="2.966" assertions="5">
 
     
 
