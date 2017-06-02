@@ -6,20 +6,19 @@ import type {
   AppProps
 } from '../App/App'
 
-// IMPORT HELPERS ______________________________________________________________
-import {
-  run
-} from './_helpers'
-
 // CONSTANTS ___________________________________________________________________
 const checkIfiOS = _.curry((win: {MSStream: any}, nav: {userAgent: string}) => {
   return /iPad|iPhone|iPod/.test(nav.userAgent) && !win.MSStream
 })
 
+const callScreenBottomPosition = _.curry((x, id) => {
+  id.setScreenBottomPosition(x)
+})
+
 // MONADS ______________________________________________________________________
 const IOWindow = IO(() => window)
-const getScrollY = IOWindow.map(_.prop('scrollY'))
-const getInnerHeight = IOWindow.map(_.prop('_INNER_HEIGHT'))
+export const windowGetScrollY = IOWindow.map(_.prop('scrollY'))
+const windowGetInnerHeight = IOWindow.map(_.prop('_INNER_HEIGHT'))
 
 /**
  * IO monad that returns `document.body` as Maybe.
@@ -31,7 +30,7 @@ const IOBody = IO(() => Maybe.fromNull(document.body))
 const getBodyHeight = IOBody.map(_.prop('clientHeight'))
 
 /**
- * Monkey patch to support consisten behavior on iOS regarding innerHeight
+ * Monkey patch to support consistent behavior on iOS regarding innerHeight
  * @type {number}
  */
 window._INNER_HEIGHT = checkIfiOS(window, navigator)
@@ -54,10 +53,10 @@ window._INNER_HEIGHT = checkIfiOS(window, navigator)
  * @param {number} position The current `window.scrollY` position
  * @return {number} The current `window.scrollY` position
  */
-const checkIfOnTop = _.curry((props: AppProps, position: number) => {
+const checkIfOnTop = _.curry((position: number, props: AppProps) => {
   if(position <= 50) props.setOnTop(true)
   else if(props.onTop) props.setOnTop(false)
-  return position
+  return props
 })
 
 /**
@@ -69,24 +68,20 @@ const checkIfOnTop = _.curry((props: AppProps, position: number) => {
  * @param {number} position The current `window.scrollY` position
  * @return {number} The current `window.scrollY` position
  */
-const checkIfOnBottom = _.curry((props: AppProps, docHeight: number, position: number) => {
+const checkIfOnBottom = _.curry((position: number, docHeight: number, props: AppProps) => {
   if(getScreenBottom(position) >= (docHeight - 50)) props.setOnBottom(true)
   else if(props.onBottom) props.setOnBottom(false)
-  return position
+  return props
 })
 
-const callScreenBottomPosition = _.curry((x, id) => {
-  id.setScreenBottomPosition(x)
-})
-
-const setScreenBottomPosition = _.curry((props: AppProps, position: number) => {
+const setScreenBottomPosition = _.curry((position: number, props: AppProps) => {
   idReader().map(callScreenBottomPosition(getScreenBottom(position))).run(props)
-  return position
+  return props
 })
 
 // SMALL GETTERS _______________________________________________________________
 export function getScreenBottom(position: number) {
-  return position + getInnerHeight.run()
+  return position + windowGetInnerHeight.run()
 }
 
 // MONADS ______________________________________________________________________
@@ -94,11 +89,16 @@ function idReader() {
   return Reader(id => id)
 }
 
-// HANDLE SCROLL COMPOSED FUNCTION _____________________________________________
-export default _.curry((props: AppProps) =>
-  _.compose(
-    checkIfOnBottom(props, getBodyHeight.run()),
-    checkIfOnTop(props),
-    setScreenBottomPosition(props)
-  )(getScrollY.run())
-)
+// STATE MANAGEMENT ____________________________________________________________
+const updateState = (winPosition: number) => {
+  return idReader()
+    .map(setScreenBottomPosition(winPosition))
+    .map(checkIfOnTop(winPosition))
+    .map(checkIfOnBottom(winPosition, getBodyHeight.run()))
+}
+
+
+// HANDLE SCROLL FUNCTION ______________________________________________________
+export default function handleOnScroll(props: AppProps) {
+  updateState(windowGetScrollY.run()).run(props)
+}
