@@ -99,6 +99,15 @@ const updateState = (winPosition: number) => {
 
 
 // HANDLE SCROLL FUNCTION ______________________________________________________
+/**
+ * Function that handles logic related to scroll in the application.
+ * This exposes a minimal API to module that imports this function.
+ * This function doesn't get composed or anything like that because
+ * `windowGetScrollY` should be evaluated each time the function gets executed,
+ * thus it can't get hardcoded by composing or currying the function.
+ *
+ * @param  {Object} props App component's props
+ */
 export default function handleOnScroll(props: AppProps) {
   updateState(windowGetScrollY.run()).run(props)
 }
