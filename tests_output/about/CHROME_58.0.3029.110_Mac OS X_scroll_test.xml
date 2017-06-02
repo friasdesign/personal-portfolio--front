@@ -5,9 +5,9 @@
 
   <testsuite name="about.scroll_test"
     errors="0" failures="0" hostname="" id="" package="about" skipped="0"
-    tests="3" time="12.35" timestamp="Fri, 02 Jun 2017 16:42:35 GMT">
+    tests="3" time="12.18" timestamp="Fri, 02 Jun 2017 16:46:57 GMT">
   
-    <testcase name="user scrolls to middle of page" classname="about.scroll_test" time="3.889" assertions="5">
+    <testcase name="user scrolls to middle of page" classname="about.scroll_test" time="3.806" assertions="5">
 
     
 
@@ -20,7 +20,7 @@
     
     </testcase>
   
-    <testcase name="user scrolls to top of page from middle" classname="about.scroll_test" time="3.831" assertions="5">
+    <testcase name="user scrolls to top of page from middle" classname="about.scroll_test" time="3.686" assertions="5">
 
     
 
@@ -33,7 +33,7 @@
     
     </testcase>
   
-    <testcase name="user scrolls to bottom" classname="about.scroll_test" time="4.625" assertions="6">
+    <testcase name="user scrolls to bottom" classname="about.scroll_test" time="4.687" assertions="6">
 
     
 

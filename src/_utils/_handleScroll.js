@@ -1,6 +1,6 @@
 // @flow
 import _ from 'ramda'
-import {Reader, IO} from 'monet'
+import {Reader, IO, Maybe} from 'monet'
 
 import type {
   AppProps
@@ -16,7 +16,21 @@ const checkIfiOS = _.curry((win: {MSStream: any}, nav: {userAgent: string}) => {
   return /iPad|iPhone|iPod/.test(nav.userAgent) && !win.MSStream
 })
 
-export const _INNER_HEIGHT = checkIfiOS(window, navigator)
+// MONADS ______________________________________________________________________
+const IOWindow = IO(() => window)
+const getScrollY = IOWindow.map(_.prop('scrollY'))
+const getInnerHeight = IOWindow.map(_.prop('_INNER_HEIGHT'))
+
+/**
+ * IO monad that returns `document.body` as Maybe.
+ */
+const IOBody = IO(() => Maybe.fromNull(document.body))
+
+/**
+ * Monkey patch to support consisten behavior on iOS regarding innerHeight
+ * @type {number}
+ */
+window._INNER_HEIGHT = checkIfiOS(window, navigator)
   ? screen.height
   : window.innerHeight
 
@@ -68,12 +82,8 @@ const setScreenBottomPosition = _.curry((props: AppProps, position: number) => {
 
 // SMALL GETTERS _______________________________________________________________
 export function getScreenBottom(position: number) {
-  return position + _INNER_HEIGHT
+  return position + getInnerHeight.run()
 }
-
-const IOWindow = IO(() => window)
-
-const getScrollY = IOWindow.map(_.prop('scrollY'))
 
 function getBodyHeight() {
   const {body} = document
