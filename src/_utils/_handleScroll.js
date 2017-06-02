@@ -25,6 +25,10 @@ const getInnerHeight = IOWindow.map(_.prop('_INNER_HEIGHT'))
  * IO monad that returns `document.body` as Maybe.
  */
 const IOBody = IO(() => Maybe.fromNull(document.body))
+  .map(b => b.orSome(false))
+  .map(b => b ? b : 150)
+
+const getBodyHeight = IOBody.map(_.prop('clientHeight'))
 
 /**
  * Monkey patch to support consisten behavior on iOS regarding innerHeight
@@ -85,11 +89,6 @@ export function getScreenBottom(position: number) {
   return position + getInnerHeight.run()
 }
 
-function getBodyHeight() {
-  const {body} = document
-  return body ? body.clientHeight : 150
-}
-
 // MONADS ______________________________________________________________________
 function idReader() {
   return Reader(id => id)
@@ -98,7 +97,7 @@ function idReader() {
 // HANDLE SCROLL COMPOSED FUNCTION _____________________________________________
 export default _.curry((props: AppProps) =>
   _.compose(
-    checkIfOnBottom(props, getBodyHeight()),
+    checkIfOnBottom(props, getBodyHeight.run()),
     checkIfOnTop(props),
     setScreenBottomPosition(props)
   )(getScrollY.run())
