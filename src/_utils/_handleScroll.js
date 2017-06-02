@@ -1,6 +1,6 @@
 // @flow
 import _ from 'ramda'
-import {Reader} from 'monet'
+import {Reader, IO} from 'monet'
 
 import type {
   AppProps
@@ -57,8 +57,12 @@ const checkIfOnBottom = _.curry((props: AppProps, docHeight: number, position: n
   return position
 })
 
+const callScreenBottomPosition = _.curry((x, id) => {
+  id.setScreenBottomPosition(x)
+})
+
 const setScreenBottomPosition = _.curry((props: AppProps, position: number) => {
-  props.setScreenBottomPosition(getScreenBottom(position))
+  idReader().map(callScreenBottomPosition(getScreenBottom(position))).run(props)
   return position
 })
 
@@ -67,10 +71,9 @@ export function getScreenBottom(position: number) {
   return position + _INNER_HEIGHT
 }
 
-const getScrollY = _.compose(
-  _.map(_.prop('scrollY')),
-  idReader
-)
+const IOWindow = IO(() => window)
+
+const getScrollY = IOWindow.map(_.prop('scrollY'))
 
 function getBodyHeight() {
   const {body} = document
@@ -83,11 +86,10 @@ function idReader() {
 }
 
 // HANDLE SCROLL COMPOSED FUNCTION _____________________________________________
-export default _.curry((props: AppProps, window: {scrollY: number}) =>
+export default _.curry((props: AppProps) =>
   _.compose(
     checkIfOnBottom(props, getBodyHeight()),
     checkIfOnTop(props),
-    setScreenBottomPosition(props),
-    run(getScrollY())
-  )(window)
+    setScreenBottomPosition(props)
+  )(getScrollY.run())
 )

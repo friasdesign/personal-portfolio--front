@@ -37,9 +37,7 @@ class App extends React.Component {
   props: AppProps
 
   componentDidMount() {
-    document.addEventListener('scroll', () => {
-      handleOnScroll(this.props, window)
-    })
+    document.addEventListener('scroll', handleOnScroll.bind({}, this.props))
   }
 
   render() {
