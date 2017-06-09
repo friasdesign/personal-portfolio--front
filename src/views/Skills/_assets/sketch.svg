@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+  <g fill="none" transform="translate(0 7)">
+    <polygon fill="#FFAE00" points="70 0 140 80.899 109.676 121.772 70 126 30.324 121.772 0 80.899" transform="rotate(-180 70 63)"/>
+    <polygon fill="#BFBFBF" points="70 0 140 80.899 0 80.899" transform="rotate(-180 70 63)"/>
+    <polygon fill="#F2F2F2" points="41.66 0 83.32 80.899 0 80.899" transform="rotate(-180 55.83 63)"/>
+    <polygon fill="#FAFAFA" points="41.66 45.101 83.32 0 0 0" transform="rotate(-180 55.83 22.55)"/>
+    <polygon fill="#B3B3B3" points="0 40.872 15.587 20.295 30.324 0 1.7 0" transform="rotate(-180 15.162 22.55)"/>
+    <polygon fill="#B3B3B3" points="0 40.872 15.587 20.295 30.324 0 1.7 0" transform="matrix(1 0 0 -1 109.676 45.1)"/>
+    <polygon fill="#BFBFBF" points="39.676 40.872 41.66 0 0 45.101" transform="rotate(-180 35 22.55)"/>
+    <polygon fill="#BFBFBF" points="39.676 40.872 41.66 0 0 45.101" transform="matrix(1 0 0 -1 70 45.1)"/>
+  </g>
+</svg>

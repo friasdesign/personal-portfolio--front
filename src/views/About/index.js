@@ -2,7 +2,6 @@
 import React from 'react'
 
 // ASSETS ______________________________________________________________________
-// import './About.sass'
 import headingImg from './_assets/heading.svg'
 
 // COMPONENTS __________________________________________________________________
@@ -15,7 +14,7 @@ import {education, interests} from './_data'
 // COMPONENT DEFINITION ________________________________________________________
 const About = ({ready}: {ready: boolean}) => (
   <div className="w-100 flx-col flx-al-center">
-    <article className="bio">
+    <article className="m-btm-2">
       <h2 className={`article-heading fade-side ${
           ready
           ? ''
