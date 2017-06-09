@@ -1,4 +1,4 @@
-exports[`About should match snapshot 1`] = `
+exports[`Skills should match snapshot 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -10,7 +10,7 @@ ShallowWrapper {
     className="page-template">
     <Connect(Component)
         direction="up"
-        label="Home"
+        label="About"
         ready={false} />
     <Connect(Filter)
         type="top" />
@@ -21,7 +21,7 @@ ShallowWrapper {
         <PopIn
             onRest={[Function]}>
             <h1
-                aria-label="About"
+                aria-label="Skills"
                 className="section__heading">
                 <img
                     alt="About"
@@ -30,11 +30,11 @@ ShallowWrapper {
             </h1>
         </PopIn>
     </header>
-    <About
+    <Skills
         ready={false} />
     <Connect(Component)
         direction="down"
-        label="Skills"
+        label="Portfolio"
         ready={false} />
 </main>,
   "nodes": Array [
@@ -42,7 +42,7 @@ ShallowWrapper {
       className="page-template">
       <Connect(Component)
             direction="up"
-            label="Home"
+            label="About"
             ready={false} />
       <Connect(Filter)
             type="top" />
@@ -53,7 +53,7 @@ ShallowWrapper {
             <PopIn
                   onRest={[Function]}>
                   <h1
-                        aria-label="About"
+                        aria-label="Skills"
                         className="section__heading">
                         <img
                               alt="About"
@@ -62,11 +62,11 @@ ShallowWrapper {
                   </h1>
             </PopIn>
       </header>
-      <About
+      <Skills
             ready={false} />
       <Connect(Component)
             direction="down"
-            label="Skills"
+            label="Portfolio"
             ready={false} />
 </main>,
   ],
@@ -110,7 +110,7 @@ ShallowWrapper {
           className="page-template">
           <Connect(Component)
                     direction="up"
-                    label="Home"
+                    label="About"
                     ready={false} />
           <Connect(Filter)
                     type="top" />
@@ -121,7 +121,7 @@ ShallowWrapper {
                     <PopIn
                               onRest={[Function]}>
                               <h1
-                                        aria-label="About"
+                                        aria-label="Skills"
                                         className="section__heading">
                                         <img
                                                   alt="About"
@@ -130,11 +130,11 @@ ShallowWrapper {
                               </h1>
                     </PopIn>
           </header>
-          <About
+          <Skills
                     ready={false} />
           <Connect(Component)
                     direction="down"
-                    label="Skills"
+                    label="Portfolio"
                     ready={false} />
 </main>,
         "_debugID": 2,
@@ -142,7 +142,7 @@ ShallowWrapper {
           className="page-template">
           <Connect(Component)
                     direction="up"
-                    label="Home"
+                    label="About"
                     ready={false} />
           <Connect(Filter)
                     type="top" />
@@ -153,7 +153,7 @@ ShallowWrapper {
                     <PopIn
                               onRest={[Function]}>
                               <h1
-                                        aria-label="About"
+                                        aria-label="Skills"
                                         className="section__heading">
                                         <img
                                                   alt="About"
@@ -162,11 +162,11 @@ ShallowWrapper {
                               </h1>
                     </PopIn>
           </header>
-          <About
+          <Skills
                     ready={false} />
           <Connect(Component)
                     direction="down"
-                    label="Skills"
+                    label="Portfolio"
                     ready={false} />
 </main>,
       },
