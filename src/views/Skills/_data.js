@@ -69,7 +69,7 @@ export const comingSoon = [
     text: 'Amazing Front-end Framework, fast and reliable. And also I love its logo :B'
   },
   {
-    logo: reactLogo,
+    logo: reactNativeLogo,
     sub: 'Wannabe',
     h: 'React Native',
     text: 'I also want to expand to native apps, React Native looks amazing to me.'
@@ -96,7 +96,7 @@ export const sideSkills = [
     text: 'I can design UIs in Sketch quickly if required, casting hundreds of keyboard shorcuts.'
   },
   {
-    logo: phoenixLogo,
+    logo: photoshopLogo,
     sub: 'Proficient',
     h: 'Adobe Photoshop',
     text: 'I can use Photoshop, I used to take photos as a hobby, sometimes even sell my job.'

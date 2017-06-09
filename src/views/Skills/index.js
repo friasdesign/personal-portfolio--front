@@ -2,47 +2,76 @@
 import React from 'react'
 
 // ASSETS ______________________________________________________________________
-// import './Skills.sass'
-import heading from './_assets/heading.svg'
-
-// ANIMATIONS __________________________________________________________________
-import PopIn from '../../animations/PopIn'
+import headingImg from './_assets/heading.svg'
 
 // COMPONENTS __________________________________________________________________
 import ArticleLine from '../../components/ArticleLine'
-import NavArrow from '../../components/NavArrow'
+import PageTemplate from '../../components/PageTemplate'
 
-class Skills extends React.Component {
-  state: {
-    titleAnimationEnd: boolean
-  }
+// DATA ________________________________________________________________________
+import {
+  mainSkills,
+  comingSoon,
+  sideSkills,
+  humanLanguages
+} from './_data'
 
-  constructor(props: Object) {
-    super(props)
+// COMPONENT DEFINITION ________________________________________________________
+const Skills = ({ready}: {ready: boolean}) => (
+  <div className="w-100 flx-col flx-al-center">
+    <article className="m-btm-2">
+      <h2 className={`article-heading fade-side ${
+          ready
+          ? ''
+          : 'fade-left'
+        }`}>Levels</h2>
+      <div className={`article-text fade-side ${
+          ready
+          ? ''
+          : 'fade-right'
+        }`}>
+        <p>
+          I have divided my skills into different levels of proficiency, those are, from most proficient to least proficient:
+        </p>
+        <ul className="text-list">
+          <li><strong>Ninja</strong>. A nerd master of the geek arts.</li>
+          <li><strong>Proficient</strong>. Can use that technology under a tight schedule, without too much research needed.</li>
+          <li><strong>Jargon</strong>. Understand all domain-specific lingo, and use it regularly, but feel better talking about it than doing it.</li>
+          <li><strong>Wannabe</strong>. One day I wan’t to become a Ninja of this.</li>
+        </ul>
+        <p>
+          I changed the levels names for human languages, but those used are self explanatory.
+        </p>
+      </div>
+    </article>
 
-    this.state = {
-      titleAnimationEnd: false
-    }
-  }
+    <ArticleLine
+      heading="Main Skills"
+      entries={mainSkills}
+    />
 
-  render() {
-    const {titleAnimationEnd} = this.state
-    return (
-      <main className="skills">
-        <NavArrow direction="up" label="About" ready={titleAnimationEnd} />
+    <ArticleLine
+      heading="Coming Soon"
+      entries={comingSoon}
+    />
 
-        <header className="section-header about__header">
-          <PopIn onRest={f => {this.setState({titleAnimationEnd: true})}}>
-            <h1 className="section__heading"
-              aria-label="About"
-            >
-              <img src={heading} alt="About" className="about__heading"/>
-            </h1>
-          </PopIn>
-        </header>
-      </main>
-    )
-  }
-}
+    <ArticleLine
+      heading="Side Skills"
+      entries={sideSkills}
+      theme="mono"
+    />
 
-export default Skills
+    <ArticleLine
+      heading="Human Languages"
+      entries={humanLanguages}
+      theme="mono"
+    />
+  </div>
+)
+
+export default PageTemplate(Skills, {
+  topNavArrowLabel: 'About',
+  bottomNavArrowLabel: 'Portfolio',
+  headingImg,
+  headingAriaLabel: 'Skills'
+})
