@@ -19,6 +19,7 @@ import Navbar from '../components/Navbar'
 // _____________________________________________________________________________
 import Home from '../views/Home'
 import About from '../views/About'
+import Skills from '../views/Skills'
 
 // TYPES
 // _____________________________________________________________________________
@@ -48,6 +49,7 @@ class App extends React.Component {
         <Navbar minimal={true}/>
         <Route exact path="/" component={Home}/>
         <Route exact path="/about" component={About}/>
+        <Route exact path="/skills" component={Skills}/>
       </div>
     )
   }

@@ -18,9 +18,6 @@ type Props = {
   screenBottomPosition: number
 }
 
-// CONSTANTS ___________________________________________________________________
-import {_INNER_HEIGHT} from '../../_utils/_handleScroll'
-
 // UTIL FUNCTIONS ______________________________________________________________
 function getElementTopPosition(elem) {
   return elem.getBoundingClientRect().top
