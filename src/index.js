@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom'
 
 // ASSETS ______________________________________________________________________
-import './assets/normalize.css'
+import './_assets/normalize.css'
 import './index.sass'
 
 // STORE _______________________________________________________________________

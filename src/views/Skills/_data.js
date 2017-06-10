@@ -4,7 +4,7 @@
 import americanLogo from './_assets/american.svg'
 import elmLogo from './_assets/elm.svg'
 import erlangLogo from './_assets/erlang.svg'
-import expressLogo from './_assets/express.svg'
+import expressLogo from '../../_assets/express.svg'
 import frenchLogo from './_assets/french.svg'
 import illustratorLogo from './_assets/illustrator.svg'
 import japaneseLogo from './_assets/japanese.svg'
@@ -14,13 +14,13 @@ import phoenixLogo from './_assets/phoenix.svg'
 import photoshopLogo from './_assets/photoshop.svg'
 import phpLogo from './_assets/php.svg'
 import postgreSQLLogo from './_assets/postgresql.svg'
-import reactNativeLogo from './_assets/react-native.svg'
-import reactLogo from './_assets/react.svg'
-import sketchLogo from './_assets/sketch.svg'
+import reactNativeLogo from '../../_assets/react-native.svg'
+import reactLogo from '../../_assets/react.svg'
+import sketchLogo from '../../_assets/sketch.svg'
 import spainLogo from './_assets/spain.svg'
 import vueLogo from './_assets/vue.svg'
 
-import mongoLogo from '../About/_assets/mongo.svg'
+import mongoLogo from '../../_assets/mongo.svg'
 
 export const mainSkills = [
   {
