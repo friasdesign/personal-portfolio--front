@@ -12,13 +12,14 @@ type ArticleLineProps = {
     logo: string,
     sub: string,
     theme?: 'default' | 'mono',
+    className?: string,
     h: string,
     text: string
   }>
 }
 
-const ArticleLine = ({heading, entries, theme}: ArticleLineProps) => (
-  <article className="article-line">
+const ArticleLine = ({className, heading, entries, theme}: ArticleLineProps) => (
+  <article className={`article-line ${className}`}>
     <h2 className="article-heading">{heading}</h2>
     <div className="line__line" aria-hidden></div>
     <div className="line__entries">

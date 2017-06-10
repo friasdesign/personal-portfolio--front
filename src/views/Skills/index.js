@@ -18,7 +18,7 @@ import {
 
 // COMPONENT DEFINITION ________________________________________________________
 const Skills = ({ready}: {ready: boolean}) => (
-  <div className="w-100 flx-col flx-al-center">
+  <div className="w-100 flx-col flx-al-center over-x-hidden">
     <article className="m-btm-2">
       <h2 className={`article-heading fade-side ${
           ready
@@ -46,6 +46,11 @@ const Skills = ({ready}: {ready: boolean}) => (
     </article>
 
     <ArticleLine
+      className={`fade-side ${
+        ready
+        ? ''
+        : 'fade-right'
+      }`}
       heading="Main Skills"
       entries={mainSkills}
     />
