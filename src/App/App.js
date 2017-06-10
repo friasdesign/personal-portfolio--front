@@ -20,6 +20,7 @@ import Navbar from '../components/Navbar'
 import Home from '../views/Home'
 import About from '../views/About'
 import Skills from '../views/Skills'
+import Portfolio from '../views/Portfolio'
 
 // TYPES
 // _____________________________________________________________________________
@@ -50,6 +51,7 @@ class App extends React.Component {
         <Route exact path="/" component={Home}/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/skills" component={Skills}/>
+        <Route exact path="/portfolio" component={Portfolio}/>
       </div>
     )
   }
