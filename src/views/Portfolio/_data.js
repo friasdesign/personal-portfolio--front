@@ -21,6 +21,20 @@ import hotel from './_assets/hotel.png'
 import hotel_2x from './_assets/hotel@2x.png'
 import hotel_3x from './_assets/hotel@3x.png'
 
+// DEFINE TYPES ________________________________________________________________
+export type ProjectType = {
+  images: {
+    default: string,
+    x2: string,
+    x3: string
+  },
+  title: string,
+  type: string,
+  description: string,
+  techs: Array<{| title: string, logo: string |}>,
+  links: Array<{| title: string, link: string, logo: string |}>
+}
+
 export const featured = [
   {
     images: {

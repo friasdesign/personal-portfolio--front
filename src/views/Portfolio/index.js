@@ -15,8 +15,8 @@ import {
 import ArticleLine from '../../components/ArticleLine'
 import PageTemplate from '../../components/PageTemplate'
 
-// PROJECT ENTRY _______________________________________________________________
-import ProjectEntry from './ProjectEntry'
+// PORTFOLIO ARTICLE  __________________________________________________________
+import PortfolioArticle from './PortfolioArticle'
 
 const Portfolio = ({ready}: {ready: boolean}) => (
   <div className="w100 flx-col flx-al-center">
@@ -48,41 +48,17 @@ const Portfolio = ({ready}: {ready: boolean}) => (
     </div>
   </article>
 
-  <section className="portfolio__featured">
-    <h2 className={`article-heading fade-side ${
-        ready
-        ? ''
-        : 'fade-right'
-      }`}>
-      Featured
-    </h2>
-    {
-      featured.map((p, i) =>
-        <ProjectEntry
-          key={i}
-          project={p}
-        />
-      )
-    }
-  </section>
+  <PortfolioArticle
+    heading="Featured"
+    ready={ready}
+    entries={featured}
+  />
 
-  <section className="portfolio__ongoing">
-    <h2 className={`article-heading fade-side ${
-        ready
-        ? ''
-        : 'fade-right'
-      }`}>
-      Ongoing
-    </h2>
-    {
-      ongoing.map((p, i) =>
-        <ProjectEntry
-          key={i}
-          project={p}
-        />
-      )
-    }
-  </section>
+  <PortfolioArticle
+    heading="Ongoing"
+    ready={ready}
+    entries={ongoing}
+  />
 
   <ArticleLine
     heading="Teeny-Tiny"

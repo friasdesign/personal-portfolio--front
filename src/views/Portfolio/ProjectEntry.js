@@ -1,20 +1,14 @@
 // @flow
 import React from 'react'
 
+// ASSETS ______________________________________________________________________
+import './ProjectEntry.sass'
+
 // TYPE ________________________________________________________________________
+import type {ProjectType} from './_data'
+
 type ProjectEntryProps = {
-  project: {
-    images: {
-      default: string,
-      x2: string,
-      x3: string
-    },
-    title: string,
-    type: string,
-    description: string,
-    techs: Array<{| title: string, logo: string |}>,
-    links: Array<{| title: string, link: string, logo: string |}>
-  }
+  project: ProjectType
 }
 
 const ProjectEntry = (props: ProjectEntryProps) => {
