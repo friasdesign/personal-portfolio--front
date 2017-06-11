@@ -39,22 +39,26 @@ const ProjectEntry = (props: ProjectEntryProps) => {
           <p className="project__type">{type}</p>
         </header>
         <p className="project__description">{description}</p>
-        <footer className="project__footer">
+        <footer className="icon-container project__footer">
           <div className="project__techs">
+            <h4 className="project__footer__heading techs">Technologies</h4>
             {
               techs.map(({title, logo}, i) =>
-                <img key={i} title={title} src={logo} alt={title} />
+                <img className="project__icon"
+                  key={i} title={title} src={logo} alt={title} />
               )
             }
           </div>
           <div className="project__links">
-            {
-              links.map(({title, link, logo}, i) =>
-                <a key={i} href={link}>
-                  <img title={title} src={logo} alt={title} />
-                </a>
-              )
-            }
+            <h4 className="project__footer__heading links">Links</h4>
+              {
+                links.map(({title, link, logo}, i) =>
+                  <a key={i} href={link}>
+                    <img className="project__icon"
+                      title={title} src={logo} alt={title} />
+                  </a>
+                )
+              }
           </div>
         </footer>
       </article>
