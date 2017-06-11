@@ -99,13 +99,13 @@ export const sideSkills = [
     logo: photoshopLogo,
     sub: 'Proficient',
     h: 'Adobe Photoshop',
-    text: 'I can use Photoshop, I used to take photos as a hobby, sometimes even sell my job.'
+    text: 'I can use Photoshop, I used to take photos as a hobby, sometimes I even sold some of my jobs.'
   },
   {
     logo: lambdaLogo,
     sub: 'Jargon',
     h: 'Calculus',
-    text: 'I like to see functions scrumbled all around in a sheet of paper, it’s magic!'
+    text: 'I like to see functions scrumbled all around on a sheet of paper, it’s magic!'
   },
   {
     logo: illustratorLogo,

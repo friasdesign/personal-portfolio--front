@@ -44,10 +44,12 @@ export const featured = [
     links: [
       {
         title: 'Github page',
+        link: 'www.google.com',
         logo: githubLogo
       },
       {
         title: 'Web',
+        link: 'www.google.com',
         logo: linkIcon
       }
     ]
@@ -81,6 +83,7 @@ export const ongoing = [
     links: [
       {
         title: 'Github page',
+        link: 'www.google.com',
         logo: githubLogo
       }
     ]
@@ -115,7 +118,7 @@ export const teenyTiny = [
   {
     logo: webIcon,
     sub: 'Web app',
-    h: 'Neighborhood App',
+    h: 'Neighborhood',
     text: 'Project also developed as part of Udacity’s Front-end Nanodegree. It’s main objective was to be able to use external APIs, in this case Google Maps API.'
   }
 ]
