@@ -21,7 +21,7 @@ const PortfolioArticle = (props: PortfolioArticleProps) => {
   } = props
 
   return (
-    <section className="portfolio__entries">
+    <section className="portfolio__entries w-100">
       <h2 className={`article-heading fade-side ${
           ready
           ? ''

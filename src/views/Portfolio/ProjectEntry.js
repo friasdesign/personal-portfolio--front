@@ -36,7 +36,9 @@ const ProjectEntry = (props: ProjectEntryProps) => {
       <article className="project__text">
         <header className="project__header">
           <h3 className="project__title">{title}</h3>
-          <p className="project__type">{type}</p>
+          <div className="project__type">
+            <span className="type__text">{type}</span>
+          </div>
         </header>
         <p className="project__description">{description}</p>
         <footer className="icon-container project__footer">

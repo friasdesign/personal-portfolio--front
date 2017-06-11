@@ -42,7 +42,7 @@ export const featured = [
       x2: simposio_2x,
       x3: simposio_3x
     },
-    title: 'Simposio de Contabiilidad',
+    title: 'Simposio de Contabilidad',
     type: 'Landing page',
     description: 'The landing page for an accounting event held in the city of Ushuaia. Whole project has been made under a tight schedule and close deadline, in less than 6 days from sketch to full deployment.',
     techs: [
