@@ -109,30 +109,30 @@ export const teenyTiny = [
     logo: controllerIcon,
     sub: 'Game',
     h: 'Pogo',
-    text: 'Developed during 2016 edition of the Global Game Jam on Rio Grande, Tierra del Fuego, Argentina. I was in charge of development using Unity.'
+    text: 'Developed during 2016 edition of the Global Game Jam on Rio Grande, Tierra del Fuego, Argentina. I was in charge of development using Unity.<br/><a target="_blank" href="http://globalgamejam.org/2016/games/pogo">Download</a>'
   },
   {
     logo: screwdriverIcon,
     sub: 'Optimization',
     h: 'Mobile Portfolio',
-    text: 'Project developed while taking Udacity’s Front-end Nanodegree, main objective of the project was to improve performance of existing web app.'
+    text: 'Project developed while taking Udacity’s Front-end Nanodegree, main objective of the project was to improve performance of existing web app.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-mobile-portfolio">Github</a>'
   },
   {
     logo: webIcon,
     sub: 'Web app',
     h: 'Discuss App',
-    text: 'Developed as part of Stephen Grider’s Udemy’s Course on Phoenix web Framework. Tech stack used: Elixir – Phoenix, CSS3, HTML5, JS.'
+    text: 'Developed as part of Stephen Grider’s Udemy’s Course on Phoenix web Framework. Tech stack used: Elixir – Phoenix, CSS3, HTML5, JS.<br/><a target="_blank" href="https://github.com/friasdesign/discuss-app">Github</a>'
   },
   {
     logo: controllerIcon,
     sub: 'Game',
     h: 'Arcade Game',
-    text: 'Developed as HTML5 Canvas project, while coursing Front-end Nanodegree at Udacity. Tech stack includes: HTML5 Canvas, JS, basic CCS3.'
+    text: 'Developed as HTML5 Canvas project, while coursing Front-end Nanodegree at Udacity. Tech stack includes: HTML5 Canvas, JS, basic CCS3.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-arcade-game">Github</a>'
   },
   {
     logo: webIcon,
     sub: 'Web app',
     h: 'Neighborhood',
-    text: 'Project also developed as part of Udacity’s Front-end Nanodegree. It’s main objective was to be able to use external APIs, in this case Google Maps API.'
+    text: 'Project also developed as part of Udacity’s Front-end Nanodegree. It’s main objective was to be able to use external APIs, in this case Google Maps API.<br/><a target="_blank" href="https://github.com/friasdesign/neighborhood-map">Github</a>'
   }
 ]
