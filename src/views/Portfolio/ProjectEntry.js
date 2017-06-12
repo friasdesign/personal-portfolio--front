@@ -4,6 +4,9 @@ import React from 'react'
 // ASSETS ______________________________________________________________________
 import './ProjectEntry.sass'
 
+// COMPONENTS __________________________________________________________________
+import LinkIcon from '../../components/LinkIcon'
+
 // TYPE ________________________________________________________________________
 import type {ProjectType} from './_data'
 
@@ -55,11 +58,8 @@ const ProjectEntry = (props: ProjectEntryProps) => {
           <div className="project__links">
             <h4 className="project__footer__heading links">Links</h4>
               {
-                links.map(({title, link, logo}, i) =>
-                  <a key={i} href={link}>
-                    <img className="project__icon"
-                      title={title} src={logo} alt={title} />
-                  </a>
+                links.map(({title, link, type}, i) =>
+                  <LinkIcon key={i} link={link} title={title} logo={type}/>
                 )
               }
           </div>

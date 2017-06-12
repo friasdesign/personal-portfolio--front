@@ -4,11 +4,9 @@
 import reactLogo from '../../_assets/react.svg'
 import reactNativeLogo from '../../_assets/react-native.svg'
 import sketchColorLogo from '../../_assets/sketch-color.svg'
-import githubLogo from '../../_assets/github.svg'
 import expressLogo from '../../_assets/express.svg'
 
 // ICONS
-import linkIcon from '../../_assets/link.svg'
 import controllerIcon from '../../_assets/controller.svg'
 import screwdriverIcon from '../../_assets/screwdriver.svg'
 import webIcon from '../../_assets/web.svg'
@@ -21,6 +19,10 @@ import hotel from './_assets/hotel.png'
 import hotel_2x from './_assets/hotel@2x.png'
 import hotel_3x from './_assets/hotel@3x.png'
 
+// CONSTANTS ___________________________________________________________________
+export const GITHUB_TYPE = 'github'
+export const WEB_TYPE = 'web'
+
 // DEFINE TYPES ________________________________________________________________
 export type ProjectType = {
   images: {
@@ -32,7 +34,7 @@ export type ProjectType = {
   type: string,
   description: string,
   techs: Array<{| title: string, logo: string |}>,
-  links: Array<{| title: string, link: string, logo: string |}>
+  links: Array<{| title: string, link: string, type: string |}>
 }
 
 export const featured = [
@@ -58,13 +60,13 @@ export const featured = [
     links: [
       {
         title: 'Github page',
-        link: 'www.google.com',
-        logo: githubLogo
+        link: 'https://github.com/friasdesign/simposio-ush',
+        type: GITHUB_TYPE
       },
       {
         title: 'Web',
-        link: 'www.google.com',
-        logo: linkIcon
+        link: 'http://www.simposioenushuaia.com.ar/',
+        type: WEB_TYPE
       }
     ]
   }
@@ -97,8 +99,8 @@ export const ongoing = [
     links: [
       {
         title: 'Github page',
-        link: 'www.google.com',
-        logo: githubLogo
+        link: 'https://github.com/friasdesign/hotel-app--front-end',
+        type: GITHUB_TYPE
       }
     ]
   }
