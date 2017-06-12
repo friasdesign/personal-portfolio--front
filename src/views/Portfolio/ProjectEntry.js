@@ -27,6 +27,7 @@ const ProjectEntry = (props: ProjectEntryProps) => {
             ${images.x2} 2x,
             ${images.x3} 3x,
           `}
+          className="project__img"
           src={images.default}
           alt={`
               Snapshot of project ${title}

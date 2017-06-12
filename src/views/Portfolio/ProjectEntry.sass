@@ -10,42 +10,47 @@
 
 .project-entry
   display: flex
-  align-items: center
-  justify-content: space-between
+  flex-direction: column
   margin: 0 auto
-  width: 90%
-  max-width: 1200px
+  width: 100%
+  max-width: $max-readable
   overflow-x: hidden
 
 // HEADER ______________________________________________________________________
 .project__title
   margin: 0
-  font-size: 2.945rem
+  font-size: 2.023rem
   color: $primary
-  text-align: right
+  text-align: center
 
 .project__type
   margin: 0
-  font-size: 1.82rem
-  text-align: right
-  margin-top: -2rem
+  display: block
+  width: 60%
+  margin: 0.775rem auto 0 auto
+  font-size: 1.25rem
+  text-align: center
+  color: $soft-black
+  border-top: 1px solid $mid-grey
+  border-bottom: 1px solid $mid-grey
+  padding: 0.45rem 0
   +anti-aliased
   &::before
-    +make-line(45rem)
-    position: relative
-    left: -22rem
-    margin-bottom: -1.775rem
+    display: none
 
 // IMAGE _______________________________________________________________________
 .project__img-container
-  width: 46%
+  width: 100%
   text-align: center
   position: relative
   z-index: 3
 
+.project__img
+  max-width: 100%
+
 // TEXT ________________________________________________________________________
 .project__text
-  width: 49%
+  width: 100%
 
 .project__description
   max-width: none !important
@@ -85,3 +90,35 @@
 
 .project__icon
   width: 50px
+
++for-tablet-landscape-up
+  .project-entry
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    max-width: 1200px
+    width: 90%
+    margin: 0 auto
+
+  .project__img-container
+    width: 46%
+
+  .project__text
+    width: 49%
+
+  .project__title
+    font-size: 2.945rem
+    text-align: right
+
+  .project__type
+    font-size: 1.82rem
+    text-align: right
+    border: none
+    width: auto
+    padding: 0
+    margin-top: -2rem
+    &::before
+      +make-line(45rem)
+      position: relative
+      left: -22rem
+      margin-bottom: -1.775rem

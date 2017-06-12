@@ -19,7 +19,7 @@ import PageTemplate from '../../components/PageTemplate'
 import PortfolioArticle from './PortfolioArticle'
 
 const Portfolio = ({ready}: {ready: boolean}) => (
-  <div className="w100 flx-col flx-al-center">
+  <div className="w-100 flx-col flx-al-center">
   <article className="m-btm-2">
     <h2 className={`article-heading fade-side ${
         ready
