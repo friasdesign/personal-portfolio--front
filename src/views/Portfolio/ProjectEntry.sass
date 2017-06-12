@@ -9,12 +9,16 @@
   border-top: 1px solid $mid-grey
 
 .project-entry
-  display: flex
-  flex-direction: column
   margin: 0 auto
   width: 100%
   max-width: $max-readable
   overflow-x: hidden
+  overflow-y: hidden
+
+.project-entry-container
+  display: flex
+  flex-direction: column
+  width: 100%
 
 // HEADER ______________________________________________________________________
 .project__title
@@ -93,12 +97,14 @@
 
 +for-tablet-landscape-up
   .project-entry
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
     max-width: 1200px
     width: 90%
     margin: 0 auto
+
+  .project-entry-container
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
 
   .project__img-container
     width: 46%
