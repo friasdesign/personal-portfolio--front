@@ -14,7 +14,7 @@ import PageTemplate from '../../components/PageTemplate'
 import TextArticle from '../../components/TextArticle'
 
 const Contact = ({ready}: {ready: boolean}) => (
-  <div className="w-100 flx-col flx-al-center">
+  <div className="template-container">
     <TextArticle ready={ready}>
       <p>
         Contact me if you want to propose a project to develop together, hire me,

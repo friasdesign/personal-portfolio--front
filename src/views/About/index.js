@@ -13,7 +13,7 @@ import {education, interests} from './_data'
 
 // COMPONENT DEFINITION ________________________________________________________
 const About = ({ready}: {ready: boolean}) => (
-  <div className="w-100 flx-col flx-al-center">
+  <div className="template-container">
     <article className="m-btm-2">
       <h2 className={`article-heading fade-side ${
           ready

@@ -18,7 +18,7 @@ import {
 
 // COMPONENT DEFINITION ________________________________________________________
 const Skills = ({ready}: {ready: boolean}) => (
-  <div className="w-100 flx-col flx-al-center over-x-hidden">
+  <div className="template-container over-x-hidden">
     <article className="m-btm-2">
       <h2 className={`article-heading fade-side ${
           ready

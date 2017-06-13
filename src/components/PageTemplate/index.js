@@ -23,10 +23,18 @@ import type {Component} from 'react-flow-types'
 
 export type ConfigObj = {
   topNavArrowLabel: string,
-  bottomNavArrowLabel: string,
+  bottomNavArrowLabel?: string,
+  last?: boolean,
   headingImg: string,
   headingAriaLabel: string
 }
+
+// FOOTER ______________________________________________________________________
+const Footer = () => (
+  <div className="end-footer">
+    Crafted with ❤ by Carlos Frías
+  </div>
+)
 
 // FUNCTION DEFINITION _________________________________________________________
 const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) => {
@@ -34,6 +42,7 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
     topNavArrowLabel,
     bottomNavArrowLabel,
     headingImg,
+    last,
     headingAriaLabel
   } = config
   // COMPONENT _________________________________________________________________
@@ -72,8 +81,14 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
 
           <WrappedComponent ready={titleAnimationEnd} {...this.props}/>
 
-          <NavArrow direction="down" label={bottomNavArrowLabel}
-            ready={titleAnimationEnd}/>
+          {
+            last
+            ? Footer()
+            : (
+              <NavArrow direction="down" label={bottomNavArrowLabel}
+                ready={titleAnimationEnd}/>
+            )
+          }
         </main>
       )
     }
