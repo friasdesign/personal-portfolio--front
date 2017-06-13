@@ -11,7 +11,8 @@ export type entryType = {
   logo: string | FunctionalComponent<ContainerProps>,
   h: string,
   sub: string,
-  text: string
+  text: string,
+  link?: string
 }
 
 export type InputProps = {
@@ -37,6 +38,6 @@ export type WithTriggeredProps = WithThemeProps & {
 }
 
 export type FinalProps = WithTriggeredProps & {
-  ContainerComponent: Component<ContainerProps>,
-  IconComponent: Component<ContainerProps>
+  ContainerComponent: FunctionalComponent<ContainerProps>,
+  IconComponent: FunctionalComponent<ContainerProps>
 }

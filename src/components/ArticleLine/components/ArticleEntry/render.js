@@ -18,7 +18,7 @@ const renderComponent = (props: FinalProps) => {
 
   return (
     <div ref={e => setTopPosition(e)} className={lineEntryClassName}>
-      <ContainerComponent className={containerClassName}>
+      <ContainerComponent link={entry.link} className={containerClassName}>
         <IconComponent entry={entry}/>
         <div className={contentClassName}>
           <p className="entry__sub">{entry.sub}</p>

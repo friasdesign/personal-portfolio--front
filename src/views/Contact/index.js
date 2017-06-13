@@ -3,6 +3,7 @@ import React from 'react'
 
 // ASSETS ______________________________________________________________________
 import headingImg from './_assets/heading.svg'
+import './Contact.sass'
 
 // DATA ________________________________________________________________________
 import {contactInfo} from './_data'

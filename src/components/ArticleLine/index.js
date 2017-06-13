@@ -3,7 +3,7 @@ import React from 'react'
 
 import './ArticleLine.sass'
 
-import ArticleEntry from './ArticleEntry'
+import ArticleEntry from './components/ArticleEntry'
 
 type ArticleLineProps = {
   heading: string,
