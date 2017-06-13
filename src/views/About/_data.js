@@ -3,7 +3,7 @@
 // LOGOS
 import frrgLogo from './_assets/frrg.svg'
 import glassesLogo from './_assets/glasses.svg'
-import kickLogo from './_assets/kick.svg'
+import omLogo from './_assets/om.svg'
 import mongoLogo from '../../_assets/mongo.svg'
 import pianoLogo from './_assets/piano.svg'
 import pizzaLogo from './_assets/pizza.svg'
@@ -45,10 +45,10 @@ export const interests = [
     text: 'Tech talks are exciting; React conf, CSSconf, whateverconf, name it! I like to participate as well as help in coordination whenever possible.'
   },
   {
-    logo: kickLogo,
+    logo: omLogo,
     sub: 'Exercises',
-    h: 'Kickboxing',
-    text: 'I practiced martial arts since I can remember, lately I turned myself towards kickboxing. It helps me beat stress, a strong enemy, indeed.'
+    h: 'Yoga',
+    text: 'I practiced martial arts for several years when I was a teenager, one day I give Yoga a go, and ever since, I practice at least a little every day.'
   },
   {
     logo: pianoLogo,
