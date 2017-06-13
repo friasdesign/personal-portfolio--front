@@ -27,7 +27,7 @@ import type {
 const processOdd = (props: InputProps): WithOddProps => (
   {
     ...props,
-    lineEntryClassName: `line__entry ${props.odd ? 'line__entry--odd' : ''}`
+    lineEntryClassName: props.odd ? 'line__entry--odd' : ''
   }
 )
 
@@ -35,22 +35,16 @@ const processOdd = (props: InputProps): WithOddProps => (
 // processTheme :: WithOddProps a -> WithThemeProps b
 const processTheme = (props: WithOddProps): WithThemeProps => ({
   ...props,
-  contentClassName: `entry__content ${
-    props.theme === 'mono'
+  contentClassName: props.theme === 'mono'
     ? 'entry__content--mono'
     : ''
-  }`
 })
 
 // PROCESS TRIGGERED ___________________________________________________________
 // processTriggered :: WithThemeProps a -> WithTriggeredProps b
 const processTriggered = (props: WithThemeProps): WithTriggeredProps => ({
   ...props,
-  containerClassName: `entry__container fade-bottom ${
-      props.triggered
-      ? ''
-      : 'fade-bottom--init'
-    }`
+  containerClassName: props.triggered ? '' : 'fade-bottom--init'
 })
 
 // PROCESS HOVER _______________________________________________________________
