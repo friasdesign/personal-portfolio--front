@@ -1,4 +1,4 @@
-exports[`Skills should match snapshot 1`] = `
+exports[`Contact should match snapshot 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -10,7 +10,7 @@ ShallowWrapper {
     className="page-template">
     <Connect(Component)
         direction="up"
-        label="About"
+        label="Portfolio"
         ready={false} />
     <Connect(Filter)
         type="top" />
@@ -21,7 +21,7 @@ ShallowWrapper {
         <PopIn
             onRest={[Function]}>
             <h1
-                aria-label="Skills"
+                aria-label="Contact"
                 className="section__heading">
                 <img
                     alt="About"
@@ -30,19 +30,19 @@ ShallowWrapper {
             </h1>
         </PopIn>
     </header>
-    <Skills
+    <Contact
         ready={false} />
-    <Connect(Component)
-        direction="down"
-        label="Portfolio"
-        ready={false} />
+    <div
+        className="end-footer">
+        Crafted with ❤ by Carlos Frías
+    </div>
 </main>,
   "nodes": Array [
     <main
       className="page-template">
       <Connect(Component)
             direction="up"
-            label="About"
+            label="Portfolio"
             ready={false} />
       <Connect(Filter)
             type="top" />
@@ -53,7 +53,7 @@ ShallowWrapper {
             <PopIn
                   onRest={[Function]}>
                   <h1
-                        aria-label="Skills"
+                        aria-label="Contact"
                         className="section__heading">
                         <img
                               alt="About"
@@ -62,12 +62,12 @@ ShallowWrapper {
                   </h1>
             </PopIn>
       </header>
-      <Skills
+      <Contact
             ready={false} />
-      <Connect(Component)
-            direction="down"
-            label="Portfolio"
-            ready={false} />
+      <div
+            className="end-footer">
+            Crafted with ❤ by Carlos Frías
+      </div>
 </main>,
   ],
   "options": Object {},
@@ -110,7 +110,7 @@ ShallowWrapper {
           className="page-template">
           <Connect(Component)
                     direction="up"
-                    label="About"
+                    label="Portfolio"
                     ready={false} />
           <Connect(Filter)
                     type="top" />
@@ -121,7 +121,7 @@ ShallowWrapper {
                     <PopIn
                               onRest={[Function]}>
                               <h1
-                                        aria-label="Skills"
+                                        aria-label="Contact"
                                         className="section__heading">
                                         <img
                                                   alt="About"
@@ -130,19 +130,19 @@ ShallowWrapper {
                               </h1>
                     </PopIn>
           </header>
-          <Skills
+          <Contact
                     ready={false} />
-          <Connect(Component)
-                    direction="down"
-                    label="Portfolio"
-                    ready={false} />
+          <div
+                    className="end-footer">
+                    Crafted with ❤ by Carlos Frías
+          </div>
 </main>,
         "_debugID": 2,
         "_renderedOutput": <main
           className="page-template">
           <Connect(Component)
                     direction="up"
-                    label="About"
+                    label="Portfolio"
                     ready={false} />
           <Connect(Filter)
                     type="top" />
@@ -153,7 +153,7 @@ ShallowWrapper {
                     <PopIn
                               onRest={[Function]}>
                               <h1
-                                        aria-label="Skills"
+                                        aria-label="Contact"
                                         className="section__heading">
                                         <img
                                                   alt="About"
@@ -162,12 +162,12 @@ ShallowWrapper {
                               </h1>
                     </PopIn>
           </header>
-          <Skills
+          <Contact
                     ready={false} />
-          <Connect(Component)
-                    direction="down"
-                    label="Portfolio"
-                    ready={false} />
+          <div
+                    className="end-footer">
+                    Crafted with ❤ by Carlos Frías
+          </div>
 </main>,
       },
       "_renderedNodeType": 0,
