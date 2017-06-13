@@ -1,0 +1,24 @@
+@import '../../_sass/_constants.sass'
+@import '../../_sass/_breakpoints.sass'
+
+// ICONS _______________________________________________________________________
+=fill-transition
+  transition: fill 0.5s
+
+.icon-fill--muted>.to-fill
+  fill: $mid-grey
+  transition: fill 0.2s
+
+.contact-entry:hover
+  &.icon-fill--twitter>.to-fill
+    fill: #1da1f2
+    +fill-transition
+  &.icon-fill--linkedin>.to-fill
+    fill: #006699
+    +fill-transition
+  &.icon-fill--gmail
+    fill: #d54b3d
+    +fill-transition
+  &.icon-fill--fd
+    fill: $primary
+    +fill-transition
