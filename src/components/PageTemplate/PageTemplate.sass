@@ -7,9 +7,6 @@
   align-items: center
   width: 100%
 
-.img__heading
-  width: 80%
-
 .article-heading::before
   display: block
   content: ""
@@ -17,6 +14,14 @@
   width: .5rem
   height: 5.125rem
   border-left: 1px solid $mid-grey
+
+.section-header
+  position: relative
+  background-color: #fff
+  z-index: 5
+
+.img__heading
+  width: 90%
 
 // FOOTER ______________________________________________________________________
 .end-footer
@@ -44,4 +49,5 @@
 
 +for-tablet-landscape-up
   .img__heading
-    width: 100%
+    width: auto
+    height: 100px

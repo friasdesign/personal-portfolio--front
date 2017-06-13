@@ -14,7 +14,7 @@ import PageTemplate from '../../components/PageTemplate'
 import TextArticle from '../../components/TextArticle'
 
 const Contact = ({ready}: {ready: boolean}) => (
-  <div className="template-container">
+  <div className="template-container template-container--last over-x-hidden">
     <TextArticle ready={ready}>
       <p>
         Contact me if you want to propose a project to develop together, hire me,

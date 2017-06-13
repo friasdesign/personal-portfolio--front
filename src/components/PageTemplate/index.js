@@ -69,7 +69,7 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
           <Filter type="top"/>
           <Filter type="bottom"/>
 
-          <header className="section-header about__header">
+          <header className="section-header w-100">
             <PopIn onRest={f => {this.setState({titleAnimationEnd: true})}}>
               <h1 className="section__heading"
                 aria-label={headingAriaLabel}
