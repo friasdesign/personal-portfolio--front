@@ -24,6 +24,11 @@ const Contact = ({ready}: {ready: boolean}) => (
     </TextArticle>
 
     <ArticleLine
+      className={`fade-side ${
+        ready
+        ? ''
+        : 'fade-right'
+      }`}
       heading="Contact Info"
       entries={contactInfo}
       theme="mono"
