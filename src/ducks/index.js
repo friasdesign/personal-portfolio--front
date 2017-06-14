@@ -22,6 +22,7 @@ const SET_ON_BOTTOM = `${_NAMESPACE}/SET_ON_BOTTOM`
 const SET_SCREEN_BOTTOM_POSITION = `${_NAMESPACE}/SET_SCREEN_BOTTOM_POSITION`
 
 const SET_IDLE = `${_NAMESPACE}/SET_IDLE`
+const SET_TIMER = `${_NAMESPACE}/SET_TIMER`
 
 // ACTION CREATORS _____________________________________________________________
 export function setOnTop(value: boolean): Action {
@@ -48,6 +49,13 @@ export function setScreenBottomPosition(value: boolean): Action {
 export function setIdle(value: boolean): Action {
   return {
     type: SET_IDLE,
+    payload: value
+  }
+}
+
+export function setTimer(value: boolean): Action {
+  return {
+    type: SET_TIMER,
     payload: value
   }
 }
@@ -99,12 +107,30 @@ function idle(state = true, {type, payload}: Action): boolean {
   }
 }
 
+/**
+ * Holds the ID of the currently active timer that checks whether the user
+ * is idle or not, the value of `-1` is used to note that no timer is set.
+ * @param  {Number} [state=-1] The id of the currently active timer or -1 of none.
+ * @param  {String} type       String that describes the action type for Redux.
+ * @param  {Any} payload    The payload of the action
+ * @return {Number}            The new value of the action is the corrent or the current value.
+ */
+function timer(state = -1, {type, payload}: Action): number {
+  switch(type) {
+    case SET_TIMER:
+      return payload
+    default:
+      return state
+  }
+}
+
 // COMBINE REDUCERS ____________________________________________________________
 const reducers = combineReducers({
   onTop,
   onBottom,
   screenBottomPosition,
-  idle
+  idle,
+  timer
 })
 
 // RETURN STORE ________________________________________________________________

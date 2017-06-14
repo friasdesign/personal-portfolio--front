@@ -29,7 +29,9 @@ export type AppProps = {
   onBottom: boolean,
   idle: boolean,
   setIdle: () => void,
-  onTop: boolean
+  onTop: boolean,
+  timer: number,
+  setTimer: () => void
 }
 
 

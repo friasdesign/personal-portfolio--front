@@ -19,6 +19,7 @@ const callScreenBottomPosition = _.curry((x, id) => {
 const IOWindow = IO(() => window)
 export const windowGetScrollY = IOWindow.map(_.prop('scrollY'))
 const windowGetInnerHeight = IOWindow.map(_.prop('_INNER_HEIGHT'))
+const windowSetTimeout = (cb, time) => IOWindow.map((w) => w.setTimeout(cb, time))
 
 /**
  * IO monad that returns `document.body` as Maybe.
@@ -66,7 +67,7 @@ const checkIfOnTop = _.curry((position: number, props: AppProps) => {
  * @param {AppProps} props Props of a React Component
  * @param {number} docHeight current height of document.body
  * @param {number} position The current `window.scrollY` position
- * @return {number} The current `window.scrollY` position
+ * @return {AppProps}       Props of App React Component
  */
 const checkIfOnBottom = _.curry((position: number, docHeight: number, props: AppProps) => {
   if(getScreenBottom(position) >= (docHeight - 70)) props.setOnBottom(true)
@@ -84,9 +85,32 @@ const setScreenBottomPosition = _.curry((position: number, props: AppProps) => {
  * Call dispatch function to set application's state `idle` to `false`, only
  * if it's currently set to `true`.
  * @param {AppProps} props Props of App React Component
+ * @return {AppProps}
  */
 const setIdleToFalse = (props: AppProps) => {
   if(props.idle) props.setIdle(false)
+  return props
+}
+
+/**
+ * Checks whether a timer has already been placed to track the idle state of the
+ * user, if so, then each time user scrolls during timeout it resets the timer.
+ * If user keeps idle until the end of timer, then state's `idle` is set to `true`.
+ * @param {AppProps} props Props of App React Component
+ * @return {AppProps}       Props of App React Component
+ */
+const setIdleTimer = (props: AppProps) => {
+  const {timer} = props
+
+  if(timer !== -1) clearInterval(timer)
+
+  const id = windowSetTimeout(() => {
+    props.setIdle(true)
+    props.setTimer(-1)
+  }, 1000).run()
+
+  props.setTimer(id)
+
   return props
 }
 
@@ -106,6 +130,7 @@ const updateState = (winPosition: number) => {
     .map(setScreenBottomPosition(winPosition))
     .map(checkIfOnTop(winPosition))
     .map(checkIfOnBottom(winPosition, getBodyHeight.run()))
+    .map(setIdleTimer)
     .map(setIdleToFalse)
 }
 
