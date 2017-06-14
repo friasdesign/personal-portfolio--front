@@ -1,150 +1,84 @@
 // @flow
 import _ from 'ramda'
-import {Reader, IO, Maybe} from 'monet'
+import {Reader} from 'monet'
 
-import type {
-  AppProps
-} from '../App/App'
+// import type {
+//   AppProps
+// } from '../App/App'
 
-// CONSTANTS ___________________________________________________________________
-const checkIfiOS = _.curry((win: {MSStream: any}, nav: {userAgent: string}) => {
-  return /iPad|iPhone|iPod/.test(nav.userAgent) && !win.MSStream
-})
+import {
+  isPositionAtTop,
+  isPositionAtBottom
+} from './helpers'
 
-const callScreenBottomPosition = _.curry((x, id) => {
-  id.setScreenBottomPosition(x)
-})
+// TYPES _______________________________________________________________________
+type ScrollObject = {
+  position: string,
+  direction: string
+}
 
-// MONADS ______________________________________________________________________
-const IOWindow = IO(() => window)
-export const windowGetScrollY = IOWindow.map(_.prop('scrollY'))
-const windowGetInnerHeight = IOWindow.map(_.prop('_INNER_HEIGHT'))
-const windowSetTimeout = (cb, time) => IOWindow.map((w) => w.setTimeout(cb, time))
+type WindowData = {
+  currentTopPosition: number,
+  currentBottomPosition: number,
+  previousTopPosition: number
+}
 
+type PropsAndScroll = [
+  typeof Reader,
+  ScrollObject
+]
+
+type PropsScrollAndRedirect = [
+  typeof Reader,
+  ScrollObject,
+  string
+]
+
+// GET POSITION ________________________________________________________________
 /**
- * IO monad that returns `document.body` as Maybe.
- */
-const IOBody = IO(() => Maybe.fromNull(document.body))
-  .map(b => b.orSome(false))
-  .map(b => b ? b : 150)
-
-const getBodyHeight = IOBody.map(_.prop('clientHeight'))
-
-/**
- * Monkey patch to support consistent behavior on iOS regarding innerHeight
- * @type {number}
- */
-window._INNER_HEIGHT = checkIfiOS(window, navigator)
-  ? screen.height
-  : window.innerHeight
-
-/**
- * Curried function that checks if application is currently on top of the
- * document. It's done by checking the actual position passed as second argument.
+ * Checks the screen position and returns a string with the three possible values:
+ * - `top`. If screen is on top.
+ * - `middle`. If screen is neither on top nor on bottom.
+ * - `bottom`. If the screen is at the bottom of the page.
  *
- * The first argument holds reference to the props of the component.
- * In this application they are tied to `App` component, this allows this
- * abstraction function to call dispatch functions as corresponds.
- *
- * This is by NO means a pure function, since it has side-effects. Instead, it
- * takes advantage of currying to reduce complexity and make it easier to reason
- * about.
- *
- * @param {AppProps} props Props of a React Component
- * @param {number} position The current `window.scrollY` position
- * @return {number} The current `window.scrollY` position
+ * @param  {number} winTopPosition The top position of the window
+ * @param  {number} winBottomPosition The bottom position of the window
+ * @param  {number} docHeight Height of `document` in pixels
+ * @return {string}                String that represents window position
  */
-const checkIfOnTop = _.curry((position: number, props: AppProps) => {
-  if(position <= 50) props.setOnTop(true)
-  else if(props.onTop) props.setOnTop(false)
-  return props
-})
+export const getScreenPosition = _.curry(
+  (winTopPosition: number, winBottomPosition: number, docHeight: number): string =>
+    isPositionAtTop(winTopPosition)
+      ? 'top'
+      : isPositionAtBottom(winBottomPosition, docHeight) ? 'bottom' : 'middle'
+)
 
+// GET SCROLL DIRECTION ________________________________________________________
 /**
- * Curried function similar to `checkIfOnTop` but it checks whether the appplication
- * has been scrolled to the bottom of the body.
+ * Checks which direction the scroll is happening, in this case scroll can be
+ * either: `up` and `down`.
  *
- * @param {AppProps} props Props of a React Component
- * @param {number} docHeight current height of document.body
- * @param {number} position The current `window.scrollY` position
- * @return {AppProps}       Props of App React Component
+ * @param  {number} currentWinTop The current top position from scroll event.
+ * @param  {number} previousWinTop Top position stored in the state of the app.
+ * @return {string}               String that represents the movement either up or down.
  */
-const checkIfOnBottom = _.curry((position: number, docHeight: number, props: AppProps) => {
-  if(getScreenBottom(position) >= (docHeight - 70)) props.setOnBottom(true)
-  else if(props.onBottom) props.setOnBottom(false)
-  return props
-})
+export const getScrollDirection = _.curry(
+  (currentWinTop: number, previousWinTop: number): string =>
+    currentWinTop < previousWinTop ? 'up' : 'down'
+)
 
-const setScreenBottomPosition = _.curry((position: number, props: AppProps) => {
-  idReader().map(callScreenBottomPosition(getScreenBottom(position))).run(props)
-  return props
-})
+// COLLECT DATA ________________________________________________________________
+export const collectData = _.curry(
+  (windowData: WindowData, docHeight: number, props: typeof Reader): PropsAndScroll  => {
+    const {
+      currentTopPosition,
+      currentBottomPosition,
+      previousTopPosition
+    } = windowData
 
-// IDLE ________________________________________________________________________
-/**
- * Call dispatch function to set application's state `idle` to `false`, only
- * if it's currently set to `true`.
- * @param {AppProps} props Props of App React Component
- * @return {AppProps}
- */
-const setIdleToFalse = (props: AppProps) => {
-  if(props.idle) props.setIdle(false)
-  return props
-}
-
-/**
- * Checks whether a timer has already been placed to track the idle state of the
- * user, if so, then each time user scrolls during timeout it resets the timer.
- * If user keeps idle until the end of timer, then state's `idle` is set to `true`.
- * @param {AppProps} props Props of App React Component
- * @return {AppProps}       Props of App React Component
- */
-const setIdleTimer = (props: AppProps) => {
-  const {timer} = props
-
-  if(timer !== -1) clearInterval(timer)
-
-  const id = windowSetTimeout(() => {
-    props.setIdle(true)
-    props.setTimer(-1)
-  }, 1000).run()
-
-  props.setTimer(id)
-
-  return props
-}
-
-// SMALL GETTERS _______________________________________________________________
-export function getScreenBottom(position: number) {
-  return position + windowGetInnerHeight.run()
-}
-
-// MONADS ______________________________________________________________________
-function idReader() {
-  return Reader(id => id)
-}
-
-// STATE MANAGEMENT ____________________________________________________________
-const updateState = (winPosition: number) => {
-  return idReader()
-    .map(setScreenBottomPosition(winPosition))
-    .map(checkIfOnTop(winPosition))
-    .map(checkIfOnBottom(winPosition, getBodyHeight.run()))
-    .map(setIdleTimer)
-    .map(setIdleToFalse)
-}
-
-
-// HANDLE SCROLL FUNCTION ______________________________________________________
-/**
- * Function that handles logic related to scroll in the application.
- * This exposes a minimal API to module that imports this function.
- * This function doesn't get composed or anything like that because
- * `windowGetScrollY` should be evaluated each time the function gets executed,
- * thus it can't get hardcoded by composing or currying the function.
- *
- * @param  {Object} props App component's props
- */
-export default function handleOnScroll(props: AppProps) {
-  updateState(windowGetScrollY.run()).run(props)
-}
+    return [props, {
+      position: getScreenPosition(currentTopPosition, currentBottomPosition, docHeight),
+      direction: getScrollDirection(currentTopPosition, previousTopPosition)
+    }]
+  }
+)
