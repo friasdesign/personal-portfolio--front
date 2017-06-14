@@ -79,6 +79,17 @@ const setScreenBottomPosition = _.curry((position: number, props: AppProps) => {
   return props
 })
 
+// IDLE ________________________________________________________________________
+/**
+ * Call dispatch function to set application's state `idle` to `false`, only
+ * if it's currently set to `true`.
+ * @param {AppProps} props Props of App React Component
+ */
+const setIdleToFalse = (props: AppProps) => {
+  if(props.idle) props.setIdle(false)
+  return props
+}
+
 // SMALL GETTERS _______________________________________________________________
 export function getScreenBottom(position: number) {
   return position + windowGetInnerHeight.run()
@@ -95,6 +106,7 @@ const updateState = (winPosition: number) => {
     .map(setScreenBottomPosition(winPosition))
     .map(checkIfOnTop(winPosition))
     .map(checkIfOnBottom(winPosition, getBodyHeight.run()))
+    .map(setIdleToFalse)
 }
 
 

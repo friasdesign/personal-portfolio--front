@@ -14,12 +14,14 @@ import type {
 } from './_types'
 
 // CONSTANTS ___________________________________________________________________
-const _NAMESPACE = 'personal-portfolio/'
+const _NAMESPACE = 'personal-portfolio'
 
 // ACTION TYPES ________________________________________________________________
 const SET_ON_TOP = `${_NAMESPACE}/SET_ON_TOP`
 const SET_ON_BOTTOM = `${_NAMESPACE}/SET_ON_BOTTOM`
 const SET_SCREEN_BOTTOM_POSITION = `${_NAMESPACE}/SET_SCREEN_BOTTOM_POSITION`
+
+const SET_IDLE = `${_NAMESPACE}/SET_IDLE`
 
 // ACTION CREATORS _____________________________________________________________
 export function setOnTop(value: boolean): Action {
@@ -39,6 +41,13 @@ export function setOnBottom(value: boolean): Action {
 export function setScreenBottomPosition(value: boolean): Action {
   return {
     type: SET_SCREEN_BOTTOM_POSITION,
+    payload: value
+  }
+}
+
+export function setIdle(value: boolean): Action {
+  return {
+    type: SET_IDLE,
     payload: value
   }
 }
@@ -81,11 +90,21 @@ function screenBottomPosition(state = 0, {type, payload}: Action): number {
   }
 }
 
+function idle(state = true, {type, payload}: Action): boolean {
+  switch(type) {
+    case SET_IDLE:
+      return payload
+    default:
+      return state
+  }
+}
+
 // COMBINE REDUCERS ____________________________________________________________
 const reducers = combineReducers({
   onTop,
   onBottom,
-  screenBottomPosition
+  screenBottomPosition,
+  idle
 })
 
 // RETURN STORE ________________________________________________________________

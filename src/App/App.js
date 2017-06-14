@@ -2,14 +2,11 @@
 
 import React from 'react'
 import {Route} from 'react-router-dom'
-
-// ASSETS ______________________________________________________________________
-import './App.css'
+import _ from 'ramda'
 
 // HELPERS
 // _____________________________________________________________________________
-import _ from 'ramda'
-import handleOnScroll from '../_utils/_handleScroll.js'
+import handleOnScroll from '../_utils/handleScroll.js'
 
 // COMPONENTS
 // _____________________________________________________________________________
@@ -30,6 +27,8 @@ export type AppProps = {
   setOnBottom: () => void,
   setScreenBottomPosition: () => void,
   onBottom: boolean,
+  idle: boolean,
+  setIdle: () => void,
   onTop: boolean
 }
 
