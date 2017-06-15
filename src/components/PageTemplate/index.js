@@ -7,6 +7,7 @@ comprehends:
 - layout
  */
 import React from 'react'
+import {connect} from 'react-redux'
 
 // ASSETS ______________________________________________________________________
 import './PageTemplate.sass'
@@ -17,6 +18,7 @@ import PopIn from '../../animations/PopIn'
 // COMPONENTS __________________________________________________________________
 import Filter from '../../components/Filter'
 import NavArrow from '../../components/NavArrow'
+import Footer from './Footer'
 
 // TYPES _______________________________________________________________________
 import type {Component} from 'react-flow-types'
@@ -29,12 +31,16 @@ export type ConfigObj = {
   headingAriaLabel: string
 }
 
-// FOOTER ______________________________________________________________________
-const Footer = () => (
-  <div className="end-footer">
-    Crafted with ❤ by Carlos Frías
-  </div>
-)
+type PageTemplateProps = {
+  inTransitionAnimation: [boolean, string]
+}
+
+// MAP STATE TO PROPS __________________________________________________________
+function mapStateToProps({inTransitionAnimation}: Object): Object {
+  return {
+    inTransitionAnimation
+  }
+}
 
 // FUNCTION DEFINITION _________________________________________________________
 const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) => {
@@ -46,12 +52,14 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
     headingAriaLabel
   } = config
   // COMPONENT _________________________________________________________________
-  return class PageTemplate extends React.Component {
+  class PageTemplate extends React.Component {
     state: {
       titleAnimationEnd: boolean
     }
 
-    constructor(props: Object) {
+    props: PageTemplateProps
+
+    constructor(props: PageTemplateProps) {
       super(props)
 
       this.state = {
@@ -61,8 +69,17 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
 
     render() {
       const {titleAnimationEnd} = this.state
+      const {
+        inTransitionAnimation,
+        ...passThru
+      } = this.props
+
       return (
-        <main className="page-template">
+        <main className=${`page-template transition-animation ${
+          inTransitionAnimation[0]
+          ? `transition-animation-${inTransitionAnimation[1]}--init`
+          : ''
+        }`}>
           <NavArrow direction="up" label={topNavArrowLabel}
             ready={titleAnimationEnd} />
 
@@ -79,7 +96,7 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
             </PopIn>
           </header>
 
-          <WrappedComponent ready={titleAnimationEnd} {...this.props}/>
+          <WrappedComponent ready={titleAnimationEnd} {...passThru}/>
 
           {
             last
@@ -93,7 +110,12 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
       )
     }
   }
-}
 
+  const PageTemplateContainer = connect(
+    mapStateToProps
+  )(PageTemplate)
+
+  return PageTemplateContainer
+}
 
 export default pageTemplate
