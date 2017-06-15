@@ -16,7 +16,13 @@ export default (data: PipedData): PipedData => {
         p.triggerTransitionAnimation(type[1])
         return p
       })
-      return [type, props]
+      return [
+        type,
+        props.map((p: AppProps): AppProps => {
+          p.triggerTransitionAnimation(type[1])
+          return p
+        })
+      ]
     default:
       return data
   }

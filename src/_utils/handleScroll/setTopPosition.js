@@ -17,17 +17,15 @@ export default _.curry(
 
     switch(type[0]) {
       case NORMAL_SCROLL:
-        props.map((p: AppProps): AppProps => {
+        return [type, props.map((p: AppProps): AppProps => {
           p.setScreenTopPosition(topPosition)
           return p
-        })
-        return [type, props]
+        })]
       case TRANSITION_SCROLL:
-        props.map((p: AppProps): AppProps => {
+        return [type, props.map((p: AppProps): AppProps => {
           p.setScreenTopPosition(0)
           return p
-        })
-        return [type, props]
+        })]
       default:
         return data
     }

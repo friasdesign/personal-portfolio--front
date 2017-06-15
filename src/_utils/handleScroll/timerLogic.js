@@ -65,12 +65,16 @@ export default (data: PipedData): PipedData => {
 
   switch(type[0]) {
     case NORMAL_SCROLL:
-      props.map(setIdleToFalse)
-      props.map(setIdleTimer)
-      return [type, props]
+      return [
+        type,
+        props.map(setIdleToFalse)
+          .map(setIdleTimer)
+      ]
     case TRANSITION_SCROLL:
-      props.map(killTimer)
-      return [type, props]
+      return [
+        type,
+        props.map(killTimer)
+      ]
     default:
       return data
   }

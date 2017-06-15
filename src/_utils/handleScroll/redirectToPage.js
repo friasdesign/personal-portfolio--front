@@ -15,19 +15,21 @@ export default (data: PipedData): PipedData => {
 
   switch(type[0]) {
     case TRANSITION_SCROLL:
-      props.map((p: AppProps): AppProps => {
-        switch(type[1]) {
-          case 'up':
-            browserHistoryPush(p.previousPage).run()
-            return p
-          case 'down':
-            browserHistoryPush(p.nextPage).run()
-            return p
-          default:
-            return p
-        }
-      })
-      return [type, props]
+      return [
+        type,
+        props.map((p: AppProps): AppProps => {
+          switch(type[1]) {
+            case 'up':
+              browserHistoryPush(p.previousPage).run()
+              return p
+            case 'down':
+              browserHistoryPush(p.nextPage).run()
+              return p
+            default:
+              return p
+          }
+        })
+      ]
     default:
       return data
   }
