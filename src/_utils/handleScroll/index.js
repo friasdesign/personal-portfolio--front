@@ -1,6 +1,5 @@
 // @flow
 import _ from 'ramda'
-import {Reader} from 'monet'
 
 import type {
   AppProps
