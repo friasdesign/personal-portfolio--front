@@ -75,7 +75,7 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
       } = this.props
 
       return (
-        <main className=${`page-template transition-animation ${
+        <main className={`page-template transition-animation ${
           inTransitionAnimation[0]
           ? `transition-animation-${inTransitionAnimation[1]}--init`
           : ''
