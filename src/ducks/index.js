@@ -25,35 +25,12 @@ import type {
 const _NAMESPACE = 'personal-portfolio'
 
 // ACTION TYPES ________________________________________________________________
-// const SET_ON_TOP = `${_NAMESPACE}/SET_ON_TOP`
-// const SET_ON_BOTTOM = `${_NAMESPACE}/SET_ON_BOTTOM`
-// const SET_SCREEN_BOTTOM_POSITION = `${_NAMESPACE}/SET_SCREEN_BOTTOM_POSITION`
 const SET_SCREEN_TOP_POSITION = `${_NAMESPACE}/SET_SCREEN_TOP_POSITION`
 
 const SET_IDLE = `${_NAMESPACE}/SET_IDLE`
 const SET_TIMER = `${_NAMESPACE}/SET_TIMER`
 
 // ACTION CREATORS _____________________________________________________________
-// export function setOnTop(value: boolean): Action {
-//   return {
-//     type: SET_ON_TOP,
-//     payload: value
-//   }
-// }
-//
-// export function setOnBottom(value: boolean): Action {
-//   return {
-//     type: SET_ON_BOTTOM,
-//     payload: value
-//   }
-// }
-//
-// export function setScreenBottomPosition(value: boolean): Action {
-//   return {
-//     type: SET_SCREEN_BOTTOM_POSITION,
-//     payload: value
-//   }
-// }
 
 export function setScreenTopPosition(value: number): Action {
   return {
@@ -77,52 +54,6 @@ export function setTimer(value: boolean): Action {
 }
 
 // REDUCERS ____________________________________________________________________
-/**
- * Tells whether the screen is on top of the page or not. Useful to:
- * - Remove top filter when on top
- * - Tell NavArrow animation when to trigger
- *
- * @param  {Boolean} [state=true] Actual value from Redux State
- * @param  {String}  type         Type of Redux Action triggered
- * @param  {Any}  payload      New Value from payload of action
- * @return {Boolean}               The new value for this entry in the Redux State
- */
-// function onTop(state = true, {type, payload}: Action): boolean {
-//   switch(type) {
-//     case SET_ON_TOP:
-//       return payload
-//     default:
-//       return state
-//   }
-// }
-//
-// function onBottom(state = false, {type, payload}: Action): boolean {
-//   switch (type) {
-//     case SET_ON_BOTTOM:
-//       return payload
-//     default:
-//       return state
-//   }
-// }
-//
-// function screenBottomPosition(state = 0, {type, payload}: Action): number {
-//   switch(type) {
-//     case SET_SCREEN_BOTTOM_POSITION:
-//       return payload
-//     default:
-//       return state
-//   }
-// }
-
-function screenTopPosition(state = 0, {type, payload}: Action): number {
-  switch(type) {
-    case SET_SCREEN_TOP_POSITION:
-      return payload
-    default:
-      return state
-  }
-}
-
 function idle(state = true, {type, payload}: Action): boolean {
   switch(type) {
     case SET_IDLE:
@@ -169,9 +100,6 @@ export const getAtBottom = createSelector(
 
 // COMBINE REDUCERS ____________________________________________________________
 const reducers = combineReducers({
-  // onTop,
-  // onBottom,
-  // screenBottomPosition,
   setScreenTopPosition,
   idle,
   timer
