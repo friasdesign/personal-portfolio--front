@@ -31,14 +31,6 @@ const IOBody = IO(() => Maybe.fromNull(document.body))
 const getBodyHeight = IOBody.map(_.prop('clientHeight'))
 
 /**
- * Monkey patch to support consistent behavior on iOS regarding innerHeight
- * @type {number}
- */
-window._INNER_HEIGHT = checkIfiOS(window, navigator)
-  ? screen.height
-  : window.innerHeight
-
-/**
  * Curried function that checks if application is currently on top of the
  * document. It's done by checking the actual position passed as second argument.
  *

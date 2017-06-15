@@ -2,8 +2,13 @@ import _ from 'ramda'
 
 // IMPORT FUNCTORS _____________________________________________________________
 import {
-  windowGetInnerHeight
+  windowGetInnerHeight,
+  windowGet_IN_IOS
 } from './functors/Window'
+
+import {
+  screenGetHeight
+} from './functors/Screen'
 
 export const run = _.curry((monad, value) => monad.run(value))
 
@@ -35,7 +40,11 @@ export const isPositionInMiddle = _.curry(
 
 // SMALL GETTERS _______________________________________________________________
 export function getScreenBottom(position: number) {
-  return position + windowGetInnerHeight.run()
+  const windowHeight = windowGet_IN_IOS.run()
+    ? screenGetHeight.run()
+    : windowGetInnerHeight.run()
+
+  return position + windowHeight
 }
 
 /**
