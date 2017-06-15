@@ -4,13 +4,18 @@ import {connect} from 'react-redux'
 // TYPES _______________________________________________________________________
 import type {Component} from 'react-flow-types'
 
+// SELECTORS ___________________________________________________________________
+import {
+  getScreenBottomPosition
+} from '../../ducks'
+
 // COMPONENT ___________________________________________________________________
 import TriggerOnScreen from './TriggerOnScreen'
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({screenBottomPosition}) {
+function mapStateToProps(state) {
   return {
-    screenBottomPosition
+    screenBottomPosition: getScreenBottomPosition(state)
   }
 }
 

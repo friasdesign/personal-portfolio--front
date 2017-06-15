@@ -6,7 +6,15 @@ This file:
 - holds action creators and actions that are relative to the application level
 */
 import {combineReducers} from 'redux'
+import {createSelector} from 'reselect'
 import createStore from './_store'
+
+// HELPER FUNCTIONS ____________________________________________________________
+import {
+  getScreenBottom,
+  isPositionAtTop,
+  isPositionAtBottom
+} from '../_utils/helpers'
 
 // TYPES _______________________________________________________________________
 import type {
@@ -140,6 +148,24 @@ function timer(state = -1, {type, payload}: Action): number {
       return state
   }
 }
+
+// SELECTORS ___________________________________________________________________
+export const getScreenBottomPosition = createSelector(
+  [(state: Object): number => state.screenTopPosition],
+  (screenTopPosition: number): number => getScreenBottom(screenTopPosition)
+)
+
+export const getAtTop = createSelector(
+  [(state: Object): number => state.screenTopPosition],
+  (screenTopPosition: number): boolean =>
+    isPositionAtTop(screenTopPosition)
+)
+
+export const getAtBottom = createSelector(
+  [(state: Object): number => state.screenTopPosition],
+  (screenTopPosition: number): boolean =>
+    isPositionAtBottom(screenTopPosition)
+)
 
 // COMBINE REDUCERS ____________________________________________________________
 const reducers = combineReducers({

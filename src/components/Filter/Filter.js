@@ -1,9 +1,18 @@
+// @flow
 import React from 'react'
 
 import './Filter.sass'
 
-const Filter = ({type, onTop, onBottom}) => {
-  const hidden = type === 'top' ? onTop : onBottom
+// TYPES _______________________________________________________________________
+type FilterProps = {
+  type: string,
+  atTop: boolean,
+  atBottom: boolean
+}
+
+// COMPONENT ___________________________________________________________________
+const Filter = ({type, atTop, atBottom}: FilterProps) => {
+  const hidden = type === 'top' ? atTop : atBottom
   const className = `filter-${type} ${hidden ? 'filter--hidden' : ''}`
 
   return (

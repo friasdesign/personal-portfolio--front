@@ -6,7 +6,7 @@ import _ from 'ramda'
 
 // HELPERS
 // _____________________________________________________________________________
-import handleOnScroll from '../_utils/handleScroll.js'
+import handleOnScroll from '../_utils/handleScroll'
 
 // COMPONENTS
 // _____________________________________________________________________________
