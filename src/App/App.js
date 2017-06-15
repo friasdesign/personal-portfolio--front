@@ -23,13 +23,20 @@ import Contact from '../views/Contact'
 // TYPES
 // _____________________________________________________________________________
 export type AppProps = {
-  setOnTop: () => void,
-  setOnBottom: () => void,
-  setScreenBottomPosition: () => void,
-  onBottom: boolean,
+  // setOnTop: () => void,
+  // setOnBottom: () => void,
+  // setScreenBottomPosition: () => void,
+  // onBottom: boolean,
+  screenTopPosition: number,
+  setScreenTopPosition: () => void,
   idle: boolean,
   setIdle: () => void,
-  onTop: boolean,
+  nextPage: string,
+  previousPage: string,
+  triggerTransitionAnimation: () => void,
+  inTransitionAnimation: [boolean, string],
+  lastTopPosition: number,
+  // onTop: boolean,
   timer: number,
   setTimer: () => void
 }

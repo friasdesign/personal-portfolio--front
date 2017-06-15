@@ -3,7 +3,7 @@ import {Reader} from 'monet'
 import {
   getScreenPosition,
   collectData
-} from './handleScroll'
+} from './index'
 
 describe('Handle Scroll', () => {
   describe('`getScreenPosition`', () => {
@@ -41,6 +41,6 @@ describe('Handle Scroll', () => {
         }
       ])
     })
-    
+
   })
 })

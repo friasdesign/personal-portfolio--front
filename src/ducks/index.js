@@ -17,31 +17,39 @@ import type {
 const _NAMESPACE = 'personal-portfolio'
 
 // ACTION TYPES ________________________________________________________________
-const SET_ON_TOP = `${_NAMESPACE}/SET_ON_TOP`
-const SET_ON_BOTTOM = `${_NAMESPACE}/SET_ON_BOTTOM`
-const SET_SCREEN_BOTTOM_POSITION = `${_NAMESPACE}/SET_SCREEN_BOTTOM_POSITION`
+// const SET_ON_TOP = `${_NAMESPACE}/SET_ON_TOP`
+// const SET_ON_BOTTOM = `${_NAMESPACE}/SET_ON_BOTTOM`
+// const SET_SCREEN_BOTTOM_POSITION = `${_NAMESPACE}/SET_SCREEN_BOTTOM_POSITION`
+const SET_SCREEN_TOP_POSITION = `${_NAMESPACE}/SET_SCREEN_TOP_POSITION`
 
 const SET_IDLE = `${_NAMESPACE}/SET_IDLE`
 const SET_TIMER = `${_NAMESPACE}/SET_TIMER`
 
 // ACTION CREATORS _____________________________________________________________
-export function setOnTop(value: boolean): Action {
-  return {
-    type: SET_ON_TOP,
-    payload: value
-  }
-}
+// export function setOnTop(value: boolean): Action {
+//   return {
+//     type: SET_ON_TOP,
+//     payload: value
+//   }
+// }
+//
+// export function setOnBottom(value: boolean): Action {
+//   return {
+//     type: SET_ON_BOTTOM,
+//     payload: value
+//   }
+// }
+//
+// export function setScreenBottomPosition(value: boolean): Action {
+//   return {
+//     type: SET_SCREEN_BOTTOM_POSITION,
+//     payload: value
+//   }
+// }
 
-export function setOnBottom(value: boolean): Action {
+export function setScreenTopPosition(value: number): Action {
   return {
-    type: SET_ON_BOTTOM,
-    payload: value
-  }
-}
-
-export function setScreenBottomPosition(value: boolean): Action {
-  return {
-    type: SET_SCREEN_BOTTOM_POSITION,
+    type: SET_SCREEN_TOP_POSITION,
     payload: value
   }
 }
@@ -71,27 +79,36 @@ export function setTimer(value: boolean): Action {
  * @param  {Any}  payload      New Value from payload of action
  * @return {Boolean}               The new value for this entry in the Redux State
  */
-function onTop(state = true, {type, payload}: Action): boolean {
-  switch(type) {
-    case SET_ON_TOP:
-      return payload
-    default:
-      return state
-  }
-}
+// function onTop(state = true, {type, payload}: Action): boolean {
+//   switch(type) {
+//     case SET_ON_TOP:
+//       return payload
+//     default:
+//       return state
+//   }
+// }
+//
+// function onBottom(state = false, {type, payload}: Action): boolean {
+//   switch (type) {
+//     case SET_ON_BOTTOM:
+//       return payload
+//     default:
+//       return state
+//   }
+// }
+//
+// function screenBottomPosition(state = 0, {type, payload}: Action): number {
+//   switch(type) {
+//     case SET_SCREEN_BOTTOM_POSITION:
+//       return payload
+//     default:
+//       return state
+//   }
+// }
 
-function onBottom(state = false, {type, payload}: Action): boolean {
-  switch (type) {
-    case SET_ON_BOTTOM:
-      return payload
-    default:
-      return state
-  }
-}
-
-function screenBottomPosition(state = 0, {type, payload}: Action): number {
+function screenTopPosition(state = 0, {type, payload}: Action): number {
   switch(type) {
-    case SET_SCREEN_BOTTOM_POSITION:
+    case SET_SCREEN_TOP_POSITION:
       return payload
     default:
       return state
@@ -126,9 +143,10 @@ function timer(state = -1, {type, payload}: Action): number {
 
 // COMBINE REDUCERS ____________________________________________________________
 const reducers = combineReducers({
-  onTop,
-  onBottom,
-  screenBottomPosition,
+  // onTop,
+  // onBottom,
+  // screenBottomPosition,
+  setScreenTopPosition,
   idle,
   timer
 })
