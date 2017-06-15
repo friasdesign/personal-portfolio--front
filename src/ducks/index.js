@@ -30,8 +30,10 @@ const SET_SCREEN_TOP_POSITION = `${_NAMESPACE}/SET_SCREEN_TOP_POSITION`
 const SET_IDLE = `${_NAMESPACE}/SET_IDLE`
 const SET_TIMER = `${_NAMESPACE}/SET_TIMER`
 
-// ACTION CREATORS _____________________________________________________________
+const TRIGGER_TRANSITION_ANIMATION = `${_NAMESPACE}/TRIGGER_TRANSITION_ANIMATION`
+const END_TRANSITION_ANIMATION = `${_NAMESPACE}/END_TRANSITION_ANIMATION`
 
+// ACTION CREATORS _____________________________________________________________
 export function setScreenTopPosition(value: number): Action {
   return {
     type: SET_SCREEN_TOP_POSITION,
@@ -53,11 +55,45 @@ export function setTimer(value: boolean): Action {
   }
 }
 
+export function triggerTransitionAnimation(direction: string): Action {
+  return {
+    type: TRIGGER_TRANSITION_ANIMATION,
+    payload: direction
+  }
+}
+
+export function endTransitionAnimation(): Action {
+  return {
+    type: END_TRANSITION_ANIMATION,
+    payload: ''
+  }
+}
+
 // REDUCERS ____________________________________________________________________
+function screenTopPosition(state = 0, {type, payload}: Action): number {
+  switch(type) {
+    case SET_SCREEN_TOP_POSITION:
+      return payload
+    default:
+      return state
+  }
+}
+
 function idle(state = true, {type, payload}: Action): boolean {
   switch(type) {
     case SET_IDLE:
       return payload
+    default:
+      return state
+  }
+}
+
+function inTransitionAnimation(state=[false, ''], {type, payload}: Action): [boolean, string] {
+  switch(type) {
+    case TRIGGER_TRANSITION_ANIMATION:
+      return [true, payload]
+    case END_TRANSITION_ANIMATION:
+      return [false, payload]
     default:
       return state
   }
@@ -100,7 +136,8 @@ export const getAtBottom = createSelector(
 
 // COMBINE REDUCERS ____________________________________________________________
 const reducers = combineReducers({
-  setScreenTopPosition,
+  screenTopPosition,
+  inTransitionAnimation,
   idle,
   timer
 })

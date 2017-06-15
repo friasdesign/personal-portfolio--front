@@ -1,6 +1,6 @@
 // @flow
 
-export type Action = {
+export type Action = {|
   +type: string,
   payload: any
-}
+|}
