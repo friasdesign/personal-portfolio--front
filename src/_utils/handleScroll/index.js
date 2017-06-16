@@ -52,6 +52,7 @@ const callSideEffects = _.curry(
 const mapDataToOperation =
   (position: string, direction: string,
     inTransitionAnimation: [boolean, string],
+    isLast: boolean,
     idle: boolean)
   : [string, string] => {
     if(inTransitionAnimation[0]) return [NORMAL_SCROLL, '']
@@ -62,7 +63,7 @@ const mapDataToOperation =
           ? [TRANSITION_SCROLL, 'up']
           : [NORMAL_SCROLL, '']
       case 'down':
-        return (position === 'bottom') && idle
+        return (position === 'bottom') && idle && !isLast
           ? [TRANSITION_SCROLL, 'down']
           : [NORMAL_SCROLL, '']
       default:
@@ -90,6 +91,7 @@ export default function handleNormalScroll(props: AppProps, deltaY: number | boo
         getScreenPosition(props),
         getScrollDirection(deltaY),
         props.inTransitionAnimation,
+        props.isLast,
         props.idle)
     ),
     idReader

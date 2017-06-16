@@ -37,6 +37,8 @@ const SET_TIMER = `${_NAMESPACE}/SET_TIMER`
 const TRIGGER_TRANSITION_ANIMATION = `${_NAMESPACE}/TRIGGER_TRANSITION_ANIMATION`
 const END_TRANSITION_ANIMATION = `${_NAMESPACE}/END_TRANSITION_ANIMATION`
 
+const SET_IS_LAST = `${_NAMESPACE}/SET_IS_LAST`
+
 // ACTION CREATORS _____________________________________________________________
 export function setScreenTopPosition(value: number): Action {
   return {
@@ -70,6 +72,13 @@ export function endTransitionAnimation(): Action {
   return {
     type: END_TRANSITION_ANIMATION,
     payload: ''
+  }
+}
+
+export function setIsLast(value: boolean): Action {
+  return {
+    type: SET_IS_LAST,
+    payload: value
   }
 }
 
@@ -120,6 +129,15 @@ function timer(state = -1, {type, payload}: Action): number {
   }
 }
 
+function isLast(state = false, {type, payload}: Action): boolean {
+  switch(type) {
+    case SET_IS_LAST:
+      return payload
+    default:
+      return state
+  }
+}
+
 // SELECTORS ___________________________________________________________________
 export const getScreenBottomPosition = createSelector(
   [(state: Object): number => state.screenTopPosition],
@@ -143,6 +161,7 @@ const reducers = combineReducers({
   screenTopPosition,
   inTransitionAnimation,
   idle,
+  isLast,
   timer
 })
 

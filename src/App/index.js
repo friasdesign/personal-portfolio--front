@@ -20,6 +20,7 @@ function mapStateToProps(state: Object) {
     setScreenTopPosition,
     inTransitionAnimation,
     idle,
+    isLast,
     timer
   } = state
   return {
@@ -27,6 +28,7 @@ function mapStateToProps(state: Object) {
     idle,
     inTransitionAnimation,
     timer,
+    isLast,
     atTop: getAtTop(state),
     atBottom: getAtBottom(state)
   }

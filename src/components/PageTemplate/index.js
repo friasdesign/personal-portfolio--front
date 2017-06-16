@@ -16,9 +16,14 @@ import './PageTemplate.sass'
 import PopIn from '../../animations/PopIn'
 
 // COMPONENTS __________________________________________________________________
-import Filter from '../../components/Filter'
-import NavArrow from '../../components/NavArrow'
+import Filter from '../Filter'
+import NavArrow from '../NavArrow'
 import Footer from './Footer'
+
+// ACTIONS _____________________________________________________________________
+import {
+  setIsLast
+} from '../../ducks'
 
 // TYPES _______________________________________________________________________
 import type {Component} from 'react-flow-types'
@@ -32,7 +37,8 @@ export type ConfigObj = {
 }
 
 type PageTemplateProps = {
-  inTransitionAnimation: [boolean, string]
+  inTransitionAnimation: [boolean, string],
+  setIsLast: () => void
 }
 
 // MAP STATE TO PROPS __________________________________________________________
@@ -65,6 +71,10 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
       this.state = {
         titleAnimationEnd: false
       }
+    }
+
+    componentDidMount() {
+      this.props.setIsLast(Boolean(last))
     }
 
     render() {
@@ -112,7 +122,9 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
   }
 
   const PageTemplateContainer = connect(
-    mapStateToProps
+    mapStateToProps, {
+      setIsLast
+    }
   )(PageTemplate)
 
   return PageTemplateContainer

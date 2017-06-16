@@ -34,7 +34,8 @@ export type AppProps = {
   timer: number,
   setTimer: () => void,
   atTop: boolean,
-  atBottom: boolean
+  atBottom: boolean,
+  isLast: boolean
 }
 
 
