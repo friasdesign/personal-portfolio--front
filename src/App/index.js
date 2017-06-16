@@ -5,20 +5,30 @@ import {connect} from 'react-redux'
 import {
   setScreenTopPosition,
   setIdle,
-  setTimer
+  setTimer,
+  triggerTransitionAnimation,
+  getAtTop,
+  getAtBottom
 } from '../ducks'
 
 // COMPONENT ___________________________________________________________________
 import App from './App'
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({setScreenTopPosition, idle, timer, atBottom, atTop}) {
+function mapStateToProps(state: Object) {
+  const {
+    setScreenTopPosition,
+    inTransitionAnimation,
+    idle,
+    timer
+  } = state
   return {
     setScreenTopPosition,
     idle,
+    inTransitionAnimation,
     timer,
-    atBottom,
-    atTop
+    atTop: getAtTop(state),
+    atBottom: getAtBottom(state)
   }
 }
 
@@ -26,6 +36,7 @@ function mapStateToProps({setScreenTopPosition, idle, timer, atBottom, atTop}) {
 const AppContainer = connect(
   mapStateToProps, {
     setScreenTopPosition,
+    triggerTransitionAnimation,
     setIdle,
     setTimer
   }

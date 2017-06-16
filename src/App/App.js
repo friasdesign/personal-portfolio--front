@@ -30,6 +30,7 @@ export type AppProps = {
   nextPage: string,
   previousPage: string,
   triggerTransitionAnimation: () => void,
+  inTransitionAnimation: [boolean, string],
   timer: number,
   setTimer: () => void,
   atTop: boolean,

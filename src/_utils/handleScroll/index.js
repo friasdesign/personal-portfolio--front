@@ -33,7 +33,7 @@ import timerLogic from './timerLogic'
 import collectData from './collectData'
 // import redirectToPage from './redirectToPage'
 import setTopPosition from './setTopPosition'
-// import triggerAnimation from './triggerAnimation'
+import triggerAnimation from './triggerAnimation'
 
 // SIDE EFFECTS ________________________________________________________________
 /**
@@ -51,7 +51,16 @@ const callSideEffects = _.curry(
 
 // MAP POSITION AND DIRECTION TO OPERATION TYPE ________________________________
 const mapDataToOperation =
-  (position: string, direction: string, idle: boolean): [string, string] => {
+  (position: string, direction: string,
+    inTransitionAnimation: [boolean, string],
+    idle: boolean)
+  : [string, string] => {
+    console.log('position', position)
+    console.log('direction', direction)
+    console.log('idle', idle)
+
+    if(inTransitionAnimation[0]) return [NORMAL_SCROLL, '']
+
     switch(direction) {
       case 'up':
         return (position === 'top') && idle
@@ -78,6 +87,7 @@ export default function handleNormalScroll(props: AppProps, deltaY: number | boo
 
   _.compose(
     callSideEffects(props),
+    triggerAnimation,
     timerLogic,
     setTopPosition(currentTopPosition),
     log('data piped:'),
@@ -85,6 +95,7 @@ export default function handleNormalScroll(props: AppProps, deltaY: number | boo
       mapDataToOperation(
         getScreenPosition(props),
         getScrollDirection(deltaY),
+        props.inTransitionAnimation,
         props.idle)
     ),
     idReader
