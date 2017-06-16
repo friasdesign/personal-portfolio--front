@@ -34,6 +34,11 @@
   +anti-aliased
 
 // ANIMATIONS __________________________________________________________________
+=transition-animation($y)
+  opacity: 0
+  transform: scale(0.9) translate(0, $y)
+  transition: .7s ease-out
+
 .fade-side
   opacity: 1
   transform: translate(0, 0)
@@ -52,14 +57,10 @@
   transform: scale(1) translate(0, 0)
 
 .transition-animation-up--init
-  opacity: 0
-  transform: scale(0.9) translate(0, 200px)
-  transition: .7s ease-out
+  +transition-animation(200px)
 
 .transition-animation-down--init
-  opacity: 0
-  transform: scale(0.95) translate(0, -200px)
-  transition: .7s ease-out
+  +transition-animation(-200px)
 
 +for-tablet-landscape-up
   .img__heading
