@@ -21,7 +21,9 @@ import Footer from './Footer'
 
 // ACTIONS _____________________________________________________________________
 import {
-  setIsLast
+  setIsLast,
+  setPreviousPage,
+  setNextPage
 } from '../../ducks'
 
 // TYPES _______________________________________________________________________
@@ -37,13 +39,19 @@ export type ConfigObj = {
 
 type PageTemplateProps = {
   inTransitionAnimation: [boolean, string],
-  setIsLast: () => void
+  setIsLast: () => void,
+  nextPage: string,
+  setNextPage: () => void,
+  previousPage: string,
+  setPreviousPage: () => void
 }
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({inTransitionAnimation}: Object): Object {
+function mapStateToProps({inTransitionAnimation, nextPage, previousPage}: Object): Object {
   return {
-    inTransitionAnimation
+    inTransitionAnimation,
+    nextPage,
+    previousPage
   }
 }
 
@@ -70,6 +78,22 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
       this.state = {
         titleAnimationEnd: false
       }
+    }
+
+    /**
+     * Call dispatch on navigation pages, those are `nextPage` and `previousPage`
+     * only if they are differentfrom the actual value on the state, since it
+     * gets evaluated each time a new prop is passed to `PageTemplate`.
+     *
+     * @param {string} nextPage     Next page URL
+     * @param {string} previousPage Previous page URL
+     */
+    setNavigationPages(nextPage: string, previousPage: string) {
+      if(this.props.nextPage !== nextPage)
+        this.props.setNextPage(nextPage)
+
+      if(this.props.previousPage !== previousPage)
+        this.props.setPreviousPage(previousPage)
     }
 
     componentDidMount() {
@@ -102,7 +126,10 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
             </PopIn>
           </header>
 
-          <WrappedComponent ready={titleAnimationEnd} {...passThru}/>
+          <WrappedComponent
+            setNavigationPages={this.setNavigationPages.bind(this)}
+            ready={titleAnimationEnd} {...passThru}
+          />
 
           {
             last
@@ -119,7 +146,9 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
 
   const PageTemplateContainer = connect(
     mapStateToProps, {
-      setIsLast
+      setIsLast,
+      setPreviousPage,
+      setNextPage
     }
   )(PageTemplate)
 

@@ -4,19 +4,19 @@ import {StaggeredMotion, spring} from 'react-motion'
 const MENU_ITEMS = [
   {
     name: 'about',
-    link: '#about'
+    link: '/about'
   },
   {
     name: 'skills',
-    link: '#skills'
+    link: '/skills'
   },
   {
     name: 'portfolio',
-    link: '#portfolio'
+    link: '/portfolio'
   },
   {
     name: 'contact',
-    link: '#contact'
+    link: '/contact'
   }
 ]
 

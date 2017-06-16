@@ -39,6 +39,9 @@ const END_TRANSITION_ANIMATION = `${_NAMESPACE}/END_TRANSITION_ANIMATION`
 
 const SET_IS_LAST = `${_NAMESPACE}/SET_IS_LAST`
 
+const SET_PREVIOUS_PAGE = `${_NAMESPACE}/SET_PREVIOUS_PAGE`
+const SET_NEXT_PAGE = `${_NAMESPACE}/SET_NEXT_PAGE`
+
 // ACTION CREATORS _____________________________________________________________
 export function setScreenTopPosition(value: number): Action {
   return {
@@ -78,6 +81,20 @@ export function endTransitionAnimation(): Action {
 export function setIsLast(value: boolean): Action {
   return {
     type: SET_IS_LAST,
+    payload: value
+  }
+}
+
+export function setPreviousPage(value: string): Action {
+  return {
+    type: SET_PREVIOUS_PAGE,
+    payload: value
+  }
+}
+
+export function setNextPage(value: string): Action {
+  return {
+    type: SET_NEXT_PAGE,
     payload: value
   }
 }
@@ -138,6 +155,24 @@ function isLast(state = false, {type, payload}: Action): boolean {
   }
 }
 
+function nextPage(state = '', {type, payload}: Action): string {
+  switch(type) {
+    case SET_NEXT_PAGE:
+      return payload
+    default:
+      return state
+  }
+}
+
+function previousPage(state = '', {type, payload}: Action): string {
+  switch(type) {
+    case SET_PREVIOUS_PAGE:
+      return payload
+    default:
+      return state
+  }
+}
+
 // SELECTORS ___________________________________________________________________
 export const getScreenBottomPosition = createSelector(
   [(state: Object): number => state.screenTopPosition],
@@ -163,7 +198,9 @@ const reducers = combineReducers({
   inTransitionAnimation,
   idle,
   isLast,
-  timer
+  timer,
+  previousPage,
+  nextPage
 })
 
 // RETURN STORE ________________________________________________________________

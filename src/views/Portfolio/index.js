@@ -15,32 +15,46 @@ import {
 import ArticleLine from '../../components/ArticleLine'
 import PageTemplate from '../../components/PageTemplate'
 
+// TYPES _______________________________________________________________________
+import type {
+  NormalPageProps
+} from '../../_types'
+
 // PORTFOLIO ARTICLE  __________________________________________________________
 import PortfolioArticle from './PortfolioArticle'
 
-const Portfolio = ({ready}: {ready: boolean}) => (
-  <div className="template-container">
+const Portfolio = (props: NormalPageProps) => {
+  const {
+    ready,
+    setNavigationPages
+  } = props
 
-  <PortfolioArticle
-    heading="Featured"
-    ready={ready}
-    entries={featured}
-  />
+  setNavigationPages('/contact', '/skills')
 
-  <PortfolioArticle
-    heading="Ongoing"
-    ready={ready}
-    entries={ongoing}
-  />
+  return (
+    <div className="template-container">
 
-  <ArticleLine
-    heading="Teeny-Tiny"
-    entries={teenyTiny}
-    theme="mono"
-  />
+    <PortfolioArticle
+      heading="Featured"
+      ready={ready}
+      entries={featured}
+    />
 
-  </div>
-)
+    <PortfolioArticle
+      heading="Ongoing"
+      ready={ready}
+      entries={ongoing}
+    />
+
+    <ArticleLine
+      heading="Teeny-Tiny"
+      entries={teenyTiny}
+      theme="mono"
+    />
+
+    </div>
+  )
+}
 
 export default PageTemplate(Portfolio, {
   topNavArrowLabel: 'Skills',

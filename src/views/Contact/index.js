@@ -13,29 +13,43 @@ import ArticleLine from '../../components/ArticleLine'
 import PageTemplate from '../../components/PageTemplate'
 import TextArticle from '../../components/TextArticle'
 
-const Contact = ({ready}: {ready: boolean}) => (
-  <div className="template-container template-container--last over-x-hidden">
-    <TextArticle heading="let's talk!" ready={ready}>
-      <p>
-        Contact me if you want to propose a project to develop together, hire me,
-        {' '}or even talk about programming a little. I am currently
-        {' '}<strong>AVAILABLE FOR HIRING</strong>.
-      </p>
-    </TextArticle>
+// TYPES _______________________________________________________________________
+import type {
+  NormalPageProps
+} from '../../_types'
 
-    <ArticleLine
-      className={`fade-side ${
-        ready
-        ? ''
-        : 'fade-right'
-      }`}
-      heading="Contact Info"
-      entries={contactInfo}
-      theme="mono"
-      hoverEnabled={true}
-    />
-  </div>
-)
+const Contact = (props: NormalPageProps) => {
+  const {
+    ready,
+    setNavigationPages
+  } = props
+
+  setNavigationPages('', '/portfolio')
+
+  return (
+    <div className="template-container template-container--last over-x-hidden">
+      <TextArticle heading="let's talk!" ready={ready}>
+        <p>
+          Contact me if you want to propose a project to develop together, hire me,
+          {' '}or even talk about programming a little. I am currently
+          {' '}<strong>AVAILABLE FOR HIRING</strong>.
+        </p>
+      </TextArticle>
+
+      <ArticleLine
+        className={`fade-side ${
+          ready
+          ? ''
+          : 'fade-right'
+        }`}
+        heading="Contact Info"
+        entries={contactInfo}
+        theme="mono"
+        hoverEnabled={true}
+      />
+    </div>
+  )
+}
 
 export default PageTemplate(Contact, {
   topNavArrowLabel: 'Portfolio',
