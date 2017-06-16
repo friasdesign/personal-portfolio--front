@@ -19,12 +19,7 @@ import type {
 
 // COMPONENT DEFINITION ________________________________________________________
 const About = (props: NormalPageProps) => {
-  const {
-    ready,
-    setNavigationPages
-  } = props
-
-  setNavigationPages('/skills', '/')
+  const {ready} = props
 
   return (
     <div className="template-container">
@@ -63,6 +58,8 @@ const About = (props: NormalPageProps) => {
 export default PageTemplate(About, {
   topNavArrowLabel: 'Home',
   bottomNavArrowLabel: 'Skills',
+  previousPage: '/skills',
+  nextPage: '/about',
   headingImg,
   headingAriaLabel: 'About'
 })

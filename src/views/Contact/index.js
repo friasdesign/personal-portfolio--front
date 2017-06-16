@@ -20,11 +20,8 @@ import type {
 
 const Contact = (props: NormalPageProps) => {
   const {
-    ready,
-    setNavigationPages
+    ready
   } = props
-
-  setNavigationPages('', '/portfolio')
 
   return (
     <div className="template-container template-container--last over-x-hidden">
@@ -55,5 +52,7 @@ export default PageTemplate(Contact, {
   topNavArrowLabel: 'Portfolio',
   last: true,
   headingImg,
-  headingAriaLabel: 'Contact'
+  headingAriaLabel: 'Contact',
+  nextPage: '',
+  previousPage: '/portfolio'
 })

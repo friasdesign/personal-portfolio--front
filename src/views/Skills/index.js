@@ -25,11 +25,8 @@ import type {
 // COMPONENT DEFINITION ________________________________________________________
 const Skills = (props: NormalPageProps) => {
   const {
-    ready,
-    setNavigationPages
+    ready
   } = props
-
-  setNavigationPages('/portfolio', '/about')
 
   return (
     <div className="template-container over-x-hidden">
@@ -82,5 +79,7 @@ export default PageTemplate(Skills, {
   topNavArrowLabel: 'About',
   bottomNavArrowLabel: 'Portfolio',
   headingImg,
-  headingAriaLabel: 'Skills'
+  headingAriaLabel: 'Skills',
+  nextPage: '/portfolio',
+  previousPage: '/about'
 })

@@ -34,15 +34,17 @@ export type ConfigObj = {
   bottomNavArrowLabel?: string,
   last?: boolean,
   headingImg: string,
-  headingAriaLabel: string
+  headingAriaLabel: string,
+  nextPage: string,
+  previousPage: string
 }
 
 type PageTemplateProps = {
   inTransitionAnimation: [boolean, string],
   setIsLast: () => void,
-  nextPage: string,
+  // nextPage: string,
   setNextPage: () => void,
-  previousPage: string,
+  // previousPage: string,
   setPreviousPage: () => void
 }
 
@@ -62,7 +64,9 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
     bottomNavArrowLabel,
     headingImg,
     last,
-    headingAriaLabel
+    headingAriaLabel,
+    nextPage,
+    previousPage
   } = config
   // COMPONENT _________________________________________________________________
   class PageTemplate extends React.Component {
@@ -89,15 +93,13 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
      * @param {string} previousPage Previous page URL
      */
     setNavigationPages(nextPage: string, previousPage: string) {
-      if(this.props.nextPage !== nextPage)
         this.props.setNextPage(nextPage)
-
-      if(this.props.previousPage !== previousPage)
         this.props.setPreviousPage(previousPage)
     }
 
     componentDidMount() {
       this.props.setIsLast(Boolean(last))
+      this.setNavigationPages(nextPage, previousPage)
     }
 
     render() {
@@ -126,10 +128,7 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
             </PopIn>
           </header>
 
-          <WrappedComponent
-            setNavigationPages={this.setNavigationPages.bind(this)}
-            ready={titleAnimationEnd} {...passThru}
-          />
+          <WrappedComponent ready={titleAnimationEnd} {...passThru}/>
 
           {
             last

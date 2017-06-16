@@ -25,11 +25,8 @@ import PortfolioArticle from './PortfolioArticle'
 
 const Portfolio = (props: NormalPageProps) => {
   const {
-    ready,
-    setNavigationPages
+    ready
   } = props
-
-  setNavigationPages('/contact', '/skills')
 
   return (
     <div className="template-container">
@@ -60,5 +57,7 @@ export default PageTemplate(Portfolio, {
   topNavArrowLabel: 'Skills',
   bottomNavArrowLabel: 'Contact',
   headingImg,
-  headingAriaLabel: 'Portfolio'
+  headingAriaLabel: 'Portfolio',
+  nextPage: '/contact',
+  previousPage: '/skills'
 })
