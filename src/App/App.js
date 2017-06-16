@@ -11,6 +11,7 @@ import handleScroll from '../_utils/handleScroll'
 // COMPONENTS
 // _____________________________________________________________________________
 import Navbar from '../components/Navbar'
+import Filter from '../components/Filter'
 
 // VIEWS
 // _____________________________________________________________________________
@@ -62,6 +63,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar minimal={true}/>
+
+        <Filter type="top"/>
+        <Filter type="bottom"/>
+
         <Route exact path="/" component={Home}/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/skills" component={Skills}/>

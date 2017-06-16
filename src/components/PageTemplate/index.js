@@ -16,7 +16,6 @@ import './PageTemplate.sass'
 import PopIn from '../../animations/PopIn'
 
 // COMPONENTS __________________________________________________________________
-import Filter from '../Filter'
 import NavArrow from '../NavArrow'
 import Footer from './Footer'
 
@@ -92,9 +91,6 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
         }`}>
           <NavArrow direction="up" label={topNavArrowLabel}
             ready={titleAnimationEnd} />
-
-          <Filter type="top"/>
-          <Filter type="bottom"/>
 
           <header className="section-header w-100">
             <PopIn onRest={f => {this.setState({titleAnimationEnd: true})}}>

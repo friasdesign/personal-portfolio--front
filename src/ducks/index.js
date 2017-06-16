@@ -151,9 +151,10 @@ export const getAtTop = createSelector(
 )
 
 export const getAtBottom = createSelector(
-  [getScreenBottomPosition],
-  (screenBottomPosition: number): boolean =>
-    isPositionAtBottom(screenBottomPosition, bodyGetHeight.run())
+  [getAtTop, getScreenBottomPosition],
+  (atTop: boolean, screenBottomPosition: number): boolean => {
+    return atTop ? false : isPositionAtBottom(screenBottomPosition, bodyGetHeight.run())
+  }
 )
 
 // COMBINE REDUCERS ____________________________________________________________
