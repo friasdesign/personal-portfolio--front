@@ -19,8 +19,7 @@ import idReader from '../functors/IdReader'
 
 // HELPER FUNCTIONS ____________________________________________________________
 import {
-  getScrollDirection,
-  log
+  getScrollDirection
 } from '../helpers'
 
 // TYPES _______________________________________________________________________
@@ -55,10 +54,6 @@ const mapDataToOperation =
     inTransitionAnimation: [boolean, string],
     idle: boolean)
   : [string, string] => {
-    console.log('position', position)
-    console.log('direction', direction)
-    console.log('idle', idle)
-
     if(inTransitionAnimation[0]) return [NORMAL_SCROLL, '']
 
     switch(direction) {
@@ -90,7 +85,6 @@ export default function handleNormalScroll(props: AppProps, deltaY: number | boo
     triggerAnimation,
     timerLogic,
     setTopPosition(currentTopPosition),
-    log('data piped:'),
     collectData(
       mapDataToOperation(
         getScreenPosition(props),
