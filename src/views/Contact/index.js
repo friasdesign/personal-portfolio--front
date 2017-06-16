@@ -15,7 +15,7 @@ import TextArticle from '../../components/TextArticle'
 
 const Contact = ({ready}: {ready: boolean}) => (
   <div className="template-container template-container--last over-x-hidden">
-    <TextArticle ready={ready}>
+    <TextArticle heading="let's talk!" ready={ready}>
       <p>
         Contact me if you want to propose a project to develop together, hire me,
         {' '}or even talk about programming a little. I am currently
