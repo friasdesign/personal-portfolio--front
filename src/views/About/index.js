@@ -58,8 +58,8 @@ const About = (props: NormalPageProps) => {
 export default PageTemplate(About, {
   topNavArrowLabel: 'Home',
   bottomNavArrowLabel: 'Skills',
-  previousPage: '/skills',
-  nextPage: '/about',
+  previousPage: '/',
+  nextPage: '/skills',
   headingImg,
   headingAriaLabel: 'About'
 })
