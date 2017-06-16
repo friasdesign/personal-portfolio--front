@@ -7,6 +7,7 @@ import {
   setIdle,
   setTimer,
   triggerTransitionAnimation,
+  endTransitionAnimation,
   getAtTop,
   getAtBottom
 } from '../ducks'
@@ -43,6 +44,7 @@ const AppContainer = connect(
   mapStateToProps, {
     setScreenTopPosition,
     triggerTransitionAnimation,
+    endTransitionAnimation,
     setIdle,
     setTimer
   }

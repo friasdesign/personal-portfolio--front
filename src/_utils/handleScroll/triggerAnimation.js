@@ -16,9 +16,11 @@ function redirectToPage(type: string, p: AppProps) {
       case 'up':
       console.log('previous page', p.previousPage)
         p.history.push(p.previousPage)
+        p.endTransitionAnimation()
         return true
       case 'down':
         p.history.push(p.nextPage)
+        p.endTransitionAnimation()
         return true
       default:
         return false
