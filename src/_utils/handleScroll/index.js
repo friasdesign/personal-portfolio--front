@@ -30,7 +30,6 @@ import type {
 // MODULES _____________________________________________________________________
 import timerLogic from './timerLogic'
 import collectData from './collectData'
-import redirectToPage from './redirectToPage'
 import setTopPosition from './setTopPosition'
 import triggerAnimation from './triggerAnimation'
 

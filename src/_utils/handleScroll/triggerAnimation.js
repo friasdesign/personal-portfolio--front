@@ -14,7 +14,6 @@ function redirectToPage(type: string, p: AppProps) {
   return () => {
     switch(type) {
       case 'up':
-      console.log('previous page', p.previousPage)
         p.history.push(p.previousPage)
         p.endTransitionAnimation()
         return true
