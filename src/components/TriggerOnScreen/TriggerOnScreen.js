@@ -32,7 +32,8 @@ function triggerOnScreen(
     props: Props
 
     state: {
-      triggered: boolean
+      triggered: boolean,
+      mounted: boolean
     }
 
     topPosition: number
@@ -44,17 +45,24 @@ function triggerOnScreen(
     constructor(props: Props) {
       super(props)
       this.state = {
-        triggered: false
+        triggered: false,
+        mounted: false
       }
     }
 
     setTopPosition(element: Object) {
-      if(element) this.topPosition = getElementTopPosition(element)
+      if(element && !this.state.mounted) {
+        this.topPosition = Math.round(
+          getElementTopPosition(element) + 200
+        )
+        console.log(this.topPosition)
+      }
     }
 
     componentWillReceiveProps({screenBottomPosition}: Object) {
-      const nextPosition = screenBottomPosition - (window.innerHeight / 5)
-      if(nextPosition >= this.topPosition) {
+      const nextPosition = screenBottomPosition
+      console.log('screen bottom:', screenBottomPosition)
+      if(nextPosition > this.topPosition) {
         this.setState({
           triggered: true
         })
@@ -63,6 +71,12 @@ function triggerOnScreen(
 
     shouldComponentUpdate(nextProps: Object, nextState: Object) {
       return !_.equals(nextState, this.state)
+    }
+
+    componentDidMount() {
+      this.setState({
+        mounted: true
+      })
     }
 
     render() {

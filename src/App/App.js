@@ -50,11 +50,6 @@ class App extends React.Component {
   props: AppProps
 
   componentDidMount() {
-    // Here we actually set whether the user is accessing the site using an iOS
-    // device, there are some inconsistencies with window.innerHeight in iOS devices,
-    // thus, we use screen.height instead.
-    windowSet_IN_IOS(checkIfiOS(window, navigator)).run()
-
     document.addEventListener('scroll', () => {
       handleOnScroll(this.props)
     })
