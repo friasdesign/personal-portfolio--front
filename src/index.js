@@ -10,6 +10,9 @@ import './index.sass'
 // STORE _______________________________________________________________________
 import store from './ducks'
 
+// COMPONENTS __________________________________________________________________
+import ScrollToTop from './components/ScrollToTop'
+
 // APPLICATION _________________________________________________________________
 import App from './App'
 
@@ -17,7 +20,9 @@ import App from './App'
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App/>
+      <ScrollToTop>
+        <App/>
+      </ScrollToTop>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
