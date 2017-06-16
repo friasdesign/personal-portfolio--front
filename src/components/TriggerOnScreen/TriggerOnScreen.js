@@ -55,13 +55,11 @@ function triggerOnScreen(
         this.topPosition = Math.round(
           getElementTopPosition(element) + 200
         )
-        console.log(this.topPosition)
       }
     }
 
     componentWillReceiveProps({screenBottomPosition}: Object) {
       const nextPosition = screenBottomPosition
-      console.log('screen bottom:', screenBottomPosition)
       if(nextPosition > this.topPosition) {
         this.setState({
           triggered: true
