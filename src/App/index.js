@@ -21,7 +21,9 @@ function mapStateToProps(state: Object) {
     inTransitionAnimation,
     idle,
     isLast,
-    timer
+    timer,
+    nextPage,
+    previousPage
   } = state
   return {
     setScreenTopPosition,
@@ -30,7 +32,9 @@ function mapStateToProps(state: Object) {
     timer,
     isLast,
     atTop: getAtTop(state),
-    atBottom: getAtBottom(state)
+    atBottom: getAtBottom(state),
+    nextPage,
+    previousPage
   }
 }
 

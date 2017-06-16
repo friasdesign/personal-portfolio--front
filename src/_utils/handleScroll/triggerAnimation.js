@@ -14,7 +14,11 @@ function redirectToPage(type: string, p: AppProps) {
   return () => {
     switch(type) {
       case 'up':
-        p.history.push('/')
+      console.log('previous page', p.previousPage)
+        p.history.push(p.previousPage)
+        return true
+      case 'down':
+        p.history.push(p.nextPage)
         return true
       default:
         return false
