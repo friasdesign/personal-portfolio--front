@@ -59,7 +59,8 @@ export default function handleOnScroll(props: AppProps): void {
     // triggerAnimation,
     timerLogic,
     setTopPosition(currentTopPosition),
-    collectData({
+    collectData(
+      props.idle, {
       currentTopPosition,
       currentBottomPosition: getScreenBottom(currentTopPosition),
       previousTopPosition: props.lastTopPosition

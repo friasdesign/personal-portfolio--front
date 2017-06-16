@@ -21,13 +21,17 @@ import {
 } from './_constants'
 
 // MAP POSITION AND DIRECTION TO OPERATION TYPE ________________________________
-const mapPositionAndDirectionToOperation =
-  (position: string, direction: string): [string, string] => {
+const mapDataToOperation =
+  (position: string, direction: string, idle: boolean): [string, string] => {
     switch(position) {
       case 'top':
-        return direction === 'up' ? [TRANSITION_SCROLL, 'up'] : [NORMAL_SCROLL, '']
+        return (direction === 'up') && idle
+          ? [TRANSITION_SCROLL, 'up']
+          : [NORMAL_SCROLL, '']
       case 'bottom':
-        return direction === 'down' ? [TRANSITION_SCROLL, 'down'] : [NORMAL_SCROLL, '']
+        return (direction === 'down') && idle
+          ? [TRANSITION_SCROLL, 'down']
+          : [NORMAL_SCROLL, '']
       default:
         return [NORMAL_SCROLL, '']
     }
@@ -35,7 +39,8 @@ const mapPositionAndDirectionToOperation =
 
 // COLLECT DATA ________________________________________________________________
 export default _.curry(
-  (windowData: WindowData, docHeight: number, props: typeof Reader): PipedData  => {
+  (idle: boolean, windowData: WindowData, docHeight: number, props: typeof Reader)
+  : PipedData  => {
     const {
       currentTopPosition,
       currentBottomPosition,
@@ -45,7 +50,7 @@ export default _.curry(
     const direction = getScrollDirection(currentTopPosition, previousTopPosition)
 
     return [
-      mapPositionAndDirectionToOperation(position, direction),
+      mapDataToOperation(position, direction, idle),
       props
     ]
   }
