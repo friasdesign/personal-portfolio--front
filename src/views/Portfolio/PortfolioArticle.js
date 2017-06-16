@@ -21,12 +21,12 @@ const PortfolioArticle = (props: PortfolioArticleProps) => {
   } = props
 
   return (
-    <section className="portfolio__entries m-btm-6 w-100">
-      <h2 className={`article-heading m-btm-4 fade-side ${
-          ready
-          ? ''
-          : 'fade-right'
-        }`}>
+    <section className={`portfolio__entries m-btm-6 w-100 fade-side ${
+        ready
+        ? ''
+        : 'fade-right'
+      }`}>
+      <h2 className="article-heading m-btm-4">
         {heading}
       </h2>
       {
