@@ -7,19 +7,22 @@ import './Filter.sass'
 type FilterProps = {
   type: string,
   atTop: boolean,
-  atBottom: boolean
+  atBottom: boolean,
+  atHome: boolean
 }
 
 // COMPONENT ___________________________________________________________________
-const Filter = ({type, atTop, atBottom}: FilterProps) => {
+const Filter = ({type, atTop, atBottom, atHome}: FilterProps) => {
   const hidden = type === 'top' ? atTop : atBottom
   const className = `filter-${type} ${hidden ? 'filter--hidden' : ''}`
 
-  return (
-    <div className={`filter ${className}`}
-      aria-hidden
-    />
-  )
+  return atHome
+    ? null
+    : (
+      <div className={`filter ${className}`}
+        aria-hidden
+      />
+    )
 }
 
 export default Filter

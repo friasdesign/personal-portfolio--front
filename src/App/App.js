@@ -3,6 +3,7 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
 import _ from 'ramda'
+import {withRouter} from 'react-router'
 
 // HELPERS
 // _____________________________________________________________________________
@@ -25,6 +26,7 @@ import Contact from '../views/Contact'
 // _____________________________________________________________________________
 export type AppProps = {
   setScreenTopPosition: () => void,
+  location: Object,
   screenTopPosition: number,
   idle: boolean,
   setIdle: () => void,
@@ -59,13 +61,19 @@ class App extends React.Component {
     })
   }
 
+  atHome() {
+    const currentLocation = this.props.location.pathname
+    return /^\/$/.test(currentLocation)
+  }
+
   render() {
+    const atHome = this.atHome()
     return (
       <div className="App">
-        <Navbar minimal={true}/>
+        <Navbar minimal={!atHome}/>
 
-        <Filter type="top"/>
-        <Filter type="bottom"/>
+        <Filter atHome={atHome} type="top"/>
+        <Filter atHome={atHome} type="bottom"/>
 
         <Route exact path="/" component={Home}/>
         <Route exact path="/about" component={About}/>
@@ -77,4 +85,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default withRouter(App)
