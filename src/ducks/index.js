@@ -16,6 +16,10 @@ import {
   isPositionAtBottom
 } from '../_utils/helpers'
 
+import {
+  bodyGetHeight
+} from '../_utils/functors/Body'
+
 // TYPES _______________________________________________________________________
 import type {
   Action
@@ -129,9 +133,9 @@ export const getAtTop = createSelector(
 )
 
 export const getAtBottom = createSelector(
-  [(state: Object): number => state.screenTopPosition],
-  (screenTopPosition: number): boolean =>
-    isPositionAtBottom(screenTopPosition)
+  [getScreenBottomPosition],
+  (screenBottomPosition: number): boolean =>
+    isPositionAtBottom(screenBottomPosition, bodyGetHeight.run())
 )
 
 // COMBINE REDUCERS ____________________________________________________________

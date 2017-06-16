@@ -55,8 +55,8 @@ export default function handleOnScroll(props: AppProps): void {
 
   _.compose(
     callSideEffects(props),
-    redirectToPage,
-    triggerAnimation,
+    // redirectToPage,
+    // triggerAnimation,
     timerLogic,
     setTopPosition(currentTopPosition),
     collectData({
