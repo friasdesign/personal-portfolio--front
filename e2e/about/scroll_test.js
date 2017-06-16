@@ -21,6 +21,10 @@ function getToTop(browser, cb) {
 
 // TEST SUITE __________________________________________________________________
 module.exports = {
+  before: function(browser) {
+    browser.resizeWindow(800, 600)
+  },
+
   beforeEach: function(browser) {
     browser.url('http://localhost:3000/about')
       .waitForElementPresent('.nav-arrow--up', 1000)
@@ -58,7 +62,7 @@ module.exports = {
 
   'user scrolls to bottom': function(browser) {
     getToBottom(browser, function() {
-      browser.pause(1500)
+      browser.pause(600)
 
       browser.expect.element('.nav-arrow--up').not.to.be.present
       browser.expect.element('.nav-arrow--down').to.be.present

@@ -31,8 +31,7 @@ import Contact from '../views/Contact'
 // TYPES
 // _____________________________________________________________________________
 export type AppProps = {
-  screenTopPosition: number,
-  setScreenTopPosition: () => void,
+  setLastTopPosition: () => void,
   idle: boolean,
   setIdle: () => void,
   nextPage: string,

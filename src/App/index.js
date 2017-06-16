@@ -6,7 +6,7 @@ import {
   // setOnTop,
   // setOnBottom,
   // setScreenBottomPosition,
-  setScreenTopPosition,
+  setLastTopPosition,
   setIdle,
   setTimer
 } from '../ducks'
@@ -15,9 +15,9 @@ import {
 import App from './App'
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({screenTopPosition, idle, timer}) {
+function mapStateToProps({lastTopPosition, idle, timer}) {
   return {
-    screenTopPosition,
+    lastTopPosition,
     idle,
     timer
   }
@@ -26,7 +26,7 @@ function mapStateToProps({screenTopPosition, idle, timer}) {
 // DEFINE CONTAINER ____________________________________________________________
 const AppContainer = connect(
   mapStateToProps, {
-    setScreenTopPosition,
+    setLastTopPosition,
     setIdle,
     setTimer
   }

@@ -18,12 +18,13 @@ export default _.curry(
     switch(type[0]) {
       case NORMAL_SCROLL:
         return [type, props.map((p: AppProps): AppProps => {
-          p.setScreenTopPosition(topPosition)
+          p.setLastTopPosition(topPosition)
           return p
         })]
       case TRANSITION_SCROLL:
+        console.log('transition scroll triggered!')
         return [type, props.map((p: AppProps): AppProps => {
-          p.setScreenTopPosition(0)
+          p.setLastTopPosition(0)
           return p
         })]
       default:

@@ -23,6 +23,7 @@ import {
 // MAP POSITION AND DIRECTION TO OPERATION TYPE ________________________________
 const mapDataToOperation =
   (position: string, direction: string, idle: boolean): [string, string] => {
+    console.log(position)
     switch(position) {
       case 'top':
         return (direction === 'up') && idle
@@ -48,6 +49,8 @@ export default _.curry(
     } = windowData
     const position = getScreenPosition(currentTopPosition, currentBottomPosition, docHeight)
     const direction = getScrollDirection(currentTopPosition, previousTopPosition)
+
+    console.log('scroll direction', direction)
 
     return [
       mapDataToOperation(position, direction, idle),
