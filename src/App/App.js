@@ -6,15 +6,7 @@ import _ from 'ramda'
 
 // HELPERS
 // _____________________________________________________________________________
-import handleOnScroll from '../_utils/handleScroll'
-import {
-  checkIfiOS
-} from '../_utils/helpers'
-
-// FUNCTORS ____________________________________________________________________
-import {
-  windowSet_IN_IOS
-} from '../_utils/functors/Window'
+import handleScroll from '../_utils/handleScroll'
 
 // COMPONENTS
 // _____________________________________________________________________________
@@ -31,15 +23,17 @@ import Contact from '../views/Contact'
 // TYPES
 // _____________________________________________________________________________
 export type AppProps = {
-  setLastTopPosition: () => void,
+  setScreenTopPosition: () => void,
+  screenTopPosition: number,
   idle: boolean,
   setIdle: () => void,
   nextPage: string,
   previousPage: string,
   triggerTransitionAnimation: () => void,
-  lastTopPosition: number,
   timer: number,
-  setTimer: () => void
+  setTimer: () => void,
+  atTop: boolean,
+  atBottom: boolean
 }
 
 
@@ -49,8 +43,16 @@ class App extends React.Component {
   props: AppProps
 
   componentDidMount() {
+    // This represents the normal scroll flow.
     document.addEventListener('scroll', () => {
-      handleOnScroll(this.props)
+      handleScroll(this.props, false)
+    })
+
+    // This event is fired each time, altough it's processed by
+    // `handleTransitionScroll` which is going to decide whether to perform a
+    // Transition Scroll or fallback to a Normal Scroll flow.
+    document.addEventListener('wheel', (e: Object) => {
+      handleScroll(this.props, e.deltaY)
     })
   }
 

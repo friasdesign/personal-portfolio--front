@@ -20,41 +20,8 @@ import {
   TRANSITION_SCROLL
 } from './_constants'
 
-// MAP POSITION AND DIRECTION TO OPERATION TYPE ________________________________
-const mapDataToOperation =
-  (position: string, direction: string, idle: boolean): [string, string] => {
-    console.log(position)
-    switch(position) {
-      case 'top':
-        return (direction === 'up') && idle
-          ? [TRANSITION_SCROLL, 'up']
-          : [NORMAL_SCROLL, '']
-      case 'bottom':
-        return (direction === 'down') && idle
-          ? [TRANSITION_SCROLL, 'down']
-          : [NORMAL_SCROLL, '']
-      default:
-        return [NORMAL_SCROLL, '']
-    }
-  }
-
 // COLLECT DATA ________________________________________________________________
 export default _.curry(
-  (idle: boolean, windowData: WindowData, docHeight: number, props: typeof Reader)
-  : PipedData  => {
-    const {
-      currentTopPosition,
-      currentBottomPosition,
-      previousTopPosition
-    } = windowData
-    const position = getScreenPosition(currentTopPosition, currentBottomPosition, docHeight)
-    const direction = getScrollDirection(currentTopPosition, previousTopPosition)
-
-    console.log('scroll direction', direction)
-
-    return [
-      mapDataToOperation(position, direction, idle),
-      props
-    ]
-  }
+  (operationType: [string, string], props: typeof Reader): PipedData  =>
+    [operationType, props]
 )

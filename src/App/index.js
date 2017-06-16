@@ -3,10 +3,7 @@ import {connect} from 'react-redux'
 
 // ACTIONS _____________________________________________________________________
 import {
-  // setOnTop,
-  // setOnBottom,
-  // setScreenBottomPosition,
-  setLastTopPosition,
+  setScreenTopPosition,
   setIdle,
   setTimer
 } from '../ducks'
@@ -15,18 +12,20 @@ import {
 import App from './App'
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({lastTopPosition, idle, timer}) {
+function mapStateToProps({setScreenTopPosition, idle, timer, atBottom, atTop}) {
   return {
-    lastTopPosition,
+    setScreenTopPosition,
     idle,
-    timer
+    timer,
+    atBottom,
+    atTop
   }
 }
 
 // DEFINE CONTAINER ____________________________________________________________
 const AppContainer = connect(
   mapStateToProps, {
-    setLastTopPosition,
+    setScreenTopPosition,
     setIdle,
     setTimer
   }

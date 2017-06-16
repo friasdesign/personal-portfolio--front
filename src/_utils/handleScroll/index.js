@@ -5,20 +5,22 @@ import type {
   AppProps
 } from '../../App/App'
 
+import {
+  NORMAL_SCROLL,
+  TRANSITION_SCROLL
+} from './_constants'
+
 // FUNCTORS ____________________________________________________________________
 import {
   windowGetScrollY
 } from '../functors/Window'
 
-import {
-  bodyGetHeight
-} from '../functors/Body'
-
 import idReader from '../functors/IdReader'
 
 // HELPER FUNCTIONS ____________________________________________________________
 import {
-  getScreenBottom
+  getScrollDirection,
+  log
 } from '../helpers'
 
 // TYPES _______________________________________________________________________
@@ -29,9 +31,9 @@ import type {
 // MODULES _____________________________________________________________________
 import timerLogic from './timerLogic'
 import collectData from './collectData'
-import redirectToPage from './redirectToPage'
+// import redirectToPage from './redirectToPage'
 import setTopPosition from './setTopPosition'
-import triggerAnimation from './triggerAnimation'
+// import triggerAnimation from './triggerAnimation'
 
 // SIDE EFFECTS ________________________________________________________________
 /**
@@ -47,24 +49,44 @@ const callSideEffects = _.curry(
   }
 )
 
-// EXPORT COMPOSED FUNCTION ____________________________________________________
-export default function handleOnScroll(props: AppProps): void {
+// MAP POSITION AND DIRECTION TO OPERATION TYPE ________________________________
+const mapDataToOperation =
+  (position: string, direction: string, idle: boolean): [string, string] => {
+    switch(direction) {
+      case 'up':
+        return (position === 'top') && idle
+          ? [TRANSITION_SCROLL, 'up']
+          : [NORMAL_SCROLL, '']
+      case 'down':
+        return (position === 'bottom') && idle
+          ? [TRANSITION_SCROLL, 'down']
+          : [NORMAL_SCROLL, '']
+      default:
+        return [NORMAL_SCROLL, '']
+    }
+  }
+
+const getScreenPosition = ({atBottom, atTop}: AppProps) =>
+  atTop ? 'top' : atBottom ? 'bottom' : 'middle'
+
+// EXPORT NORMAL SCROLL FLOW ___________________________________________________
+export default function handleNormalScroll(props: AppProps, deltaY: number | boolean)
+: void {
   // I can't export a single composed function, because this line ought to be
   // executed each time the scroll handle function is called.
   const currentTopPosition = windowGetScrollY.run()
 
   _.compose(
     callSideEffects(props),
-    // redirectToPage,
-    // triggerAnimation,
     timerLogic,
     setTopPosition(currentTopPosition),
+    log('data piped:'),
     collectData(
-      props.idle, {
-      currentTopPosition,
-      currentBottomPosition: getScreenBottom(currentTopPosition),
-      previousTopPosition: props.lastTopPosition
-    }, bodyGetHeight.run()),
+      mapDataToOperation(
+        getScreenPosition(props),
+        getScrollDirection(deltaY),
+        props.idle)
+    ),
     idReader
   )()
 }

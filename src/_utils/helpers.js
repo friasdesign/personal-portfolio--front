@@ -66,10 +66,7 @@ export const getScreenPosition = _.curry(
  * @param  {number} previousWinTop Top position stored in the state of the app.
  * @return {string}               String that represents the movement either up or down.
  */
-export const getScrollDirection = _.curry(
-  (currentWinTop: number, previousWinTop: number): string => {
-    console.log('current win position', currentWinTop)
-    console.log('previousTopPosition', previousWinTop)
-    return currentWinTop < previousWinTop ? 'up' : 'down'
-  }
-)
+export const getScrollDirection = (deltaY: number): string => {
+  if(deltaY === false) return ''
+  return deltaY < 0 ? 'up' : 'down'
+}

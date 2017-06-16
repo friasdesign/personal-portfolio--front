@@ -29,7 +29,7 @@ import type {
 const _NAMESPACE = 'personal-portfolio'
 
 // ACTION TYPES ________________________________________________________________
-const SET_LAST_TOP_POSITION = `${_NAMESPACE}/SET_LAST_TOP_POSITION`
+const SET_SCREEN_TOP_POSITION = `${_NAMESPACE}/SET_SCREEN_TOP_POSITION`
 
 const SET_IDLE = `${_NAMESPACE}/SET_IDLE`
 const SET_TIMER = `${_NAMESPACE}/SET_TIMER`
@@ -38,9 +38,9 @@ const TRIGGER_TRANSITION_ANIMATION = `${_NAMESPACE}/TRIGGER_TRANSITION_ANIMATION
 const END_TRANSITION_ANIMATION = `${_NAMESPACE}/END_TRANSITION_ANIMATION`
 
 // ACTION CREATORS _____________________________________________________________
-export function setLastTopPosition(value: number): Action {
+export function setScreenTopPosition(value: number): Action {
   return {
-    type: SET_LAST_TOP_POSITION,
+    type: SET_SCREEN_TOP_POSITION,
     payload: value
   }
 }
@@ -74,9 +74,9 @@ export function endTransitionAnimation(): Action {
 }
 
 // REDUCERS ____________________________________________________________________
-function lastTopPosition(state = 0, {type, payload}: Action): number {
+function screenTopPosition(state = 0, {type, payload}: Action): number {
   switch(type) {
-    case SET_LAST_TOP_POSITION:
+    case SET_SCREEN_TOP_POSITION:
       return payload
     default:
       return state
@@ -140,7 +140,7 @@ export const getAtBottom = createSelector(
 
 // COMBINE REDUCERS ____________________________________________________________
 const reducers = combineReducers({
-  lastTopPosition,
+  screenTopPosition,
   inTransitionAnimation,
   idle,
   timer
