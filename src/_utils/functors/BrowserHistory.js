@@ -4,7 +4,7 @@ This monad takes the `browserHistory` singleton from React Router and wraps it
 for referential transparency.
  */
 import {IO} from 'monet'
-import {browserHistory} from 'react-router'
+import {browserHistory} from 'react-router-dom'
 
 const browserHistoryIO = IO(() => browserHistory)
 

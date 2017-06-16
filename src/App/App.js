@@ -27,6 +27,7 @@ import Contact from '../views/Contact'
 export type AppProps = {
   setScreenTopPosition: () => void,
   location: Object,
+  history: Object,
   screenTopPosition: number,
   idle: boolean,
   setIdle: () => void,

@@ -1,7 +1,7 @@
 // @flow
 
 // FUNCTORS ____________________________________________________________________
-import {browserHistoryPush} from '../functors/BrowserHistory'
+// import {browserHistoryPush} from '../functors/BrowserHistory'
 
 // TYPES _______________________________________________________________________
 import type {PipedData} from './_types'
@@ -20,10 +20,12 @@ export default (data: PipedData): PipedData => {
         props.map((p: AppProps): AppProps => {
           switch(type[1]) {
             case 'up':
-              browserHistoryPush(p.previousPage).run()
+              p.history.push(p.previousPage)
+              // browserHistoryPush(p.previousPage).run()
               return p
             case 'down':
-              browserHistoryPush(p.nextPage).run()
+              p.history.push(p.nextPage)
+              // browserHistoryPush(p.nextPage).run()
               return p
             default:
               return p
