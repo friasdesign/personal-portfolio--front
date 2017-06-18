@@ -13,7 +13,9 @@ import createStore from './_store'
 import {
   getScreenBottom,
   isPositionAtTop,
-  isPositionAtBottom
+  isPositionAtBottom,
+  isPositionBeyondBottom,
+  isPositionBeyondTop
 } from '../_utils/helpers'
 
 import {
@@ -182,13 +184,17 @@ export const getScreenBottomPosition = createSelector(
 export const getAtTop = createSelector(
   [(state: Object): number => state.screenTopPosition],
   (screenTopPosition: number): boolean =>
-    isPositionAtTop(screenTopPosition)
+    isPositionAtTop(screenTopPosition) ||
+    isPositionBeyondTop(screenTopPosition)
 )
 
 export const getAtBottom = createSelector(
   [getAtTop, getScreenBottomPosition],
   (atTop: boolean, screenBottomPosition: number): boolean => {
-    return atTop ? false : isPositionAtBottom(screenBottomPosition, bodyGetHeight.run())
+    const bodyHeight = bodyGetHeight.run()
+    return atTop ? false
+      : isPositionAtBottom(screenBottomPosition, bodyHeight) ||
+        isPositionBeyondBottom(screenBottomPosition, bodyHeight)
   }
 )
 

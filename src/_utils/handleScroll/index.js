@@ -15,11 +15,18 @@ import {
   windowGetScrollY
 } from '../functors/Window'
 
+import {
+  bodyGetHeight
+} from '../functors/Body'
+
 import idReader from '../functors/IdReader'
 
 // HELPER FUNCTIONS ____________________________________________________________
 import {
-  getScrollDirection
+  getScrollDirection,
+  getScreenPosition,
+  getScreenBottom,
+  log
 } from '../helpers'
 
 // TYPES _______________________________________________________________________
@@ -47,6 +54,10 @@ const callSideEffects = _.curry(
   }
 )
 
+const TRANSITION_UP_TUPLE = [TRANSITION_SCROLL, 'up']
+const TRANSITION_DOWN_TUPLE = [TRANSITION_SCROLL, 'down']
+const NORMAL_SCROLL_TUPLE = [NORMAL_SCROLL, '']
+
 // MAP POSITION AND DIRECTION TO OPERATION TYPE ________________________________
 const mapDataToOperation =
   (position: string, direction: string,
@@ -56,22 +67,27 @@ const mapDataToOperation =
   : [string, string] => {
     if(inTransitionAnimation[0]) return [NORMAL_SCROLL, '']
 
-    switch(direction) {
-      case 'up':
-        return (position === 'top') && idle
-          ? [TRANSITION_SCROLL, 'up']
-          : [NORMAL_SCROLL, '']
-      case 'down':
-        return (position === 'bottom') && idle && !isLast
-          ? [TRANSITION_SCROLL, 'down']
-          : [NORMAL_SCROLL, '']
+    switch(position) {
+      case 'beyondTop':
+        return idle
+          ? TRANSITION_UP_TUPLE
+          : NORMAL_SCROLL_TUPLE
+      case 'top':
+        return (direction === 'up') && idle
+          ? TRANSITION_UP_TUPLE
+          : NORMAL_SCROLL_TUPLE
+      case 'bottom':
+        return (direction === 'down') && idle && !isLast
+          ? TRANSITION_DOWN_TUPLE
+          : NORMAL_SCROLL_TUPLE
+      case 'beyondBottom':
+        return idle && !isLast
+          ? TRANSITION_DOWN_TUPLE
+          : NORMAL_SCROLL_TUPLE
       default:
-        return [NORMAL_SCROLL, '']
+        return NORMAL_SCROLL_TUPLE
     }
   }
-
-const getScreenPosition = ({atBottom, atTop}: AppProps) =>
-  atTop ? 'top' : atBottom ? 'bottom' : 'middle'
 
 // EXPORT NORMAL SCROLL FLOW ___________________________________________________
 export default function handleNormalScroll(props: AppProps, deltaY: number | boolean)
@@ -79,15 +95,21 @@ export default function handleNormalScroll(props: AppProps, deltaY: number | boo
   // I can't export a single composed function, because this line ought to be
   // executed each time the scroll handle function is called.
   const currentTopPosition = windowGetScrollY.run()
+  const bodyHeight = bodyGetHeight.run()
 
   _.compose(
     callSideEffects(props),
     triggerAnimation,
     timerLogic,
     setTopPosition(currentTopPosition),
+    log('piped data:'),
     collectData(
       mapDataToOperation(
-        getScreenPosition(props),
+        getScreenPosition(
+          currentTopPosition,
+          getScreenBottom(currentTopPosition),
+          bodyHeight
+        ),
         getScrollDirection(deltaY),
         props.inTransitionAnimation,
         props.isLast,
