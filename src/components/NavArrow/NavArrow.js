@@ -17,6 +17,7 @@ type NavArrowProps = {
   direction: 'up' | 'down',
   atTop: boolean,
   atBottom: boolean,
+  link: string,
   ready: boolean,
   label: string,
   text?: string,
@@ -27,7 +28,7 @@ type NavArrowProps = {
 const SPRING_SET = {stiffness: 28, damping: 13}
 
 // COMPONENT DEFINITION ________________________________________________________
-const NavArrowComponent = ({direction, text, defaultY}: NavArrowProps) => {
+const NavArrowComponent = ({link, direction, text, defaultY}: NavArrowProps) => {
   return (
     <div className={`nav-arrow-container nav-arrow-container--${direction}`}>
       <Motion
@@ -52,8 +53,8 @@ const NavArrowComponent = ({direction, text, defaultY}: NavArrowProps) => {
             >
               {
                 ({o, t}) => (
-                    <div className={`nav-arrow nav-arrow--${direction}`}
-                      href={`#${direction}`}
+                    <a className={`nav-arrow nav-arrow--${direction}`}
+                      href={link}
                       style={{
                         opacity: o,
                         transform: `scale(${t}) translateY(${y}px)`
@@ -61,7 +62,7 @@ const NavArrowComponent = ({direction, text, defaultY}: NavArrowProps) => {
                     >
                       <img className="nav-arrow__arrow" src={icons[direction]} alt={direction}/>
                       {text}
-                    </div>
+                    </a>
                 )
               }
             </ReactMotionLoop>

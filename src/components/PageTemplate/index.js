@@ -115,7 +115,7 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
           ? `transition-animation-${inTransitionAnimation[1]}--init`
           : ''
         }`}>
-          <NavArrow direction="up" label={topNavArrowLabel}
+          <NavArrow direction="up" link={previousPage} label={topNavArrowLabel}
             ready={titleAnimationEnd} />
 
           <header className="section-header w-100">
@@ -134,7 +134,8 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
             last
             ? Footer()
             : (
-              <NavArrow direction="down" label={bottomNavArrowLabel}
+              <NavArrow direction="down" link={nextPage}
+                label={bottomNavArrowLabel}
                 ready={titleAnimationEnd}/>
             )
           }
