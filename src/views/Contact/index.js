@@ -48,11 +48,15 @@ const Contact = (props: NormalPageProps) => {
   )
 }
 
-export default PageTemplate(Contact, {
+const configObj = {
   topNavArrowLabel: 'Portfolio',
   last: true,
   headingImg,
   headingAriaLabel: 'Contact',
   nextPage: '',
   previousPage: '/portfolio'
-})
+}
+
+export const ContactTesting = PageTemplate(Contact, configObj, true)
+
+export default PageTemplate(Contact, configObj)

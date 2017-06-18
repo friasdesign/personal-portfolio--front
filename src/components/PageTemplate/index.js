@@ -42,23 +42,20 @@ export type ConfigObj = {
 type PageTemplateProps = {
   inTransitionAnimation: [boolean, string],
   setIsLast: () => void,
-  // nextPage: string,
   setNextPage: () => void,
-  // previousPage: string,
   setPreviousPage: () => void
 }
 
 // MAP STATE TO PROPS __________________________________________________________
-function mapStateToProps({inTransitionAnimation, nextPage, previousPage}: Object): Object {
+function mapStateToProps({inTransitionAnimation}: Object): Object {
   return {
     inTransitionAnimation,
-    nextPage,
-    previousPage
   }
 }
 
 // FUNCTION DEFINITION _________________________________________________________
-const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) => {
+const pageTemplate = (WrappedComponent: Component<Object>,
+config: ConfigObj, testing: boolean = false) => {
   const {
     topNavArrowLabel,
     bottomNavArrowLabel,
@@ -152,7 +149,9 @@ const pageTemplate = (WrappedComponent: Component<Object>, config: ConfigObj) =>
     }
   )(PageTemplate)
 
-  return PageTemplateContainer
+  return testing
+    ? PageTemplate
+    : PageTemplateContainer
 }
 
 export default pageTemplate

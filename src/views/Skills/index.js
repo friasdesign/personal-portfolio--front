@@ -75,11 +75,15 @@ const Skills = (props: NormalPageProps) => {
   )
 }
 
-export default PageTemplate(Skills, {
+const configObj = {
   topNavArrowLabel: 'About',
   bottomNavArrowLabel: 'Portfolio',
   headingImg,
   headingAriaLabel: 'Skills',
   nextPage: '/portfolio',
   previousPage: '/about'
-})
+}
+
+export const SkillsTesting = PageTemplate(Skills, configObj, true)
+
+export default PageTemplate(Skills, configObj)

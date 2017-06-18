@@ -55,11 +55,15 @@ const About = (props: NormalPageProps) => {
   )
 }
 
-export default PageTemplate(About, {
+const configObj = {
   topNavArrowLabel: 'Home',
   bottomNavArrowLabel: 'Skills',
   previousPage: '/',
   nextPage: '/skills',
   headingImg,
   headingAriaLabel: 'About'
-})
+}
+
+export const AboutTesting = PageTemplate(About, configObj, true)
+
+export default PageTemplate(About, configObj)

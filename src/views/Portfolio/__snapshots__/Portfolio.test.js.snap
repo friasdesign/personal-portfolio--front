@@ -7,15 +7,12 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <main
-    className="page-template">
+    className="page-template transition-animation ">
     <Connect(Component)
         direction="up"
         label="Skills"
+        link="/skills"
         ready={false} />
-    <Connect(Filter)
-        type="top" />
-    <Connect(Filter)
-        type="bottom" />
     <header
         className="section-header w-100">
         <PopIn
@@ -31,23 +28,24 @@ ShallowWrapper {
         </PopIn>
     </header>
     <Portfolio
-        ready={false} />
+        ready={false}
+        setIsLast={[Function]}
+        setNextPage={[Function]}
+        setPreviousPage={[Function]} />
     <Connect(Component)
         direction="down"
         label="Contact"
+        link="/contact"
         ready={false} />
 </main>,
   "nodes": Array [
     <main
-      className="page-template">
+      className="page-template transition-animation ">
       <Connect(Component)
             direction="up"
             label="Skills"
+            link="/skills"
             ready={false} />
-      <Connect(Filter)
-            type="top" />
-      <Connect(Filter)
-            type="bottom" />
       <header
             className="section-header w-100">
             <PopIn
@@ -63,10 +61,14 @@ ShallowWrapper {
             </PopIn>
       </header>
       <Portfolio
-            ready={false} />
+            ready={false}
+            setIsLast={[Function]}
+            setNextPage={[Function]}
+            setPreviousPage={[Function]} />
       <Connect(Component)
             direction="down"
             label="Contact"
+            link="/contact"
             ready={false} />
 </main>,
   ],
@@ -76,14 +78,23 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 0,
       "_context": Object {},
-      "_currentElement": <PageTemplate />,
+      "_currentElement": <PageTemplate
+        inTransitionAnimation={false}
+        setIsLast={[Function]}
+        setNextPage={[Function]}
+        setPreviousPage={[Function]} />,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": PageTemplate {
         "_reactInternalInstance": [Circular],
         "context": Object {},
-        "props": Object {},
+        "props": Object {
+          "inTransitionAnimation": false,
+          "setIsLast": [Function],
+          "setNextPage": [Function],
+          "setPreviousPage": [Function],
+        },
         "refs": Object {},
         "state": Object {
           "titleAnimationEnd": false,
@@ -107,15 +118,12 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <main
-          className="page-template">
+          className="page-template transition-animation ">
           <Connect(Component)
                     direction="up"
                     label="Skills"
+                    link="/skills"
                     ready={false} />
-          <Connect(Filter)
-                    type="top" />
-          <Connect(Filter)
-                    type="bottom" />
           <header
                     className="section-header w-100">
                     <PopIn
@@ -131,23 +139,24 @@ ShallowWrapper {
                     </PopIn>
           </header>
           <Portfolio
-                    ready={false} />
+                    ready={false}
+                    setIsLast={[Function]}
+                    setNextPage={[Function]}
+                    setPreviousPage={[Function]} />
           <Connect(Component)
                     direction="down"
                     label="Contact"
+                    link="/contact"
                     ready={false} />
 </main>,
         "_debugID": 2,
         "_renderedOutput": <main
-          className="page-template">
+          className="page-template transition-animation ">
           <Connect(Component)
                     direction="up"
                     label="Skills"
+                    link="/skills"
                     ready={false} />
-          <Connect(Filter)
-                    type="top" />
-          <Connect(Filter)
-                    type="bottom" />
           <header
                     className="section-header w-100">
                     <PopIn
@@ -163,10 +172,14 @@ ShallowWrapper {
                     </PopIn>
           </header>
           <Portfolio
-                    ready={false} />
+                    ready={false}
+                    setIsLast={[Function]}
+                    setNextPage={[Function]}
+                    setPreviousPage={[Function]} />
           <Connect(Component)
                     direction="down"
                     label="Contact"
+                    link="/contact"
                     ready={false} />
 </main>,
       },
@@ -180,6 +193,10 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <PageTemplate />,
+  "unrendered": <PageTemplate
+    inTransitionAnimation={false}
+    setIsLast={[Function]}
+    setNextPage={[Function]}
+    setPreviousPage={[Function]} />,
 }
 `;

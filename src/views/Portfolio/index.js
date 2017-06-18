@@ -53,11 +53,15 @@ const Portfolio = (props: NormalPageProps) => {
   )
 }
 
-export default PageTemplate(Portfolio, {
+const configObj = {
   topNavArrowLabel: 'Skills',
   bottomNavArrowLabel: 'Contact',
   headingImg,
   headingAriaLabel: 'Portfolio',
   nextPage: '/contact',
   previousPage: '/skills'
-})
+}
+
+export const PortfolioTesting = PageTemplate(Portfolio, configObj, true)
+
+export default PageTemplate(Portfolio, configObj)

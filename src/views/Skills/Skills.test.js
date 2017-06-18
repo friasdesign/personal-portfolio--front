@@ -1,10 +1,12 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import Skills from './index'
+import {SkillsTesting} from './index'
+
+import {PageTemplateProps} from '../../_testing-data'
 
 describe('Skills', () => {
-  const wrapper = shallow(<Skills />)
+  const wrapper = shallow(<SkillsTesting {...PageTemplateProps} />)
 
   it('should render without crashing', () => {
     expect(wrapper).toHaveLength(1)
