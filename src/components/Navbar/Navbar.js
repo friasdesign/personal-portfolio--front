@@ -47,7 +47,11 @@ const processMinimal = (props: inputProps): withMinimalProps => {
       ? nullComponent
       : LogoContainer,
     hamburgerStyle: minimal
-      ? {display: 'block'}
+      ? { display: 'block',
+        width: '100%',
+        backgroundColor: 'rgba(255, 255, 255, .75)',
+        borderRadius: '0.775rem'
+      }
       : {},
     listOnTop: minimal
       ? nullComponent
