@@ -2,11 +2,7 @@ import React from 'react'
 import {StaggeredMotion, spring} from 'react-motion'
 import {NavLink} from 'react-router-dom'
 
-const MENU_ITEMS = [
-  {
-    name: 'home',
-    link: '/'
-  },
+const MENU_ITEMS_TOP = [
   {
     name: 'about',
     link: '/about'
@@ -25,6 +21,14 @@ const MENU_ITEMS = [
   }
 ]
 
+const MENU_ITEMS = [
+  {
+    name: 'home',
+    link: '/'
+  },
+  ...MENU_ITEMS_TOP
+]
+
 const STIFFNESS = 210
 const DAMPING = 18
 
@@ -32,7 +36,7 @@ function TopList() {
   return (
     <ul className="nav__list top-nav__list">
       {
-        MENU_ITEMS.map(({link, name}, i) => (
+        MENU_ITEMS_TOP.map(({link, name}, i) => (
           <li key={i}><a href={link} className="top-nav__link">{name}</a></li>
         ))
       }
