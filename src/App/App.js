@@ -42,6 +42,13 @@ export type AppProps = {
   isLast: boolean
 }
 
+function turnLoadingScreenOff() {
+  const loadingScreen = document.getElementById('loading_screen')
+  if(loadingScreen) {
+    loadingScreen.className = 'loading-screen--fade-off'
+    setTimeout(() => loadingScreen.className += ' loading-screen--out', 500)
+  }
+}
 
 // COMPONENT
 // _____________________________________________________________________________
@@ -49,6 +56,7 @@ class App extends React.Component {
   props: AppProps
 
   componentDidMount() {
+    turnLoadingScreenOff()
     // This represents the normal scroll flow.
     document.addEventListener('scroll', () => {
       handleScroll(this.props, false)
