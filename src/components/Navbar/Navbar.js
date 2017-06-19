@@ -14,27 +14,14 @@ import FadeIn from '../../animations/FadeIn'
 
 // IMPORT COMPONENTS ___________________________________________________________
 import List from './List'
+import LogoContainer from './components/LogoContainer'
 
 // TYPES _______________________________________________________________________
-import type {Element, FunctionalComponent} from 'react-flow-types'
-
-type inputProps = {
-  minimal: boolean,
-  menuOpen: boolean,
-  toggleMenuOpen: () => void
-}
-
-type withMinimalProps = inputProps & {
-  headerComponentClassName: string,
-  logoContainer: (Object) => Element<any> | null,
-  hamburgerStyle: {display?: string},
-  listOnTop: () => Element<any> | null
-}
-
-type withMenuOpenProps = withMenuOpenProps & {
-  renderHamburger: (FunctionalComponent<Object>, number) => Element<any>,
-  listOnBottom: () => Element<any> | null
-}
+import type {
+  inputProps,
+  withMinimalProps,
+  withMenuOpenProps
+} from './_types'
 
 // HELPERS _____________________________________________________________________
 const addMotionToComponent = (component, key) => (
@@ -44,15 +31,6 @@ const addMotionToComponent = (component, key) => (
     {s => component({style: s})}
   </Motion>
 )
-
-// SMALL COMPONENTS ____________________________________________________________
-function logoContainer({logo}: {logo: string}) {
-  return (
-    <div className="logo-container">
-      <img src={logo} alt="logo" className="logo" />
-    </div>
-  )
-}
 
 const nullComponent = () => null
 
@@ -67,7 +45,7 @@ const processMinimal = (props: inputProps): withMinimalProps => {
       : '',
     logoContainer: minimal
       ? nullComponent
-      : logoContainer,
+      : LogoContainer,
     hamburgerStyle: minimal
       ? {display: 'block'}
       : {},
@@ -133,6 +111,7 @@ const render = (props: withMenuOpenProps) => {
   )
 }
 
+// DEFINE NAVBAR COMPONENT _____________________________________________________
 const Navbar = _.compose(
   render,
   processMenuOpen,
