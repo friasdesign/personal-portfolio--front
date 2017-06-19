@@ -11,7 +11,7 @@ import './index.sass'
 import store from './ducks'
 
 // COMPONENTS __________________________________________________________________
-import ScrollToTop from './components/ScrollToTop'
+import ResetOnPageChange from './components/ResetOnPageChange'
 
 // APPLICATION _________________________________________________________________
 import App from './App'
@@ -20,9 +20,9 @@ import App from './App'
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <ScrollToTop>
+      <ResetOnPageChange>
         <App/>
-      </ScrollToTop>
+      </ResetOnPageChange>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
