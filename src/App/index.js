@@ -1,5 +1,6 @@
 // @flow
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router'
 
 // ACTIONS _____________________________________________________________________
 import {
@@ -50,4 +51,4 @@ const AppContainer = connect(
   }
 )(App)
 
-export default AppContainer
+export default withRouter(AppContainer)

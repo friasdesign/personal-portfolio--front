@@ -3,7 +3,6 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
 import _ from 'ramda'
-import {withRouter} from 'react-router'
 
 // HELPERS
 // _____________________________________________________________________________
@@ -87,4 +86,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App)
+export default App
