@@ -44,6 +44,9 @@ const SET_IS_LAST = `${_NAMESPACE}/SET_IS_LAST`
 const SET_PREVIOUS_PAGE = `${_NAMESPACE}/SET_PREVIOUS_PAGE`
 const SET_NEXT_PAGE = `${_NAMESPACE}/SET_NEXT_PAGE`
 
+const SET_MENU_OPEN = `${_NAMESPACE}/SET_MENU_OPEN`
+const TOGGLE_MENU_OPEN = `${_NAMESPACE}/TOGGLE_MENU_OPEN`
+
 // ACTION CREATORS _____________________________________________________________
 export function setScreenTopPosition(value: number): Action {
   return {
@@ -98,6 +101,19 @@ export function setNextPage(value: string): Action {
   return {
     type: SET_NEXT_PAGE,
     payload: value
+  }
+}
+
+export function setMenuOpen(value: string): Action {
+  return {
+    type: SET_MENU_OPEN,
+    payload: value
+  }
+}
+
+export function toggleMenuOpen(): Action {
+  return {
+    type: TOGGLE_MENU_OPEN
   }
 }
 
@@ -175,6 +191,17 @@ function previousPage(state = '', {type, payload}: Action): string {
   }
 }
 
+function menuOpen(state = false, {type, payload}: Action): boolean {
+  switch(type) {
+    case SET_MENU_OPEN:
+      return payload
+    case TOGGLE_MENU_OPEN:
+      return !state
+    default:
+      return state
+  }
+}
+
 // SELECTORS ___________________________________________________________________
 export const getScreenBottomPosition = createSelector(
   [(state: Object): number => state.screenTopPosition],
@@ -206,7 +233,8 @@ const reducers = combineReducers({
   isLast,
   timer,
   previousPage,
-  nextPage
+  nextPage,
+  menuOpen
 })
 
 // RETURN STORE ________________________________________________________________
