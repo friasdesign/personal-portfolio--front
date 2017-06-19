@@ -1,7 +1,12 @@
 import React from 'react'
 import {StaggeredMotion, spring} from 'react-motion'
+import {NavLink} from 'react-router-dom'
 
 const MENU_ITEMS = [
+  {
+    name: 'home',
+    link: '/'
+  },
   {
     name: 'about',
     link: '/about'
@@ -67,9 +72,13 @@ function List({topNav}) {
 
             return (
               <li key={i} style={styles}>
-                <a href={MENU_ITEMS[i].link} className="top-nav__link">
+                <NavLink to={MENU_ITEMS[i].link}
+                  className="top-nav__link"
+                  activeClassName="top-nav__link--active"
+                  exact
+                >
                   {MENU_ITEMS[i].name}
-                </a>
+                </NavLink>
               </li>
             )
           })}

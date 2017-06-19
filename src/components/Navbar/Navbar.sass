@@ -1,6 +1,13 @@
 @import '../../_sass/_breakpoints.sass'
 @import '../../_sass/_constants.sass'
 
+=create-line
+  display: inline-block
+  width: 45%
+  border-top: 1px solid $primary
+  height: 0.5rem
+  content: ""
+
 .top-nav
   font-weight: normal
   -webkit-font-smoothing: antialiased
@@ -72,6 +79,13 @@
   color: $primary
   transition: .5s
 
+.top-nav__link--active
+  color: $soft-black
+
+  &::after
+    margin-left: 1.125rem
+    +create-line
+
 // LOGO ________________________________________________________________________
 .logo
   width: 3.272rem
@@ -115,6 +129,13 @@
       width: 50%
       text-align: right
       margin-right: 3.775rem
+
+  .top-nav__link--active
+    &::after
+      display: none
+    &::before
+      margin-right: 1.125rem
+      +create-line
 
 // DESKTOP _____________________________________________________________________
 +for-desktop-up
