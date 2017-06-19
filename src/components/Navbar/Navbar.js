@@ -50,7 +50,8 @@ const processMinimal = (props: inputProps): withMinimalProps => {
       ? { display: 'block',
         width: '100%',
         backgroundColor: 'rgba(255, 255, 255, .75)',
-        borderRadius: '0.775rem'
+        borderRadius: '0.775rem',
+        pointerEvents: 'initial'
       }
       : {},
     listOnTop: minimal
