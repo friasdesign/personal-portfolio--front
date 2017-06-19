@@ -9,9 +9,7 @@ ShallowWrapper {
   "node": <FadeIn
     onRest={[Function]}>
     <header
-        className="top-nav 
-                
-              "
+        className="top-nav "
         role="banner">
         <div
             className="top-nav__on-top">
@@ -24,7 +22,7 @@ ShallowWrapper {
             </div>
             <div
                 className="hamburger"
-                onClick={[Function]}
+                onClick={undefined}
                 style={Object {}}>
                 <Motion
                     defaultStyle={
@@ -54,9 +52,7 @@ ShallowWrapper {
     <FadeIn
       onRest={[Function]}>
       <header
-            className="top-nav 
-                  
-                "
+            className="top-nav "
             role="banner">
             <div
                   className="top-nav__on-top">
@@ -69,7 +65,7 @@ ShallowWrapper {
                   </div>
                   <div
                         className="hamburger"
-                        onClick={[Function]}
+                        onClick={undefined}
                         style={Object {}}>
                         <Motion
                               defaultStyle={
@@ -100,20 +96,18 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Navbar />,
+      "_currentElement": <Unknown />,
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Navbar {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {},
         "refs": Object {},
-        "state": Object {
-          "navOpen": false,
-        },
+        "state": null,
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],
@@ -135,9 +129,7 @@ ShallowWrapper {
         "_currentElement": <FadeIn
           onRest={[Function]}>
           <header
-                    className="top-nav 
-                      
-                    "
+                    className="top-nav "
                     role="banner">
                     <div
                               className="top-nav__on-top">
@@ -150,7 +142,7 @@ ShallowWrapper {
                               </div>
                               <div
                                         className="hamburger"
-                                        onClick={[Function]}
+                                        onClick={undefined}
                                         style={Object {}}>
                                         <Motion
                                                   defaultStyle={
@@ -180,9 +172,7 @@ ShallowWrapper {
         "_renderedOutput": <FadeIn
           onRest={[Function]}>
           <header
-                    className="top-nav 
-                      
-                    "
+                    className="top-nav "
                     role="banner">
                     <div
                               className="top-nav__on-top">
@@ -195,7 +185,7 @@ ShallowWrapper {
                               </div>
                               <div
                                         className="hamburger"
-                                        onClick={[Function]}
+                                        onClick={undefined}
                                         style={Object {}}>
                                         <Motion
                                                   defaultStyle={
@@ -232,6 +222,6 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Navbar />,
+  "unrendered": <Unknown />,
 }
 `;
