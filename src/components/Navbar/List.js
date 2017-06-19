@@ -40,7 +40,7 @@ function List({topNav}) {
 
   return (
     <StaggeredMotion
-      defaultStyles={MENU_ITEMS.map((item, i) => ({x: -100, o: 0}))}
+      defaultStyles={MENU_ITEMS.map((item, i) => ({x: 100, o: 0}))}
       styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
         return i === 0
           // Initial stiffness and damping
