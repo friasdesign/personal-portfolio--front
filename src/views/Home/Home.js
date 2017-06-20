@@ -181,7 +181,7 @@ class Home extends Component {
           <div className="controls">
             {
               finishedTyping
-              ? (<Arrow />)
+              ? (<Arrow link="/about" />)
               : null
             }
           </div>

@@ -1,12 +1,13 @@
 import React from 'react'
 import {Motion, spring} from 'react-motion'
 import {ReactMotionLoop} from 'react-motion-loop'
+import {Link} from 'react-router-dom'
 
 import arrow from './arrow.svg'
 
 const SPRING_SET = {stiffness: 32, damping: 10}
 
-function Arrow({up = false}) {
+function Arrow({up = false, link}) {
   return(
     <Motion
       defaultStyle={{o: 0}}
@@ -21,12 +22,12 @@ function Arrow({up = false}) {
             {
               ({t}) => {
                 return (
-                <div className="arrow-container">
+                <Link className="arrow-container" to={link}>
                   <img style={{
                       opacity: o,
                       transform: `translate(0, ${t}px)`
                     }} src={arrow} alt="Arrow-down" className="arrow"/>
-                </div>
+                </Link>
               )}
             }
           </ReactMotionLoop>
