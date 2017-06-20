@@ -57,15 +57,18 @@ const callSideEffects = _.curry(
 const TRANSITION_UP_TUPLE = [TRANSITION_SCROLL, 'up']
 const TRANSITION_DOWN_TUPLE = [TRANSITION_SCROLL, 'down']
 const NORMAL_SCROLL_TUPLE = [NORMAL_SCROLL, '']
+const NO_SCROLL_TUPLE = ['noScroll', '']
 
 // MAP POSITION AND DIRECTION TO OPERATION TYPE ________________________________
 const mapDataToOperation =
   (position: string, direction: string,
     inTransitionAnimation: [boolean, string],
     isLast: boolean,
-    idle: boolean)
+    idle: boolean,
+    atHome: boolean)
   : [string, string] => {
-    if(inTransitionAnimation[0]) return [NORMAL_SCROLL, '']
+    if(inTransitionAnimation[0]) return NO_SCROLL_TUPLE
+    if(atHome) return direction === 'down' ? TRANSITION_DOWN_TUPLE : NO_SCROLL_TUPLE
 
     switch(position) {
       case 'beyondTop':
@@ -113,7 +116,8 @@ export default function handleNormalScroll(props: AppProps, deltaY: number | boo
         getScrollDirection(deltaY),
         props.inTransitionAnimation,
         props.isLast,
-        props.idle)
+        props.idle,
+        props.atHome)
     ),
     idReader
   )()
