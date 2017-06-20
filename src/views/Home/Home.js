@@ -1,3 +1,4 @@
+// @flow
 import React, {Component} from 'react'
 import {Motion, spring, presets} from 'react-motion'
 
@@ -15,8 +16,29 @@ const NAME = 'Carlos Frias'
 const SECOND_LINE = 'full-stack'
 const THIRD_LINE = 'ux/ui'
 
+// TYPES _______________________________________________________________________
+type HomeProps = {
+  setNextPage: (string) => void,
+  inTransitionAnimation: boolean
+}
+
+type HomeState = {
+  firstLine: string,
+  name: string,
+  secondLine: string,
+  thirdLine: string,
+  finishedTyping: boolean,
+  startedTyping: boolean,
+  developer: boolean,
+  designer: boolean,
+  ready: boolean
+}
+
 class Home extends Component {
-  constructor(props) {
+  props: HomeProps
+  state: HomeState
+
+  constructor(props: HomeProps) {
     super(props)
 
     this.firstLine = FIRST_LINE.split('')
@@ -66,7 +88,7 @@ class Home extends Component {
       .then(() => this.setState({finishedTyping: true}))
   }
 
-  displaySub(property) {
+  displaySub(property: string): Promise {
     return new Promise((resolve, reject) => {
       this.setState({
         [property]: true
@@ -75,7 +97,7 @@ class Home extends Component {
     })
   }
 
-  typeCharArray(charArray, property) {
+  typeCharArray(charArray: Array<string>, property: string): Promise {
     return new Promise((resolve) => {
       const length = charArray.length
 
@@ -91,10 +113,6 @@ class Home extends Component {
         }), (i + 1) * 120)
       })
     })
-  }
-
-  componentWillMount() {
-    if(!this.props.atHome) this.props.setAtHome(true)
   }
 
   componentDidUpdate() {
@@ -169,6 +187,10 @@ class Home extends Component {
           </div>
         </div>
     )
+  }
+
+  componentDidMount() {
+    this.props.setNextPage('/about')
   }
 
   render() {
