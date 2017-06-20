@@ -68,7 +68,10 @@ const mapDataToOperation =
     atHome: boolean)
   : [string, string] => {
     if(inTransitionAnimation[0]) return NO_SCROLL_TUPLE
-    if(atHome) return direction === 'down' ? TRANSITION_DOWN_TUPLE : NO_SCROLL_TUPLE
+    if(atHome)
+      return direction === 'down' || position === 'beyondBottom'
+        ? TRANSITION_DOWN_TUPLE
+        : NO_SCROLL_TUPLE
 
     switch(position) {
       case 'beyondTop':
