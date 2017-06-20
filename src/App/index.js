@@ -25,7 +25,8 @@ function mapStateToProps(state: Object) {
     isLast,
     timer,
     nextPage,
-    previousPage
+    previousPage,
+    atHome
   } = state
   return {
     setScreenTopPosition,
@@ -36,7 +37,8 @@ function mapStateToProps(state: Object) {
     atTop: getAtTop(state),
     atBottom: getAtBottom(state),
     nextPage,
-    previousPage
+    previousPage,
+    atHome
   }
 }
 

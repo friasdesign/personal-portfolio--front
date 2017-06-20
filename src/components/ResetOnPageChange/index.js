@@ -2,9 +2,10 @@
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 
-// SELECTORS ___________________________________________________________________
+// ACTION CREATORS _____________________________________________________________
 import {
-  setMenuOpen
+  setMenuOpen,
+  setAtHome
 } from '../../ducks'
 
 // COMPONENT ___________________________________________________________________
@@ -13,7 +14,8 @@ import ResetOnPageChange from './ResetOnPageChange'
 // DEFINE CONTAINER ____________________________________________________________
 const ResetOnPageChangeContainer = connect(
   null, {
-    setMenuOpen
+    setMenuOpen,
+    setAtHome
   }
 )(ResetOnPageChange)
 

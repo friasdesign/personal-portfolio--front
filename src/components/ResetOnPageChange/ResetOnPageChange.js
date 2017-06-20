@@ -2,24 +2,37 @@
 import React from 'react'
 
 // TYPES _______________________________________________________________________
+import type {ReactChildren} from 'react-flow-types'
+
 type ResetOnPageChangeProps = {
   setMenuOpen: (boolean) => void,
-  location: Object
+  setAtHome: (boolean) => void,
+  location: Object,
+  children: ReactChildren
 }
 
 class ResetOnPageChange extends React.Component {
   props: ResetOnPageChangeProps
 
-  componentDidUpdate(prevProps) {
+  atHome() {
+    const currentLocation = this.props.location.pathname
+    return /^\/$/.test(currentLocation)
+  }
+
+  componentDidUpdate(prevProps: Object) {
     if (this.props.location !== prevProps.location) {
-      console.log('changed')
       window.scrollTo(0, 0)
       this.props.setMenuOpen(false)
+      this.props.setAtHome(this.atHome())
     }
   }
 
+  componentDidMount() {
+    this.props.setAtHome(this.atHome())
+  }
+
   render() {
-    return this.props.children
+    return React.Children.only(this.props.children)
   }
 }
 

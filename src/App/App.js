@@ -39,7 +39,8 @@ export type AppProps = {
   setTimer: () => void,
   atTop: boolean,
   atBottom: boolean,
-  isLast: boolean
+  isLast: boolean,
+  atHome: boolean
 }
 
 function turnLoadingScreenOff() {
@@ -70,13 +71,8 @@ class App extends React.Component {
     })
   }
 
-  atHome() {
-    const currentLocation = this.props.location.pathname
-    return /^\/$/.test(currentLocation)
-  }
-
   render() {
-    const atHome = this.atHome()
+    const {atHome} = this.props
     return (
       <div className="App">
         <Navbar minimal={!atHome}/>

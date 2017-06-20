@@ -47,6 +47,8 @@ const SET_NEXT_PAGE = `${_NAMESPACE}/SET_NEXT_PAGE`
 const SET_MENU_OPEN = `${_NAMESPACE}/SET_MENU_OPEN`
 const TOGGLE_MENU_OPEN = `${_NAMESPACE}/TOGGLE_MENU_OPEN`
 
+const SET_AT_HOME = `${_NAMESPACE}/SET_AT_HOME`
+
 // ACTION CREATORS _____________________________________________________________
 export function setScreenTopPosition(value: number): Action {
   return {
@@ -113,7 +115,15 @@ export function setMenuOpen(value: string): Action {
 
 export function toggleMenuOpen(): Action {
   return {
-    type: TOGGLE_MENU_OPEN
+    type: TOGGLE_MENU_OPEN,
+    payload: null
+  }
+}
+
+export function setAtHome(value: boolean): Action {
+  return {
+    type: SET_AT_HOME,
+    payload: value
   }
 }
 
@@ -202,6 +212,15 @@ function menuOpen(state = false, {type, payload}: Action): boolean {
   }
 }
 
+function atHome(state = false, {type, payload}: Action): boolean {
+  switch(type) {
+    case SET_AT_HOME:
+      return payload
+    default:
+      return state
+  }
+}
+
 // SELECTORS ___________________________________________________________________
 export const getScreenBottomPosition = createSelector(
   [(state: Object): number => state.screenTopPosition],
@@ -234,7 +253,8 @@ const reducers = combineReducers({
   timer,
   previousPage,
   nextPage,
-  menuOpen
+  menuOpen,
+  atHome
 })
 
 // RETURN STORE ________________________________________________________________
