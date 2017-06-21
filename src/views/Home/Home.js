@@ -19,7 +19,7 @@ const THIRD_LINE = 'ux/ui'
 // TYPES _______________________________________________________________________
 type HomeProps = {
   setNextPage: (string) => void,
-  inTransitionAnimation: boolean
+  inTransitionAnimation: [boolean, string]
 }
 
 type HomeState = {
@@ -202,11 +202,16 @@ class Home extends Component {
 
   render() {
     const {ready} = this.state
+    const {inTransitionAnimation} = this.props
     return(
       <FadeIn
         onRest={() => {this.setState({ready: true})}}
       >
-        <section id="home" className="home-container">
+        <section id="home" className={`home-container ${
+            inTransitionAnimation[0]
+              ? 'home-container--transition'
+              : ''
+          }`}>
           <div className="curtain">
             {
               ready

@@ -12,14 +12,21 @@
   height: 100vh
   overflow: hidden
 
-.home-container--out
-  background: #fff
-  transition: 1.2s
+.home-container::after
+  display: block
+  content: ""
+  position: fixed
+  top: 120%
+  z-index: 12
+  width: 100vw
+  height: 100vh
+  transform: skewY(-10deg)
+  background-color: #fff
 
-.curtain--out
-  transform: scale(0.7)
-  opacity: 0.2
-  transition: 1.2s
+.home-container--transition::after
+  top: 0
+  transform: skewY(0deg)
+  transition: 0.8s ease-out
 
 .home-content
   padding-top: 10%
