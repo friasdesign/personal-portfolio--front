@@ -38,6 +38,13 @@ class Home extends Component {
   props: HomeProps
   state: HomeState
 
+  firstLine: Array<string>
+  secondLine: Array<string>
+  name: Array<string>
+  thirdLine: Array<string>
+  typeCharArray: (Array<string>, string) => Promise<any>
+  displaySub: (string) => Promise<any>
+
   constructor(props: HomeProps) {
     super(props)
 
@@ -88,7 +95,7 @@ class Home extends Component {
       .then(() => this.setState({finishedTyping: true}))
   }
 
-  displaySub(property: string): Promise {
+  displaySub(property: string): Promise<any> {
     return new Promise((resolve, reject) => {
       this.setState({
         [property]: true
@@ -97,7 +104,7 @@ class Home extends Component {
     })
   }
 
-  typeCharArray(charArray: Array<string>, property: string): Promise {
+  typeCharArray(charArray: Array<string>, property: string): Promise<any> {
     return new Promise((resolve) => {
       const length = charArray.length
 
@@ -120,7 +127,7 @@ class Home extends Component {
     if(ready && !startedTyping) this.startTyping()
   }
 
-  titleWithSub(title, subtitle, shorter, first) {
+  titleWithSub(title: string, subtitle: string, shorter: boolean, first: boolean = false) {
     return (
       <div className={`title-sub ${shorter ? 'title-sub--half' : ''}`}>
         {
@@ -195,21 +202,12 @@ class Home extends Component {
 
   render() {
     const {ready} = this.state
-    const {inTransitionAnimation} = this.props
     return(
       <FadeIn
         onRest={() => {this.setState({ready: true})}}
       >
-        <section id="home" className={`home-container ${
-            inTransitionAnimation[0]
-            ? 'home-container--out'
-            : ''
-          }`}>
-          <div className={`curtain ${
-              inTransitionAnimation[0]
-              ? 'curtain--out'
-              : ''
-            }`}>
+        <section id="home" className="home-container">
+          <div className="curtain">
             {
               ready
               ? this.mountChildren()
