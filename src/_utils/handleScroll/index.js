@@ -100,8 +100,11 @@ export const triggerTransitionScroll =
       callSideEffects(props),
       triggerAnimation,
       timerLogic,
-      [TRANSITION_SCROLL, direction]
-    )
+      collectData(
+        [TRANSITION_SCROLL, direction]
+      ),
+      idReader
+    )()
   })
 
 // EXPORT SCROLL FLOW ___________________________________________________

@@ -19,7 +19,8 @@ const THIRD_LINE = 'ux/ui'
 // TYPES _______________________________________________________________________
 type HomeProps = {
   setNextPage: (string) => void,
-  inTransitionAnimation: [boolean, string]
+  inTransitionAnimation: [boolean, string],
+  triggerTransition: (string) => void
 }
 
 type HomeState = {
@@ -188,7 +189,7 @@ class Home extends Component {
           <div className="controls">
             {
               finishedTyping
-              ? (<Arrow link="/about" />)
+              ? (<Arrow triggerTransition={this.props.triggerTransition} />)
               : null
             }
           </div>

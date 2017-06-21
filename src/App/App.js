@@ -6,7 +6,7 @@ import _ from 'ramda'
 
 // HELPERS
 // _____________________________________________________________________________
-import handleScroll from '../_utils/handleScroll'
+import handleScroll, {triggerTransitionScroll} from '../_utils/handleScroll'
 
 // COMPONENTS
 // _____________________________________________________________________________
@@ -80,7 +80,9 @@ class App extends React.Component {
         <Filter atHome={atHome} type="top"/>
         <Filter atHome={atHome} type="bottom"/>
 
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" render={() =>
+            <Home triggerTransition={triggerTransitionScroll(this.props)}/>
+        }/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/skills" component={Skills}/>
         <Route exact path="/portfolio" component={Portfolio}/>

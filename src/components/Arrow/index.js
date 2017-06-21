@@ -1,13 +1,22 @@
+// @flow
 import React from 'react'
 import {Motion, spring} from 'react-motion'
 import {ReactMotionLoop} from 'react-motion-loop'
-import {Link} from 'react-router-dom'
 
 import arrow from './arrow.svg'
 
+import './Arrow.sass'
+
 const SPRING_SET = {stiffness: 32, damping: 10}
 
-function Arrow({up = false, link}) {
+// TYPES _______________________________________________________________________
+type ArrowProps = {
+  up?: boolean,
+  triggerTransition: (string) => void
+}
+
+function Arrow({up = false, triggerTransition}: ArrowProps) {
+  const direction = up ? 'up' : 'down'
   return(
     <Motion
       defaultStyle={{o: 0}}
@@ -22,12 +31,12 @@ function Arrow({up = false, link}) {
             {
               ({t}) => {
                 return (
-                <Link className="arrow-container" to={link}>
+                <div onClick={triggerTransition.bind(this, direction)} className="arrow-container">
                   <img style={{
                       opacity: o,
                       transform: `translate(0, ${t}px)`
                     }} src={arrow} alt="Arrow-down" className="arrow"/>
-                </Link>
+                </div>
               )}
             }
           </ReactMotionLoop>
