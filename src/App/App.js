@@ -81,12 +81,20 @@ class App extends React.Component {
         <Filter atHome={atHome} type="bottom"/>
 
         <Route exact path="/" render={() =>
-            <Home triggerTransition={triggerTransitionScroll(this.props)}/>
+          <Home triggerTransition={triggerTransitionScroll(this.props)}/>
         }/>
-        <Route exact path="/about" component={About}/>
-        <Route exact path="/skills" component={Skills}/>
-        <Route exact path="/portfolio" component={Portfolio}/>
-        <Route exact path="/contact" component={Contact}/>
+        <Route exact path="/about" render={() =>
+          <About triggerTransition={triggerTransitionScroll(this.props)}/>
+        }/>
+        <Route exact path="/skills" render={() =>
+          <Skills triggerTransition={triggerTransitionScroll(this.props)}/>
+        }/>
+        <Route exact path="/portfolio" render={() =>
+          <Portfolio triggerTransition={triggerTransitionScroll(this.props)}/>
+        }/>
+        <Route exact path="/contact" render={() =>
+          <Contact triggerTransition={triggerTransitionScroll(this.props)}/>
+        }/>
       </div>
     )
   }

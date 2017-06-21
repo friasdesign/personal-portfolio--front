@@ -15,9 +15,9 @@ const icons = {
 // TYPES _______________________________________________________________________
 type NavArrowProps = {
   direction: 'up' | 'down',
+  triggerTransition: (string) => void,
   atTop: boolean,
   atBottom: boolean,
-  link: string,
   ready: boolean,
   label: string,
   text?: string,
@@ -28,7 +28,7 @@ type NavArrowProps = {
 const SPRING_SET = {stiffness: 28, damping: 13}
 
 // COMPONENT DEFINITION ________________________________________________________
-const NavArrowComponent = ({link, direction, text, defaultY}: NavArrowProps) => {
+const NavArrowComponent = ({triggerTransition, direction, text, defaultY}: NavArrowProps) => {
   return (
     <div className={`nav-arrow-container nav-arrow-container--${direction}`}>
       <Motion
@@ -53,8 +53,8 @@ const NavArrowComponent = ({link, direction, text, defaultY}: NavArrowProps) => 
             >
               {
                 ({o, t}) => (
-                    <a className={`nav-arrow nav-arrow--${direction}`}
-                      href={link}
+                    <div className={`nav-arrow nav-arrow--${direction}`}
+                      onClick={triggerTransition.bind(this, direction)}
                       style={{
                         opacity: o,
                         transform: `scale(${t}) translateY(${y}px)`
@@ -62,7 +62,7 @@ const NavArrowComponent = ({link, direction, text, defaultY}: NavArrowProps) => 
                     >
                       <img className="nav-arrow__arrow" src={icons[direction]} alt={direction}/>
                       {text}
-                    </a>
+                    </div>
                 )
               }
             </ReactMotionLoop>

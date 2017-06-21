@@ -43,7 +43,8 @@ type PageTemplateProps = {
   inTransitionAnimation: [boolean, string],
   setIsLast: () => void,
   setNextPage: () => void,
-  setPreviousPage: () => void
+  setPreviousPage: () => void,
+  triggerTransition: (string) => void
 }
 
 // MAP STATE TO PROPS __________________________________________________________
@@ -103,6 +104,7 @@ config: ConfigObj, testing: boolean = false) => {
       const {titleAnimationEnd} = this.state
       const {
         inTransitionAnimation,
+        triggerTransition,
         ...passThru
       } = this.props
 
@@ -113,7 +115,7 @@ config: ConfigObj, testing: boolean = false) => {
           : ''
         }`}>
           <NavArrow direction="up" link={previousPage} label={topNavArrowLabel}
-            ready={titleAnimationEnd} />
+            ready={titleAnimationEnd} triggerTransition={triggerTransition} />
 
           <header className="section-header w-100">
             <PopIn onRest={f => {this.setState({titleAnimationEnd: true})}}>
@@ -133,7 +135,8 @@ config: ConfigObj, testing: boolean = false) => {
             : (
               <NavArrow direction="down" link={nextPage}
                 label={bottomNavArrowLabel}
-                ready={titleAnimationEnd}/>
+                ready={titleAnimationEnd}
+                triggerTransition={triggerTransition}/>
             )
           }
         </main>
