@@ -25,8 +25,7 @@ import idReader from '../functors/IdReader'
 import {
   getScrollDirection,
   getScreenPosition,
-  getScreenBottom,
-  log
+  getScreenBottom
 } from '../helpers'
 
 // TYPES _______________________________________________________________________
@@ -95,6 +94,16 @@ const mapDataToOperation =
     }
   }
 
+export const triggerTransitionScroll =
+  _.curry((props: AppProps, direction: 'up' | 'down'): void => {
+    _.compose(
+      callSideEffects(props),
+      triggerAnimation,
+      timerLogic,
+      [TRANSITION_SCROLL, direction]
+    )
+  })
+
 // EXPORT SCROLL FLOW ___________________________________________________
 export default _.curry((props: AppProps, deltaY: number | boolean): void => {
   // I can't export a single composed function, because this line ought to be
@@ -107,7 +116,6 @@ export default _.curry((props: AppProps, deltaY: number | boolean): void => {
     triggerAnimation,
     timerLogic,
     setTopPosition(currentTopPosition),
-    log('piped data:'),
     collectData(
       mapDataToOperation(
         getScreenPosition(
