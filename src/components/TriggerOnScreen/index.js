@@ -14,7 +14,9 @@ import TriggerOnScreen from './TriggerOnScreen'
 
 // MAP STATE TO PROPS __________________________________________________________
 function mapStateToProps(state) {
+  const {screenTopPosition} = state
   return {
+    screenTopPosition,
     screenBottomPosition: getScreenBottomPosition(state)
   }
 }

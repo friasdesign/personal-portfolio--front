@@ -5,7 +5,7 @@ import React from 'react'
 import type {ReactChildren} from 'react-flow-types'
 
 type ResetOnPageChangeProps = {
-  setMenuOpen: (boolean) => void,
+  resetOnPageChange: () => void,
   setAtHome: (boolean) => void,
   location: Object,
   children: ReactChildren
@@ -22,7 +22,7 @@ class ResetOnPageChange extends React.Component {
   componentDidUpdate(prevProps: Object) {
     if (this.props.location !== prevProps.location) {
       window.scrollTo(0, 0)
-      this.props.setMenuOpen(false)
+      this.props.resetOnPageChange()
       this.props.setAtHome(this.atHome())
     }
   }

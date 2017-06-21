@@ -51,9 +51,9 @@ function triggerOnScreen(
     }
 
     setTopPosition(element: Object) {
-      if(element && !this.state.mounted) {
+      if(element && this.state.mounted) {
         this.topPosition = Math.round(
-          getElementTopPosition(element) + 200
+          getElementTopPosition(element) + 100
         )
       }
     }

@@ -49,6 +49,8 @@ const TOGGLE_MENU_OPEN = `${_NAMESPACE}/TOGGLE_MENU_OPEN`
 
 const SET_AT_HOME = `${_NAMESPACE}/SET_AT_HOME`
 
+const RESET_ON_PAGE_CHANGE = `${_NAMESPACE}/RESET_ON_PAGE_CHANGE`
+
 // ACTION CREATORS _____________________________________________________________
 export function setScreenTopPosition(value: number): Action {
   return {
@@ -124,6 +126,13 @@ export function setAtHome(value: boolean): Action {
   return {
     type: SET_AT_HOME,
     payload: value
+  }
+}
+
+export function resetOnPageChange(): Action {
+  return {
+    type: RESET_ON_PAGE_CHANGE,
+    payload: null
   }
 }
 
@@ -205,6 +214,8 @@ function menuOpen(state = false, {type, payload}: Action): boolean {
   switch(type) {
     case SET_MENU_OPEN:
       return payload
+    case RESET_ON_PAGE_CHANGE:
+      return false
     case TOGGLE_MENU_OPEN:
       return !state
     default:

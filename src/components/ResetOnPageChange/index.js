@@ -4,7 +4,7 @@ import {withRouter} from 'react-router'
 
 // ACTION CREATORS _____________________________________________________________
 import {
-  setMenuOpen,
+  resetOnPageChange,
   setAtHome
 } from '../../ducks'
 
@@ -14,7 +14,7 @@ import ResetOnPageChange from './ResetOnPageChange'
 // DEFINE CONTAINER ____________________________________________________________
 const ResetOnPageChangeContainer = connect(
   null, {
-    setMenuOpen,
+    resetOnPageChange,
     setAtHome
   }
 )(ResetOnPageChange)
