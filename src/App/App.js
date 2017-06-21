@@ -74,7 +74,7 @@ class App extends React.Component {
   render() {
     const {atHome} = this.props
     return (
-      <div className="App">
+      <div className={`app ${atHome ? 'app--at-home' : ''}`}>
         <Navbar minimal={!atHome}/>
 
         <Filter atHome={atHome} type="top"/>
