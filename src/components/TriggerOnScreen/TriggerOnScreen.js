@@ -68,7 +68,7 @@ function triggerOnScreen(
     }
 
     shouldComponentUpdate(nextProps: Object, nextState: Object) {
-      return !_.equals(nextState, this.state)
+      return this.state.triggered ? false : !_.equals(nextState, this.state)
     }
 
     componentDidMount() {

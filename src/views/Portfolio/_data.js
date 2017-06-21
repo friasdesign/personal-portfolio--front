@@ -81,7 +81,7 @@ export const ongoing = [
     },
     title: 'Hotel Room Booking',
     type: 'Web app',
-    description: 'Room booking form for a hotel, it’s going to be extended to be sold as a full booking management solution in the future, for now, it’s in its baby steps. Back-end in Python is going to be developed by a friend of mine.',
+    description: 'Room booking form for a hotel, it’s going to be extended to be sold as a full booking management solution in the future, for now, it’s in its baby steps.',
     techs: [
       {
         title: 'Express',

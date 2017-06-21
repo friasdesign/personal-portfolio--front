@@ -71,6 +71,19 @@ class App extends React.Component {
     })
   }
 
+  shouldComponentUpdate(nextProps: Object): boolean {
+    const {
+      atHome,
+      location,
+      nextPage,
+      previousPage
+    } = this.props
+    return (location.pathname !== nextProps.location.pathname) ||
+      (atHome !== nextProps.atHome) ||
+      (nextPage !== nextProps.nextPage) ||
+      (previousPage !== nextProps.previousPage)
+  }
+
   render() {
     const {atHome} = this.props
     return (
