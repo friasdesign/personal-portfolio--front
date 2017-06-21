@@ -95,9 +95,8 @@ const mapDataToOperation =
     }
   }
 
-// EXPORT NORMAL SCROLL FLOW ___________________________________________________
-export default function handleNormalScroll(props: AppProps, deltaY: number | boolean)
-: void {
+// EXPORT SCROLL FLOW ___________________________________________________
+export default _.curry((props: AppProps, deltaY: number | boolean): void => {
   // I can't export a single composed function, because this line ought to be
   // executed each time the scroll handle function is called.
   const currentTopPosition = windowGetScrollY.run()
@@ -124,4 +123,4 @@ export default function handleNormalScroll(props: AppProps, deltaY: number | boo
     ),
     idReader
   )()
-}
+})
