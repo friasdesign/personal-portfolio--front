@@ -4,10 +4,19 @@
 This is the Front-end of my personal portfolio app. In this application I use
 the following technologies:
 
-- React
+- React - Redux
 - Flow
 - Compiled using `create-react-app`
     - Webpack - sass and a lot more
+
+## Project state
+
+This project is still under development, but I could consider this stage to be
+a kind of an *open beta* (early release xP). And yet are still some things to do:
+
+- [ ] Change hero picture
+- [ ] Add more natural feeling animations
+- [ ] Improve performance of behavior, elements appearing when scrolling.
 
 ## Disclaimer
 
@@ -15,7 +24,7 @@ If you want to use parts of the code of this application you can use it freely.
 Although I don't authorize the usage of assets containing my image, in other
 words, pictures of myself I have in the repo. Apart from that, feel free to get
 inspired by my way of writing code and designing, if you want to contact me, you
-can do it at [carlos.a.frias@gmail.com](mailto:carlos.a.frias@gmail.com)
+can do it at [contact@friasdesign.com](mailto:contact@friasdesign.com)
 
 ## Credits
 
