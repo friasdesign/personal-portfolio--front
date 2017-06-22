@@ -16,7 +16,7 @@ a kind of an *open beta* (early release xP). And yet are still some things to do
 
 - [ ] Change hero picture
 - [ ] Add more natural feeling animations
-- [ ] Improve performance of behavior, elements appearing when scrolling.
+- [ ] Improve performance – elements appearing when scrolling
 
 ## Disclaimer
 
@@ -29,11 +29,53 @@ can do it at [contact@friasdesign.com](mailto:contact@friasdesign.com)
 ## Credits
 
 I don't own all the work here, these are the following things I've used from
-other resources and a reference to their amazing work:
+other resources and a reference to their amazing work, as well as indication of any change done by me.
+All logos used here are property of their own authors and/or organizations.
 
-- Magnifying glass icon at Home.
-    - Made by Edward Boatman
-    - Reference [here](https://thenounproject.com/term/magnifying-glass/95/)
+### `/about`
+
+- Glasses Icon
+	- Author: Seth Tylor
+	- [Link](http://sethtaylor.com/b2/2013/09/02/free-vector-glasses-icon/)
+	- Changes: change of color
+- Om Icon
+	- [Link](https://commons.wikimedia.org/wiki/File:Om_symbol.svg)
+	- Changes: change of color
+- Piano Icon
+	- Author: Lauri Kaila
+	- [Link](https://commons.wikimedia.org/wiki/File:PianoKeyboard.svg)
+	- Changes: change of color
+- Pizza Icon
+	- Author: Molly Bramlet
+	- [Link](https://thenounproject.com/term/pizza/16974/)
+	- Changes: change of color
+
+### `/skills`
+
+- Pencil Icon
+	- [Link](https://commons.wikimedia.org/wiki/File:Black_pencil.svg)
+	- Changes: change of color
+- Glass of Wine Icon
+	- [Link](https://commons.wikimedia.org/wiki/File:Simpleicons_Interface_glass-with-wine.svg)
+	- Changes: change of color
+- Godzilla Icon
+	- [Link](https://commons.wikimedia.org/wiki/File:Godzilla_Simpsons.svg)
+	- Changes: change of color
+- Statue of liberty Icon
+	- Author: Freepik
+	- [Link](http://www.flaticon.com/free-icon/the-statue-of-liberty_1003#)
+	- Changes: change of color
+- Obelisk Icon
+	- Author: Freepik
+	- [Link](http://www.flaticon.es/icono-gratis/obelisco-de-buenos-aires-argentina_25918)
+	- Changes: change of color
+- Game controller Icon
+	- [Link](https://commons.wikimedia.org/wiki/File:Video_game_controller_icon_designed_by_Maico_Amorim.svg)
+	- Changes: change of color
+- Web Icon
+	- Author: Freepik
+	- [Link](http://www.flaticon.com/free-icon/world-wide-web_1198#)
+	- Changes: change of color
 
 ## License
 
