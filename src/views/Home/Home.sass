@@ -164,6 +164,12 @@ $transparent-black: rgba(0, 0, 0, .75)
     +for-dppx(3)
       background-image: url('./_assets/mobile-landscape@3x.jpg')
 
+  +for-tablet-portrait-up
+    background-image: url('./_assets/tablet@2x.jpg')
+    background-size: 768px 1024px
+    +for-dppx(3)
+      background-image: url('./_assets/tablet@3x.jpg')
+
 // TABLET BREAKPOINT -- LANDSCAPE ______________________________________________
 +for-tablet-landscape-up
   .home-content
