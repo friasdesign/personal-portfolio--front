@@ -170,6 +170,20 @@ $transparent-black: rgba(0, 0, 0, .75)
     +for-dppx(3)
       background-image: url('./_assets/tablet@3x.jpg')
 
+  +for-desktop-up
+    background-image: url('./_assets/desktop.jpg')
+    background-size: cover
+    +for-dppx(2)
+      background-image: url('./_assets/desktop@2x.jpg')
+      background-size: 1440px 850px
+
+  +for-big-desktop-up
+    background-image: url('./_assets/big-desktop.jpg')
+    background-size: cover
+    +for-dppx(2)
+      background-image: url('./_assets/big-desktop@2x.jpg')
+      background-size: 1920px 1200px
+
 // TABLET BREAKPOINT -- LANDSCAPE ______________________________________________
 +for-tablet-landscape-up
   .home-content
