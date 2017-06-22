@@ -25,3 +25,12 @@
 =for-big-desktop-up
   @media (min-width: 1800px)
     @content
+
+=for-dppx($dppx)
+  @media only screen and (-webkit-min-device-pixel-ratio: $dppx),
+  only screen and (   min--moz-device-pixel-ratio: $dppx),
+  only screen and (     -o-min-device-pixel-ratio: ($dppx)/1),
+  only screen and (        min-device-pixel-ratio: $dppx),
+  only screen and (                min-resolution: $dppx * 96dpi),
+  only screen and (                min-resolution: $dppx * 1dppx)
+      @content
