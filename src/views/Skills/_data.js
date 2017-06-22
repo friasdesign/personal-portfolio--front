@@ -19,6 +19,7 @@ import reactLogo from '../../_assets/react.svg'
 import sketchLogo from '../../_assets/sketch.svg'
 import spainLogo from './_assets/spain.svg'
 import vueLogo from './_assets/vue.svg'
+import framerLogo from './_assets/framer.svg'
 
 import mongoLogo from '../../_assets/mongo.svg'
 
@@ -94,6 +95,12 @@ export const sideSkills = [
     sub: 'Proficient',
     h: 'Sketch',
     text: 'I can design UIs in Sketch quickly if required, casting hundreds of keyboard shorcuts.'
+  },
+  {
+    logo: framerLogo,
+    sub: 'Proficient',
+    h: 'Framer',
+    text: 'It\'s important for a designer to communicate the intended behavior as throughly as possible, and nothing is better than an interactive prototype. :D'
   },
   {
     logo: photoshopLogo,
