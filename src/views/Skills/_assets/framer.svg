@@ -13,12 +13,12 @@
       <stop stop-color="#D9F3FF" offset="100%"/>
     </linearGradient>
     <path id="d" d="M35.3557323,7.04265599 L110.734403,7.01562197 L110.734403,7.01565977 C115.856245,7.01382286 120.009812,11.1643954 120.01167,16.2862368 L120.03872,90.7574441 L120.03872,90.7574441 C120.040647,96.0689985 115.736343,100.376426 110.424788,100.378353 C110.413201,100.378357 110.401614,100.37834 110.390026,100.378302 L35.062677,100.133354 L35.062677,100.133354 C30.1451722,100.117363 26.1659016,96.1288996 26.1612586,91.211371 L26.0905477,16.3199193 L26.085119,16.3199244 C26.0802831,11.1980703 30.2284459,7.04206684 35.3503001,7.0372309 C35.3521102,7.03722919 35.3539202,7.03722801 35.3557303,7.03722736 Z"/>
-    <filter id="c" width="136.2%" height="136.4%" x="-17%" y="-10.7%" filterUnits="objectBoundingBox">
-      <feOffset dx="1" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"/>
-      <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
-      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" in="shadowBlurOuter1"/>
+    <filter id="c" width="116%" height="116.1%" x="-6.9%" y="-4.8%" filterUnits="objectBoundingBox">
+      <feOffset dx="1" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.440019248 0" in="shadowBlurOuter1"/>
     </filter>
-    <filter id="f" width="121.3%" height="121.4%" x="-9.6%" y="-3.2%" filterUnits="objectBoundingBox">
+    <filter id="f" width="110.6%" height="110.7%" x="-4.3%" y="-2.1%" filterUnits="objectBoundingBox">
       <feGaussianBlur stdDeviation=".5" in="SourceAlpha" result="shadowBlurInner1"/>
       <feOffset dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
       <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
