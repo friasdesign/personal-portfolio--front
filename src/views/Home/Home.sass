@@ -150,13 +150,19 @@ $transparent-black: rgba(0, 0, 0, .75)
   background-position: left top
   background-size: cover
   background-image: url('./_assets/mobile.jpg')
-
   +for-dppx(2)
     background-image: url('./_assets/mobile@2x.jpg')
     background-size: 450px 750px
-
   +for-dppx(3)
     background-image: url('./_assets/mobile@3x.jpg')
+
+  +for-phone-landscape
+    background-image: url('./_assets/mobile-landscape.jpg')
+    +for-dppx(2)
+      background-image: url('./_assets/mobile-landscape@2x.jpg')
+      background-size: 750px 450px
+    +for-dppx(3)
+      background-image: url('./_assets/mobile-landscape@3x.jpg')
 
 // TABLET BREAKPOINT -- LANDSCAPE ______________________________________________
 +for-tablet-landscape-up
