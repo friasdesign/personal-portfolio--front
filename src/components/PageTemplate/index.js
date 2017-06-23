@@ -27,13 +27,13 @@ import {
 } from '../../ducks'
 
 // TYPES _______________________________________________________________________
-import type {Component} from 'react-flow-types'
+import type {Component, FunctionalComponent} from 'react-flow-types'
 
 export type ConfigObj = {
   topNavArrowLabel: string,
   bottomNavArrowLabel?: string,
   last?: boolean,
-  headingImg: string,
+  headingImg: FunctionalComponent<Object>,
   headingAriaLabel: string,
   nextPage: string,
   previousPage: string
@@ -122,7 +122,7 @@ config: ConfigObj, testing: boolean = false) => {
               <h1 className="section__heading"
                 aria-label={headingAriaLabel}
               >
-                <img src={headingImg} alt="About" className="img__heading"/>
+                {headingImg({})}
               </h1>
             </PopIn>
           </header>

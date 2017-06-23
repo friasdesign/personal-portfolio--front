@@ -2,7 +2,7 @@
 import React from 'react'
 
 // ASSETS ______________________________________________________________________
-import headingImg from './_assets/heading.svg'
+import headingImg from './SkillsHeading'
 
 // COMPONENTS __________________________________________________________________
 import ArticleLine from '../../components/ArticleLine'
