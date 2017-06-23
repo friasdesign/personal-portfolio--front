@@ -4,13 +4,12 @@ import _ from 'ramda'
 import {Motion, spring} from 'react-motion'
 import {ReactMotionLoop} from 'react-motion-loop'
 
+// COMPONENTS __________________________________________________________________
+import UpArrow from './UpArrow'
+import DownArrow from './DownArrow'
+
 // ASSETS ______________________________________________________________________
 import './NavArrow.sass'
-
-const icons = {
-  up: require('./_assets/up.svg'),
-  down: require('./_assets/down.svg')
-}
 
 // TYPES _______________________________________________________________________
 type NavArrowProps = {
@@ -26,6 +25,17 @@ type NavArrowProps = {
 }
 
 const SPRING_SET = {stiffness: 28, damping: 13}
+
+const renderArrow = (direction: string) => {
+  switch(direction) {
+    case 'up':
+      return UpArrow()
+    case 'down':
+      return DownArrow()
+    default:
+      return null
+  }
+}
 
 // COMPONENT DEFINITION ________________________________________________________
 const NavArrowComponent = ({triggerTransition, direction, text, defaultY}: NavArrowProps) => {
@@ -60,7 +70,9 @@ const NavArrowComponent = ({triggerTransition, direction, text, defaultY}: NavAr
                         transform: `scale(${t}) translateY(${y}px)`
                       }}
                     >
-                      <img className="nav-arrow__arrow" src={icons[direction]} alt={direction}/>
+                      <div className="nav-arrow__arrow">
+                        {renderArrow(direction)}
+                      </div>
                       {text}
                     </div>
                 )
