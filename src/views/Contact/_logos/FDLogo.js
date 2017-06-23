@@ -1,7 +1,6 @@
 // @flow
 import React from 'react'
 
-// CONSTANTS ___________________________________________________________________
 const FDLogo = () => (
   <svg className="entry__logo icon-fill--muted icon-fill--fd" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
     <g fill="none" transform="translate(0 19)">

@@ -5,12 +5,13 @@ import twitterLogo from './_logos/TwitterLogo'
 import linkedInLogo from './_logos/LinkedInLogo'
 import gmailLogo from './_logos/GmailLogo'
 import fdLogo from './_logos/FDLogo'
+import behanceLogo from './_logos/BehanceLogo'
 
 // TYPES _____________________________________________________________________
-import type {Component} from 'react-flow-types'
+import type {FunctionalComponent} from 'react-flow-types'
 
 export type contactEntry = {
-  logo: Component<{}>,
+  logo: FunctionalComponent<Object>,
   sub: string,
   h: string,
   text: string,
@@ -45,5 +46,12 @@ export const contactInfo = [
     h: 'Work',
     text: 'contact@friasdesign.com',
     link: 'mailto:contact@friasdesign.com'
+  },
+  {
+    logo: behanceLogo,
+    sub: 'Design Portfolio',
+    h: 'Behance',
+    text: 'Feel free to check my designs! :D',
+    link: 'https://www.behance.net/carlosafri8572'
   }
 ]

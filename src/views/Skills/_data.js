@@ -28,7 +28,7 @@ export const mainSkills = [
     logo: reactLogo,
     sub: 'Ninja',
     h: 'React - Redux',
-    text: 'Mainly for web apps, I feel comfotable using this stack. Partcularly focused on Universal applications.'
+    text: 'Mainly for web apps, I feel comfortable using this stack. Particularly focused on Universal applications.'
   },
   {
     logo: mongoLogo,
