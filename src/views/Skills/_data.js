@@ -79,7 +79,7 @@ export const comingSoon = [
     logo: erlangLogo,
     sub: 'Wannabe',
     h: 'Erlang',
-    text: 'To now more about Elixir, and may be able to contribute to Elixir’s core project, Erlang is a key piece.'
+    text: 'To know more about Elixir, and may be able to contribute to Elixir’s core project, Erlang is a key piece.'
   },
   {
     logo: elmLogo,
@@ -100,7 +100,7 @@ export const sideSkills = [
     logo: framerLogo,
     sub: 'Proficient',
     h: 'Framer',
-    text: 'It\'s important for a designer to communicate the intended behavior as throughly as possible, and nothing is better than an interactive prototype. :D'
+    text: 'It\'s important for a designer to communicate the intended behavior as thoroughly as possible, and nothing is better than an interactive prototype. :D'
   },
   {
     logo: photoshopLogo,
