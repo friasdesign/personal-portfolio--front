@@ -2,7 +2,7 @@
 import React from 'react'
 
 const ContactHeading = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="646" height="100" viewBox="0 0 646 100">
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-100" viewBox="0 0 646 100">
     <defs>
       <linearGradient id="a" x1="24.519%" x2="24.581%" y1="-20.246%" y2="134.399%">
         <stop stopColor="#C15454" offset="0%"/>

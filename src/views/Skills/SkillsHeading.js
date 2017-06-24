@@ -2,7 +2,7 @@
 import React from 'react'
 
 const SkillsHeading = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="466" height="101" viewBox="0 0 466 101">
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-100" viewBox="0 0 466 101">
     <defs>
       <linearGradient id="a" x1="24.519%" x2="24.581%" y1="-20.246%" y2="134.399%">
         <stop stopColor="#C15454" offset="0%"/>
