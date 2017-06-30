@@ -3,32 +3,30 @@
 export const forPhoneOnly =
   "only screen and (max-width: 599px)"
 
-export const forPhoneLandscape = (styles: string) =>
-  `@media (max-width: 799px) and (orientation: landscape){${styles}}`
+export const forPhoneLandscape =
+  "only screen and (max-width: 799px) and (orientation: landscape)"
 
-export const forTablePortraitUp = (styles: string) =>
-  `@media (min-width: 700px){${styles}}`
+export const forTablePortraitUp =
+  "only screen and (min-width: 700px)"
 
 export const forTabletPortraitOnly =
-  "(min-width: 700px) and (max-width: 899px) and (orientation: portrait)"
+  "only screen and (min-width: 700px) and (max-width: 899px) and (orientation: portrait)"
 
-export const forTabletLandscapeUp = (styles: string) =>
-  `@media (min-width: 900px) and (orientation: landscape){${styles}}`
+export const forTabletLandscapeUp =
+  "only screen and (min-width: 900px) and (orientation: landscape)"
 
-export const forDesktopUp = (styles: string) =>
-  `@media (min-width: 1200px){${styles}}`
+export const forDesktopUp =
+  "only screen and (min-width: 1200px)"
 
-export const forBigDesktopUp = (styles: string) =>
-  `@media (min-width: 1800px){${styles}}`
+export const forBigDesktopUp =
+  "only screen and (min-width: 1800px)"
 
-export const forDppx = (dppx: number, styles: string):string =>
+export const forDppx = (dppx: number):string =>
   `
-  @media only screen and (-webkit-min-device-pixel-ratio: ${dppx}),
+  only screen and (-webkit-min-device-pixel-ratio: ${dppx}),
   only screen and (   min--moz-device-pixel-ratio: ${dppx}),
   only screen and (     -o-min-device-pixel-ratio: ${dppx}/1),
   only screen and (        min-device-pixel-ratio: ${dppx}),
   only screen and (                min-resolution: ${dppx * 96}dpi),
-  only screen and (                min-resolution: ${dppx}dppx){
-    ${styles}
-  }
+  only screen and (                min-resolution: ${dppx}dppx)
   `

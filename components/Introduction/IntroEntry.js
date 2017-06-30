@@ -4,7 +4,9 @@ import {flattenProp} from 'recompose'
 import * as colors from '../../_const/_colors'
 import {
   forTabletPortraitOnly,
-  forPhoneOnly
+  forTabletLandscapeUp,
+  forDesktopUp,
+  forBigDesktopUp
 } from '../../_const/_breakpoints'
 
 import Salutation from './Salutation'
@@ -16,13 +18,13 @@ type IntroEntryProps = {|
   first: boolean
 |}
 
-console.log(forPhoneOnly)
-
 // INTRO ENTRY _________________________________________________________________
 const IntroEntry = ({title, subtitle, first}: IntroEntryProps) => (
   <div className="title-sub">
     <Salutation first={first} />
+
     <p className="job-title">{title}</p>
+
     <span className="job-sub">
       {subtitle}
     </span>
@@ -34,11 +36,9 @@ const IntroEntry = ({title, subtitle, first}: IntroEntryProps) => (
         flex-direction: column;
         align-items: flex-end;
       }
-
       .title-sub:last-child {
         margin-top: 3.272rem;
       }
-
       .job-title {
         font-size: 3.272rem;
         font-weight: 900;
@@ -48,11 +48,9 @@ const IntroEntry = ({title, subtitle, first}: IntroEntryProps) => (
         line-height: 1;
         max-width: none !important;
       }
-
       .job-sub {
         font-size: 1.618rem;
       }
-
       .job-sub::before {
         content: '';
         height: .5rem;
@@ -61,14 +59,74 @@ const IntroEntry = ({title, subtitle, first}: IntroEntryProps) => (
         border-top: 1px ${colors.$primary} solid;
         margin-right: 1rem;
       }
-
       .job-sub--shorter::before {
         width: 1.618rem;
       }
 
-      @media screen and (min-width: 599px) {
-        :global(body) {
-          background-color: #000;
+      @media ${forTabletPortraitOnly} {
+        .job-title {
+          font-size: 5.295rem;
+        }
+        .job-sub {
+          font-size: 2.023rem;
+        }
+        .job-sub::before {
+          width: 17.942rem;
+        }
+        .job-sub--shorter::before {
+          width: 5.295rem;
+        }
+      }
+
+      @media ${forTabletLandscapeUp} {
+        .job-title {
+          font-size: 5.295rem
+        }
+        .job-sub {
+          font-size: 2.023rem
+        }
+        .job-sub::before {
+          width: 17.942rem
+        }
+        .job-sub--shorter::before {
+          width: 5.295rem
+        }
+      }
+
+      @media ${forDesktopUp} {
+        .title-sub {
+          width: 100%
+        }
+        .title-sub--half {
+          width: 75%
+        }
+        .job-title {
+          font-size: 5.295rem
+          align-self: flex-start
+        }
+        .job-sub {
+          font-size: 2.618rem
+        }
+        .job-sub--shorter::before {
+          width: 11.089rem
+        }
+      }
+
+      @media ${forBigDesktopUp} {
+        .job-title {
+          font-size: 6.854rem
+        }
+        .job-sub {
+          font-size: 3.272rem
+        }
+        .job-sub::before {
+          width: 22.428rem
+        }
+        .title-sub--half {
+          margin-top: 2.618rem
+        }
+        .job-sub--shorter::before {
+          width: 13.861rem
         }
       }
 

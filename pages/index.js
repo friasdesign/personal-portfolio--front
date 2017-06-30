@@ -1,17 +1,25 @@
 // @flow
 // import type {indexProps} from '../types'
-import Head from '../components/Head'
+import Globals from '../components/Globals'
 
 // COMPONENTS __________________________________________________________________
 import Introduction from '../components/Introduction'
 
 const Index = (props: any) => (
   <main className="home">
-    <Head/>
+    <Globals/>
     <div className="home-content home-content--pic">
       <h1 id="home__title" hidden>Home</h1>
       <Introduction/>
     </div>
+
+    <style jsx>{`
+      .home {
+        background-color: #000;
+        width: 100vw;
+        height: 100vh;
+      }
+    `}</style>
   </main>
 )
 
