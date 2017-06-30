@@ -2,6 +2,8 @@
 // import type {indexProps} from '../types'
 import Globals from '../components/Globals'
 
+import {antiAliased} from '../_const/_other'
+
 // COMPONENTS __________________________________________________________________
 import Introduction from '../components/Introduction'
 
@@ -18,6 +20,7 @@ const Index = (props: any) => (
         background-color: #000;
         width: 100vw;
         height: 100vh;
+        ${antiAliased}
       }
     `}</style>
   </main>
