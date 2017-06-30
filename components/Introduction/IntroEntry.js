@@ -1,5 +1,5 @@
 // @flow
-import {flattenProp} from 'recompose'
+import {flattenProp, withProps, compose} from 'recompose'
 
 import * as colors from '../../_const/_colors'
 import {
@@ -15,17 +15,18 @@ import Salutation from './Salutation'
 type IntroEntryProps = {|
   title: string,
   subtitle: string,
-  first: boolean
+  first: boolean,
+  shorter?: boolean
 |}
 
 // INTRO ENTRY _________________________________________________________________
-const IntroEntry = ({title, subtitle, first}: IntroEntryProps) => (
-  <div className="title-sub">
+const IntroEntry = ({title, subtitle, first, shorter}: IntroEntryProps) => (
+  <div className={`title-sub ${shorter ? 'title-sub--half' : ''}`}>
     <Salutation first={first} />
 
     <p className="job-title">{title}</p>
 
-    <span className="job-sub">
+    <span className={`job-sub ${shorter ? 'job-sub--shorter' : ''}`}>
       {subtitle}
     </span>
 
@@ -134,4 +135,7 @@ const IntroEntry = ({title, subtitle, first}: IntroEntryProps) => (
   </div>
 )
 
-export default flattenProp('data')(IntroEntry)
+export default compose(
+  flattenProp('data'),
+  withProps((props: IntroEntryProps) => ({...props, shorter: !props.first}))
+)(IntroEntry)
