@@ -20,6 +20,9 @@ import sketchLogo from '../../_assets/sketch.svg'
 import spainLogo from './_assets/spain.svg'
 import vueLogo from './_assets/vue.svg'
 import framerLogo from './_assets/framer.svg'
+import jest from './_assets/jest.svg'
+import mocha from './_assets/mocha.svg'
+import nightwatch from './_assets/nightwatch.svg'
 
 import mongoLogo from '../../_assets/mongo.svg'
 
@@ -29,6 +32,12 @@ export const mainSkills = [
     sub: 'Ninja',
     h: 'React - Redux',
     text: 'Mainly for web apps, I feel comfortable using this stack. Particularly focused on Universal applications.'
+  },
+  {
+    logo: jest,
+    sub: 'Ninja',
+    h: 'Jest',
+    text: 'For testing React apps, alongside Enzyme by Airbnb. I\'m pretty used to writing tests, and follow TDD approach.'
   },
   {
     logo: mongoLogo,
@@ -47,6 +56,18 @@ export const mainSkills = [
     sub: 'Proficient',
     h: 'Elixir - Phoenix',
     text: 'An alternative to Express for highly concurrent systems, I love Elixir syntax and it’s functional programming approach.'
+  },
+  {
+    logo: nightwatch,
+    sub: 'Proficient',
+    h: 'NightwatchJS',
+    text: 'And end-to-end testing framework. I simply don\'t trust any human\'s code, neither mine nor any one else\'s, thus I rely on a robust test suite, and e2e tests are vital.'
+  },
+  {
+    logo: mocha,
+    sub: 'Jargon',
+    h: 'Mocha + Chai + Sinon',
+    text: 'I love this combination (mmm sounds tasty), I don\'t feel as confident as I am using Jest, but I prefer Mocha for Back-end testing.'
   },
   {
     logo: phpLogo,
