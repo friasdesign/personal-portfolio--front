@@ -15,9 +15,9 @@ import webIcon from '../../_assets/web.svg'
 import simposio from './_assets/simposio.png'
 import simposio_2x from './_assets/simposio@2x.png'
 import simposio_3x from './_assets/simposio@3x.png'
-import hotel from './_assets/hotel.png'
-import hotel_2x from './_assets/hotel@2x.png'
-import hotel_3x from './_assets/hotel@3x.png'
+import huddle from './_assets/huddle.png'
+import huddle_2x from './_assets/huddle@2x.png'
+import huddle_3x from './_assets/huddle@3x.png'
 
 // CONSTANTS ___________________________________________________________________
 export const GITHUB_TYPE = 'github'
@@ -75,18 +75,14 @@ export const featured = [
 export const ongoing = [
   {
     images: {
-      default: hotel,
-      x2: hotel_2x,
-      x3: hotel_3x
+      default: huddle,
+      x2: huddle_2x,
+      x3: huddle_3x
     },
-    title: 'Hotel Room Booking',
-    type: 'Web app',
-    description: 'Room booking form for a hotel, it’s going to be extended to be sold as a full booking management solution in the future, for now, it’s in its baby steps.',
+    title: 'Huddle Bar\'s Website',
+    type: 'Website',
+    description: 'This is the website for a friend\'s bar in Setagaya, Tokyo. It\'s currently under development, but moving fast. Check the design prototypes!',
     techs: [
-      {
-        title: 'Express',
-        logo: expressLogo
-      },
       {
         title: 'React – Redux',
         logo: reactLogo
@@ -99,8 +95,13 @@ export const ongoing = [
     links: [
       {
         title: 'Github page',
-        link: 'https://github.com/friasdesign/hotel-app--front-end',
+        link: 'https://github.com/friasdesign/huddle-web',
         type: GITHUB_TYPE
+      },
+      {
+        title: 'Invision',
+        link: 'https://invis.io/4CCEG91HB#/241575562_index-Desktop',
+        type: WEB_TYPE
       }
     ]
   }
