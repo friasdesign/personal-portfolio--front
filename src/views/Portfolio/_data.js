@@ -4,7 +4,6 @@
 import reactLogo from '../../_assets/react.svg'
 import reactNativeLogo from '../../_assets/react-native.svg'
 import sketchColorLogo from '../../_assets/sketch-color.svg'
-import expressLogo from '../../_assets/express.svg'
 
 // ICONS
 import controllerIcon from '../../_assets/controller.svg'
@@ -34,7 +33,7 @@ export type ProjectType = {
   type: string,
   description: string,
   techs: Array<{| title: string, logo: string |}>,
-  links: Array<{| title: string, link: string, type: string |}>
+    links: Array < {| title: string, link: string, type: string |}>
 }
 
 export const featured = [

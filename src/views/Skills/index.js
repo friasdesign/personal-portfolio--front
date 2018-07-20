@@ -11,7 +11,8 @@ import TextArticle from '../../components/TextArticle'
 
 // DATA ________________________________________________________________________
 import {
-  mainSkills,
+  frontSkills,
+  backSkills,
   comingSoon,
   sideSkills,
   humanLanguages
@@ -48,11 +49,21 @@ const Skills = (props: NormalPageProps) => {
       <ArticleLine
         className={`fade-side ${
           ready
-          ? ''
-          : 'fade-right'
-        }`}
-        heading="Main Skills"
-        entries={mainSkills}
+            ? ''
+            : 'fade-right'
+          }`}
+        heading="Front-end"
+        entries={frontSkills}
+      />
+
+      <ArticleLine
+        className={`fade-side ${
+          ready
+            ? ''
+            : 'fade-right'
+          }`}
+        heading="Back-end"
+        entries={backSkills}
       />
 
       <ArticleLine

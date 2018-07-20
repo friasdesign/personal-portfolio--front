@@ -2,111 +2,93 @@
 
 // LOGOS
 import americanLogo from './_assets/american.svg'
-import elmLogo from './_assets/elm.svg'
 import erlangLogo from './_assets/erlang.svg'
-import expressLogo from '../../_assets/express.svg'
-import frenchLogo from './_assets/french.svg'
-import illustratorLogo from './_assets/illustrator.svg'
 import japaneseLogo from './_assets/japanese.svg'
-import lambdaLogo from './_assets/lambda.svg'
-import pencilLogo from './_assets/pencil.svg'
-import phoenixLogo from './_assets/phoenix.svg'
+import goLogo from '../../_assets/gopher.svg'
 import photoshopLogo from './_assets/photoshop.svg'
 import phpLogo from './_assets/php.svg'
 import postgreSQLLogo from './_assets/postgresql.svg'
 import reactNativeLogo from '../../_assets/react-native.svg'
 import reactLogo from '../../_assets/react.svg'
-import sketchLogo from '../../_assets/sketch.svg'
 import spainLogo from './_assets/spain.svg'
 import vueLogo from './_assets/vue.svg'
-import framerLogo from './_assets/framer.svg'
 import jest from './_assets/jest.svg'
-import mocha from './_assets/mocha.svg'
-import nightwatch from './_assets/nightwatch.svg'
 
+import sketchLogo from '../../_assets/sketch.svg'
 import mongoLogo from '../../_assets/mongo.svg'
 
-export const mainSkills = [
+export const frontSkills = [
   {
     logo: reactLogo,
     sub: 'Ninja',
     h: 'React - Redux',
-    text: 'Mainly for web apps, I feel comfortable using this stack. Particularly focused on Universal applications.'
+    text: 'Mainly for web apps, I feel comfortable using this stack. Particularly using it with Flow or Typescript.'
+  },
+  {
+    logo: vueLogo,
+    sub: 'Jargon',
+    h: 'Vue',
+    text: 'For developing web apps, I also plan to expand my knowledge to include it with NativeScript.',
   },
   {
     logo: jest,
-    sub: 'Ninja',
+    sub: 'Proficient',
     h: 'Jest',
-    text: 'For testing React apps, alongside Enzyme by Airbnb. I\'m pretty used to writing tests, and follow TDD approach.'
+    text: 'Testing tool for front-end and all JS stuff, it\'s my primary tool for TDD.'
+  },
+]
+
+export const backSkills = [
+  {
+    logo: phpLogo,
+    sub: 'Ninja',
+    h: 'Symfony',
+    text: 'This framework is all about getting things done, I can work fluently with it.'
   },
   {
-    logo: mongoLogo,
+    logo: goLogo,
     sub: 'Proficient',
-    h: 'MongoDB',
-    text: 'Certainly can deploy and optimize properly the DB, when working with MongoDB.'
-  },
-  {
-    logo: expressLogo,
-    sub: 'Proficient',
-    h: 'Express',
-    text: 'Restful APIs, chat servers, don’t worry I feel comfortable using Express as my back-end, keeping the Full-Stack in JS.'
-  },
-  {
-    logo: phoenixLogo,
-    sub: 'Proficient',
-    h: 'Elixir - Phoenix',
-    text: 'An alternative to Express for highly concurrent systems, I love Elixir syntax and it’s functional programming approach.'
-  },
-  {
-    logo: nightwatch,
-    sub: 'Proficient',
-    h: 'NightwatchJS',
-    text: 'And end-to-end testing framework. I simply don\'t trust any human\'s code, neither mine nor any one else\'s, thus I rely on a robust test suite, and e2e tests are vital.'
-  },
-  {
-    logo: mocha,
-    sub: 'Jargon',
-    h: 'Mocha + Chai + Sinon',
-    text: 'I love this combination (mmm sounds tasty), I don\'t feel as confident as I am using Jest, but I prefer Mocha for Back-end testing.'
+    h: 'Go',
+    text: 'This programming language can be summed up as reliable, performance, and productive. I\'m happy I gave it a go, now I can build cool stuff with it!'
   },
   {
     logo: phpLogo,
-    sub: 'Jargon',
-    h: 'PHP',
-    text: 'Yes, I used to program in PHP, but no longer. I can handle it for legacy code, especially symfony.'
+    sub: 'Proficient',
+    h: 'Laravel',
+    text: 'I don\'t like PHP that much, but this framework it\'s really good! It love to write tests and do TDD with it, it feels to nice!'
   },
   {
     logo: postgreSQLLogo,
+    sub: 'Proficient',
+    h: 'Serverless Framework',
+    text: 'Best way to be productive with a Serverless stack, I used it and loved it!'
+  },
+  {
+    logo: mongoLogo,
     sub: 'Jargon',
-    h: 'PostgreSQL',
-    text: 'I can do something basic with PostgreSQL, but I am willing to learn more if a project requires it.'
-  }
+    h: 'MongoDB',
+    text: 'I never had the chance to work with MongoDB on a real-world project, but I have enough knowledge to getting started.'
+  },
+  {
+    logo: postgreSQLLogo,
+    sub: 'Proficient',
+    h: 'MySQL',
+    text: 'My main database of choice, mostly because it\'s pretty widely used, and sooner or later you become comfortable with it.'
+  },
 ]
 
 export const comingSoon = [
   {
-    logo: vueLogo,
-    sub: 'Wannabe',
-    h: 'VueJS',
-    text: 'Amazing Front-end Framework, fast and reliable. And also I love its logo :B'
-  },
-  {
     logo: reactNativeLogo,
     sub: 'Wannabe',
-    h: 'React Native',
-    text: 'I also want to expand to native apps, React Native looks amazing to me.'
+    h: 'Firebase',
+    text: 'It looks to me like the best way to develop mobile and web apps on budget and on time, amazing developer experience from what I could see so far'
   },
   {
     logo: erlangLogo,
     sub: 'Wannabe',
-    h: 'Erlang',
-    text: 'To know more about Elixir, and may be able to contribute to Elixir’s core project, Erlang is a key piece.'
-  },
-  {
-    logo: elmLogo,
-    sub: 'Wannabe',
-    h: 'Elm',
-    text: 'To reach the Nirvana of a purely functional stack, Phoenix-Elixir on the back-end and Elm on the front.'
+    h: 'NativeScript',
+    text: 'It has an amazing ecosystem, and it\'s a pretty mature project, tempting ...'
   }
 ]
 
@@ -118,35 +100,11 @@ export const sideSkills = [
     text: 'I can design UIs in Sketch quickly if required, casting hundreds of keyboard shorcuts.'
   },
   {
-    logo: framerLogo,
-    sub: 'Proficient',
-    h: 'Framer',
-    text: 'It\'s important for a designer to communicate the intended behavior as thoroughly as possible, and nothing is better than an interactive prototype. :D'
-  },
-  {
     logo: photoshopLogo,
-    sub: 'Proficient',
-    h: 'Adobe Photoshop',
-    text: 'I can use Photoshop, I used to take photos as a hobby, sometimes I even sold some of my jobs.'
-  },
-  {
-    logo: lambdaLogo,
-    sub: 'Jargon',
-    h: 'Calculus',
-    text: 'I like to see functions scrumbled all around on a sheet of paper, it’s magic!'
-  },
-  {
-    logo: illustratorLogo,
-    sub: 'Jargon',
-    h: 'Adobe Illustrator',
-    text: 'I use it, I know how to tackle some tasks, but the job may get done faster.'
-  },
-  {
-    logo: pencilLogo,
     sub: 'Wannabe',
-    h: 'Digital Drawing',
-    text: 'I bought a drawing tablet, but I can’t yet overcome the basic line-drawn guy :’('
-  }
+    h: 'Figma',
+    text: 'This tool is amazing! The way it handles components, and how productive you are working on a team with it.'
+  },
 ]
 
 export const humanLanguages = [
@@ -164,14 +122,8 @@ export const humanLanguages = [
   },
   {
     logo: japaneseLogo,
-    sub: 'Intermediate',
+    sub: 'Basic',
     h: 'Japanese',
     text: 'I can handle basic daily conversations pretty well, with a neat accent, but not proficient to work, yet.'
   },
-  {
-    logo: frenchLogo,
-    sub: 'Wannabe',
-    h: 'French',
-    text: 'I started learning French recently, as a way to test a new learning technique, so I went on the easy way.'
-  }
 ]
