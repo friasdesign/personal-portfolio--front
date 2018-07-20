@@ -2,8 +2,8 @@
 
 // LOGOS
 import reactLogo from '../../_assets/react.svg'
-import reactNativeLogo from '../../_assets/react-native.svg'
 import sketchColorLogo from '../../_assets/sketch-color.svg'
+import serverlessLogo from '../../_assets/serverless.svg'
 
 // ICONS
 import controllerIcon from '../../_assets/controller.svg'
@@ -33,7 +33,7 @@ export type ProjectType = {
   type: string,
   description: string,
   techs: Array<{| title: string, logo: string |}>,
-    links: Array < {| title: string, link: string, type: string |}>
+  links: Array<{| title: string, link: string, type: string |}>
 }
 
 export const featured = [
@@ -45,21 +45,26 @@ export const featured = [
     },
     title: 'Simposio de Contabilidad',
     type: 'Landing page',
-    description: 'The landing page for an accounting event held in the city of Ushuaia. Whole project has been made under a tight schedule and close deadline, in less than 6 days from sketch to full deployment.',
+    description:
+      'The landing page for an accounting event held in the city of Ushuaia. Whole project has been made under a tight schedule and close deadline, in less than 6 days from sketch to full deployment.',
     techs: [
       {
         title: 'React',
-        logo: reactNativeLogo
+        logo: reactLogo
       },
       {
         title: 'Sketch',
         logo: sketchColorLogo
+      },
+      {
+        title: 'Serverless',
+        logo: serverlessLogo
       }
     ],
     links: [
       {
         title: 'Github page',
-        link: 'https://github.com/friasdesign/simposio-ush',
+        link: 'https://github.com/cafrias/simposio-ush',
         type: GITHUB_TYPE
       },
       {
@@ -78,12 +83,13 @@ export const ongoing = [
       x2: huddle_2x,
       x3: huddle_3x
     },
-    title: 'Huddle Bar\'s Website',
+    title: "Huddle Bar's Website",
     type: 'Website',
-    description: 'This is the website for a friend\'s bar in Setagaya, Tokyo. It\'s currently under development, but moving fast. Check the design prototypes!',
+    description:
+      "This is the website for a friend's bar in Setagaya, Tokyo. It's currently under development, but moving fast. Check the design prototypes!",
     techs: [
       {
-        title: 'React – Redux',
+        title: 'React',
         logo: reactLogo
       },
       {
@@ -94,7 +100,7 @@ export const ongoing = [
     links: [
       {
         title: 'Github page',
-        link: 'https://github.com/friasdesign/huddle-web',
+        link: 'https://github.com/cafrias/huddle-web',
         type: GITHUB_TYPE
       },
       {
@@ -111,30 +117,35 @@ export const teenyTiny = [
     logo: controllerIcon,
     sub: 'Game',
     h: 'Pogo',
-    text: 'Developed during 2016 edition of the Global Game Jam on Rio Grande, Tierra del Fuego, Argentina. I was in charge of development using Unity.<br/><a target="_blank" href="http://globalgamejam.org/2016/games/pogo">Download</a>'
+    text:
+      'Developed during 2016 edition of the Global Game Jam on Rio Grande, Tierra del Fuego, Argentina. I was in charge of development using Unity.<br/><a target="_blank" href="http://globalgamejam.org/2016/games/pogo">Download</a>'
   },
   {
     logo: screwdriverIcon,
     sub: 'Optimization',
     h: 'Mobile Portfolio',
-    text: 'Project developed while taking Udacity’s Front-end Nanodegree, main objective of the project was to improve performance of existing web app.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-mobile-portfolio">Github</a>'
+    text:
+      'Project developed while taking Udacity’s Front-end Nanodegree, main objective of the project was to improve performance of existing web app.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-mobile-portfolio">Github</a>'
   },
   {
     logo: webIcon,
     sub: 'Web app',
     h: 'Discuss App',
-    text: 'Developed as part of Stephen Grider’s Udemy’s Course on Phoenix web Framework. Tech stack used: Elixir – Phoenix, CSS3, HTML5, JS.<br/><a target="_blank" href="https://github.com/friasdesign/discuss-app">Github</a>'
+    text:
+      'Developed as part of Stephen Grider’s Udemy’s Course on Phoenix web Framework. Tech stack used: Elixir – Phoenix, CSS3, HTML5, JS.<br/><a target="_blank" href="https://github.com/friasdesign/discuss-app">Github</a>'
   },
   {
     logo: controllerIcon,
     sub: 'Game',
     h: 'Arcade Game',
-    text: 'Developed as HTML5 Canvas project, while coursing Front-end Nanodegree at Udacity. Tech stack includes: HTML5 Canvas, JS, basic CCS3.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-arcade-game">Github</a>'
+    text:
+      'Developed as HTML5 Canvas project, while coursing Front-end Nanodegree at Udacity. Tech stack includes: HTML5 Canvas, JS, basic CCS3.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-arcade-game">Github</a>'
   },
   {
     logo: webIcon,
     sub: 'Web app',
     h: 'Neighborhood',
-    text: 'Project also developed as part of Udacity’s Front-end Nanodegree. It’s main objective was to be able to use external APIs, in this case Google Maps API.<br/><a target="_blank" href="https://github.com/friasdesign/neighborhood-map">Github</a>'
+    text:
+      'Project also developed as part of Udacity’s Front-end Nanodegree. It’s main objective was to be able to use external APIs, in this case Google Maps API.<br/><a target="_blank" href="https://github.com/friasdesign/neighborhood-map">Github</a>'
   }
 ]
