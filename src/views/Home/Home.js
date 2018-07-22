@@ -1,6 +1,6 @@
 // @flow
-import React, {Component} from 'react'
-import {Motion, spring, presets} from 'react-motion'
+import React, { Component } from 'react'
+import { Motion, spring, presets } from 'react-motion'
 
 import './Home.sass'
 
@@ -14,13 +14,13 @@ import FadeIn from '../../animations/FadeIn'
 const FIRST_LINE = 'I am'
 const NAME = 'Carlos Frias'
 const SECOND_LINE = 'full-stack'
-const THIRD_LINE = 'ux/ui'
+const THIRD_LINE = 'QA'
 
 // TYPES _______________________________________________________________________
 type HomeProps = {
-  setNextPage: (string) => void,
+  setNextPage: string => void,
   inTransitionAnimation: [boolean, string],
-  triggerTransition: (string) => void
+  triggerTransition: string => void
 }
 
 type HomeState = {
@@ -44,7 +44,7 @@ class Home extends Component {
   name: Array<string>
   thirdLine: Array<string>
   typeCharArray: (Array<string>, string) => Promise<any>
-  displaySub: (string) => Promise<any>
+  displaySub: string => Promise<any>
 
   constructor(props: HomeProps) {
     super(props)
@@ -91,9 +91,9 @@ class Home extends Component {
       // Type 'UX/UI'
       .then(() => typeCharArray(thirdLine, 'thirdLine'))
       // Trigger 'designer' animation
-      .then(() => displaySub('designer'))
+      .then(() => displaySub('engineer'))
       // Finish typing
-      .then(() => this.setState({finishedTyping: true}))
+      .then(() => this.setState({ finishedTyping: true }))
   }
 
   displaySub(property: string): Promise<any> {
@@ -106,94 +106,90 @@ class Home extends Component {
   }
 
   typeCharArray(charArray: Array<string>, property: string): Promise<any> {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const length = charArray.length
 
       charArray.forEach((char, i) => {
-        const final = (i + 1) === length
-        setTimeout(() => requestAnimationFrame(() => {
-          this.setState({
-            [property]: this.state[property] + char,
-            startedTyping: true
-          })
-          // Resolve if finished
-          if(final) resolve(true)
-        }), (i + 1) * 120)
+        const final = i + 1 === length
+        setTimeout(
+          () =>
+            requestAnimationFrame(() => {
+              this.setState({
+                [property]: this.state[property] + char,
+                startedTyping: true
+              })
+              // Resolve if finished
+              if (final) resolve(true)
+            }),
+          (i + 1) * 120
+        )
       })
     })
   }
 
   componentDidUpdate() {
-    const {ready, startedTyping} = this.state
-    if(ready && !startedTyping) this.startTyping()
+    const { ready, startedTyping } = this.state
+    if (ready && !startedTyping) this.startTyping()
   }
 
-  titleWithSub(title: string, subtitle: string, shorter: boolean, first: boolean = false) {
+  titleWithSub(
+    title: string,
+    subtitle: string,
+    shorter: boolean,
+    first: boolean = false
+  ) {
     return (
       <div className={`title-sub ${shorter ? 'title-sub--half' : ''}`}>
-        {
-          first
-          ? (
-            <p className="name">
-              {this.state.firstLine}
-              <span className="semi">{' ' + this.state.name}</span>
-            </p>
-          )
-          : null
-        }
+        {first ? (
+          <p className="name">
+            {this.state.firstLine}
+            <span className="semi">{' ' + this.state.name}</span>
+          </p>
+        ) : null}
         <p className="job-title">{title}</p>
-        {
-          this.state[subtitle]
-          ? (
-            <Motion
-              defaultStyle={{s: 0.6, o: 0}}
-              style={{s: spring(1, presets.wobbly), o: spring(1)}}
-            >
-              {
-                ({s, o}) => (
-                  <span style={{
-                      opacity: o,
-                      transform: `scale(${s}, ${s})`
-                    }} className={`job-sub ${shorter ? 'job-sub--shorter' : ''}`}>
-                    {subtitle}
-                  </span>
-                )
-              }
-            </Motion>
-          )
-          : null
-        }
+        {this.state[subtitle] ? (
+          <Motion
+            defaultStyle={{ s: 0.6, o: 0 }}
+            style={{ s: spring(1, presets.wobbly), o: spring(1) }}
+          >
+            {({ s, o }) => (
+              <span
+                style={{
+                  opacity: o,
+                  transform: `scale(${s}, ${s})`
+                }}
+                className={`job-sub ${shorter ? 'job-sub--shorter' : ''}`}
+              >
+                {subtitle}
+              </span>
+            )}
+          </Motion>
+        ) : null}
       </div>
     )
   }
 
   mountChildren() {
-    const {
-      secondLine,
-      thirdLine,
-      finishedTyping
-    } = this.state
+    const { secondLine, thirdLine, finishedTyping } = this.state
 
     // TODO: Check if Home is read by screen reader
     return (
-        <div className={`home-content ${finishedTyping ? 'home-content--pic' : ''}`}>
-          <h1 id="home__title" hidden>Home</h1>
-          <div className="presentation">
-            {
-              this.titleWithSub(secondLine, 'developer', false, true)
-            }
-            {
-              this.titleWithSub(thirdLine, 'designer', true)
-            }
-          </div>
-          <div className="controls">
-            {
-              finishedTyping
-              ? (<Arrow triggerTransition={this.props.triggerTransition} />)
-              : null
-            }
-          </div>
+      <div
+        className={`home-content ${finishedTyping ? 'home-content--pic' : ''}`}
+      >
+        <h1 id="home__title" hidden>
+          Home
+        </h1>
+        <div className="presentation">
+          {this.titleWithSub(secondLine, 'developer', false, true)}
+          {this.titleWithSub(thirdLine, 'engineer', true)}
         </div>
+        <div className="controls">
+          {finishedTyping ? (
+            <Arrow triggerTransition={this.props.triggerTransition} />
+          ) : null}
+        </div>
+      </div>
     )
   }
 
@@ -202,24 +198,21 @@ class Home extends Component {
   }
 
   render() {
-    const {ready} = this.state
-    const {inTransitionAnimation} = this.props
-    return(
+    const { ready } = this.state
+    const { inTransitionAnimation } = this.props
+    return (
       <FadeIn
-        onRest={() => {this.setState({ready: true})}}
+        onRest={() => {
+          this.setState({ ready: true })
+        }}
       >
-        <section id="home" className={`home-container ${
-            inTransitionAnimation[0]
-              ? 'home-container--transition'
-              : ''
-          }`}>
-          <div className="curtain">
-            {
-              ready
-              ? this.mountChildren()
-              : null
-            }
-          </div>
+        <section
+          id="home"
+          className={`home-container ${
+            inTransitionAnimation[0] ? 'home-container--transition' : ''
+          }`}
+        >
+          <div className="curtain">{ready ? this.mountChildren() : null}</div>
         </section>
       </FadeIn>
     )

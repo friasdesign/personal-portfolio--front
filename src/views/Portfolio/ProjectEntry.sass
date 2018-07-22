@@ -19,6 +19,7 @@
   display: flex
   flex-direction: column
   width: 100%
+  margin-bottom: 8rem
 
 // HEADER ______________________________________________________________________
 .project__title
@@ -58,6 +59,8 @@
 
 .project__description
   max-width: none !important
+  & ul
+    +anti-aliased
 
 // FOOTER ______________________________________________________________________
 .project__footer
@@ -114,17 +117,17 @@
 
   .project__title
     font-size: 2.945rem
-    text-align: right
+    text-align: left
 
   .project__type
     font-size: 1.82rem
-    text-align: right
+    text-align: left
     border: none
     width: auto
     padding: 0
-    margin-top: -2rem
-    &::before
-      +make-line(45rem)
-      position: relative
-      left: -22rem
-      margin-bottom: -1.775rem
+    margin-top: 0
+    // &::before
+    //   +make-line(45rem)
+    //   position: relative
+    //   left: -22rem
+    //   margin-bottom: -1.775rem

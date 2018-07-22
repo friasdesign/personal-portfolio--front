@@ -5,50 +5,32 @@ import React from 'react'
 import headingImg from './PortfolioHeading'
 
 // DATA ________________________________________________________________________
-import {
-  featured,
-  ongoing,
-  teenyTiny
-} from './_data'
+import { featured, teenyTiny } from './_data'
 
 // COMPONENTS __________________________________________________________________
 import ArticleLine from '../../components/ArticleLine'
 import PageTemplate from '../../components/PageTemplate'
 
 // TYPES _______________________________________________________________________
-import type {
-  NormalPageProps
-} from '../../_types'
+import type { NormalPageProps } from '../../_types'
 
 // PORTFOLIO ARTICLE  __________________________________________________________
 import PortfolioArticle from './PortfolioArticle'
 
 const Portfolio = (props: NormalPageProps) => {
-  const {
-    ready
-  } = props
+  const { ready } = props
 
   return (
     <div className="template-container">
+      <PortfolioArticle heading="Featured" ready={ready} entries={featured} />
 
-    <PortfolioArticle
-      heading="Featured"
-      ready={ready}
-      entries={featured}
-    />
-
-    <PortfolioArticle
+      {/* <PortfolioArticle
       heading="Ongoing"
       ready={ready}
       entries={ongoing}
-    />
+    /> */}
 
-    <ArticleLine
-      heading="Teeny-Tiny"
-      entries={teenyTiny}
-      theme="mono"
-    />
-
+      <ArticleLine heading="Teeny-Tiny" entries={teenyTiny} theme="mono" />
     </div>
   )
 }

@@ -28,7 +28,7 @@ export const education = [
     sub: 'Computer Programming',
     h: 'Technical Degree',
     text: 'Facultad Regional Río Grande (FRRG) de la UTN<br/>2013-2015'
-  },
+  }
 ]
 
 export const interests = [
@@ -36,25 +36,28 @@ export const interests = [
     logo: zenLogo,
     sub: 'Head-space',
     h: 'Zen Buddhism',
-    text: 'I’ve been interested in Zen Buddhism since my trip to Japan, after visiting Soji Temple in Yokohama … so peaceful!'
+    text:
+      'I’ve been interested in Zen Buddhism since my trip to Japan, after visiting Soji Temple in Yokohama … so peaceful!'
   },
   {
     logo: glassesLogo,
     sub: 'Events',
     h: 'Tech Talks',
-    text: 'Tech talks are exciting; React conf, CSSconf, whateverconf, name it! I like to participate as well as help in coordination whenever possible.'
+    text: 'Tech talks are exciting; React conf, CSSconf, whateverconf, name it!'
   },
   {
     logo: omLogo,
     sub: 'Exercises',
     h: 'Yoga',
-    text: 'I practiced martial arts for several years when I was a teenager, one day I give Yoga a go, and ever since, I practice at least a little every day.'
+    text:
+      'I practiced martial arts for several years when I was a teenager, one day I give Yoga a go, and ever since, I practice at least a little every day.'
   },
   {
     logo: pianoLogo,
     sub: 'Arts',
     h: 'Piano',
-    text: 'I’ve playing piano for several years, it used to be more than a hobbie in the past. Nowadays it’s there for eventual diminished scale smashing.'
+    text:
+      'I’ve playing piano for several years, it used to be more than a hobbie in the past. Nowadays it’s there for eventual diminished scale smashing.'
   },
   {
     logo: pizzaLogo,

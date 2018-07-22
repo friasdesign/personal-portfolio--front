@@ -4,6 +4,7 @@
 import reactLogo from '../../_assets/react.svg'
 import sketchColorLogo from '../../_assets/sketch-color.svg'
 import serverlessLogo from '../../_assets/serverless.svg'
+import goLogo from '../../_assets/go.svg'
 
 // ICONS
 import controllerIcon from '../../_assets/controller.svg'
@@ -17,6 +18,9 @@ import simposio_3x from './_assets/simposio@3x.png'
 import huddle from './_assets/huddle.png'
 import huddle_2x from './_assets/huddle@2x.png'
 import huddle_3x from './_assets/huddle@3x.png'
+import clcity from './_assets/clcity.jpg'
+import clcity_2x from './_assets/clcity@2x.jpg'
+import clcity_3x from './_assets/clcity@3x.jpg'
 
 // CONSTANTS ___________________________________________________________________
 export const GITHUB_TYPE = 'github'
@@ -44,9 +48,38 @@ export const featured = [
       x3: simposio_3x
     },
     title: 'Simposio de Contabilidad',
-    type: 'Landing page',
-    description:
-      'The landing page for an accounting event held in the city of Ushuaia. Whole project has been made under a tight schedule and close deadline, in less than 6 days from sketch to full deployment.',
+    type: 'Landing page - Admin panel',
+    description: `
+        <p>
+        Lading page for an accounting simposium held in Ushuaia, Tierra del Fuego, Argentina. It also included an admin panel.
+        It used a static page, and <strong>AWS lambda functions</strong> to provide serverless functionality.
+        </p>
+        <p>
+          Use cases:
+          <ul>
+            <li>
+              Provide infomation about the simposium
+            </li>
+            <li>
+              Allow subscribers to submit subscription form
+            </li>
+            <li>
+              Allow organizers to manage subscriptions
+            </li>
+          </ul>
+        </p>
+        <p>
+          Resposibilities:
+          <ul>
+            <li>
+              Back-end and Front-end development
+            </li>
+            <li>
+              Deployment
+            </li>
+          </ul>
+        </p>
+      `,
     techs: [
       {
         title: 'React',
@@ -63,14 +96,65 @@ export const featured = [
     ],
     links: [
       {
-        title: 'Github page',
-        link: 'https://github.com/cafrias/simposio-ush',
+        title: 'Github page - Website',
+        link: 'https://github.com/cafrias/xii-simposio-web',
         type: GITHUB_TYPE
       },
       {
-        title: 'Web',
-        link: 'http://www.simposioenushuaia.com.ar/',
+        title: 'Github page - Admin panel',
+        link: 'https://github.com/cafrias/xii-simposio-admin',
+        type: GITHUB_TYPE
+      },
+      {
+        title: 'Website',
+        link: 'https://www.simposioenushuaia.com.ar/',
         type: WEB_TYPE
+      }
+    ]
+  },
+  {
+    images: {
+      default: clcity,
+      x2: clcity_2x,
+      x3: clcity_3x
+    },
+    title: 'clcity',
+    type: 'Command-line Application',
+    description: `
+        <p>
+        Command-line application for fetching and parsing data from an endpoint that has local public transportation information.
+        </p>
+        <p>
+          Use cases:
+          <ul>
+            <li>
+            Generate a KML file public local transportation information, such as stops, trips, etc.
+            </li>
+            <li>
+            Generate a basic GTFS feed with public local transportation information to be later polish by hand and published to Google Transit
+            </li>
+          </ul>
+        </p>
+        <p>
+          Resposibilities:
+          <ul>
+            <li>
+            Only developer and maintainer of the project
+            </li>
+          </ul>
+        </p>
+      `,
+    techs: [
+      {
+        title: 'Go',
+        logo: goLogo
+      }
+    ],
+    links: [
+      {
+        title: 'Github page - Website',
+        link: 'https://github.com/cafrias/clcity',
+        type: GITHUB_TYPE
       }
     ]
   }
@@ -85,8 +169,12 @@ export const ongoing = [
     },
     title: "Huddle Bar's Website",
     type: 'Website',
-    description:
-      "This is the website for a friend's bar in Setagaya, Tokyo. It's currently under development, but moving fast. Check the design prototypes!",
+    description: `
+        <p>
+        This is the website for a friend's bar in Setagaya, Tokyo.
+        It's currently under development, but moving fast. Check the design prototypes!
+        </p>
+      `,
     techs: [
       {
         title: 'React',
@@ -114,6 +202,13 @@ export const ongoing = [
 
 export const teenyTiny = [
   {
+    logo: screwdriverIcon,
+    sub: 'Monitoring Tools',
+    h: 'Monitorize',
+    text:
+      'A Server Monitoring Stack I put together while working at Rio Grande Municipality. Uses InfluxDB, Grafana, and Prometheus. <a target="_blank" href="https://github.com/cafrias/monitorize">Github</a>'
+  },
+  {
     logo: controllerIcon,
     sub: 'Game',
     h: 'Pogo',
@@ -125,27 +220,27 @@ export const teenyTiny = [
     sub: 'Optimization',
     h: 'Mobile Portfolio',
     text:
-      'Project developed while taking Udacity’s Front-end Nanodegree, main objective of the project was to improve performance of existing web app.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-mobile-portfolio">Github</a>'
+      'Project developed while taking Udacity’s Front-end Nanodegree, main objective of the project was to improve performance of existing web app.<br/><a target="_blank" href="https://github.com/cafrias/frontend-nanodegree-mobile-portfolio">Github</a>'
   },
   {
     logo: webIcon,
     sub: 'Web app',
     h: 'Discuss App',
     text:
-      'Developed as part of Stephen Grider’s Udemy’s Course on Phoenix web Framework. Tech stack used: Elixir – Phoenix, CSS3, HTML5, JS.<br/><a target="_blank" href="https://github.com/friasdesign/discuss-app">Github</a>'
+      'Developed as part of Stephen Grider’s Udemy’s Course on Phoenix web Framework. Tech stack used: Elixir – Phoenix, CSS3, HTML5, JS.<br/><a target="_blank" href="https://github.com/cafrias/discuss-app">Github</a>'
   },
   {
     logo: controllerIcon,
     sub: 'Game',
     h: 'Arcade Game',
     text:
-      'Developed as HTML5 Canvas project, while coursing Front-end Nanodegree at Udacity. Tech stack includes: HTML5 Canvas, JS, basic CCS3.<br/><a target="_blank" href="https://github.com/friasdesign/frontend-nanodegree-arcade-game">Github</a>'
+      'Developed as HTML5 Canvas project, while coursing Front-end Nanodegree at Udacity. Tech stack includes: HTML5 Canvas, JS, basic CCS3.<br/><a target="_blank" href="https://github.com/cafrias/frontend-nanodegree-arcade-game">Github</a>'
   },
   {
     logo: webIcon,
     sub: 'Web app',
     h: 'Neighborhood',
     text:
-      'Project also developed as part of Udacity’s Front-end Nanodegree. It’s main objective was to be able to use external APIs, in this case Google Maps API.<br/><a target="_blank" href="https://github.com/friasdesign/neighborhood-map">Github</a>'
+      'Project also developed as part of Udacity’s Front-end Nanodegree. It’s main objective was to be able to use external APIs, in this case Google Maps API.<br/><a target="_blank" href="https://github.com/cafrias/neighborhood-map">Github</a>'
   }
 ]
