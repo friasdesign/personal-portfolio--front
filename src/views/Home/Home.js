@@ -14,7 +14,7 @@ import FadeIn from '../../animations/FadeIn'
 const FIRST_LINE = 'I am'
 const NAME = 'Carlos Frias'
 const SECOND_LINE = 'full-stack'
-const THIRD_LINE = 'QA'
+const THIRD_LINE = ''
 
 // TYPES _______________________________________________________________________
 type HomeProps = {
@@ -88,10 +88,6 @@ class Home extends Component {
       .then(() => typeCharArray(secondLine, 'secondLine'))
       // Trigger 'developer' animation
       .then(() => displaySub('developer'))
-      // Type 'UX/UI'
-      .then(() => typeCharArray(thirdLine, 'thirdLine'))
-      // Trigger 'designer' animation
-      .then(() => displaySub('engineer'))
       // Finish typing
       .then(() => this.setState({ finishedTyping: true }))
   }
@@ -182,7 +178,6 @@ class Home extends Component {
         </h1>
         <div className="presentation">
           {this.titleWithSub(secondLine, 'developer', false, true)}
-          {this.titleWithSub(thirdLine, 'engineer', true)}
         </div>
         <div className="controls">
           {finishedTyping ? (
